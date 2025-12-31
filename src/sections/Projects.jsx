@@ -31,6 +31,12 @@ function Projects() {
             description: "Développement d'un moteur de jeu en C/C++ avec SDL2, mettant en avant l'algorithmique et la gestion mémoire bas niveau. Travail approfondi sur les structures de données et l'optimisation.",
             technologies: ['C', 'C++', 'SDL2', 'Algorithmique'],
         },
+        {
+            title: 'VirtualQuest (CWAD)',
+            semester: 'S1',
+            description: "Projet d'intégration Front-end (HTML/CSS) avec cahier des charges strict : validation W3C, Responsive Design, Media Queries, Flexbox/Grid. Axé sur le respect des normes, l'identité visuelle et l'accessibilité.",
+            technologies: ['HTML5', 'CSS3', 'Responsive', 'W3C'],
+        },
     ];
 
     return (
@@ -52,6 +58,7 @@ function Projects() {
                             description={project.description}
                             technologies={project.technologies}
                             githubLink={project.githubLink}
+                            liveLink={project.liveLink}
                         />
                     ))}
                 </div>

@@ -17,6 +17,7 @@ function Header() {
 
     const navLinks = [
         { href: '#about', label: 'À Propos' },
+        { href: '#formation', label: 'Formation' },
         { href: '#skills', label: 'Compétences' },
         { href: '#projects', label: 'Projets' },
         { href: '#contact', label: 'Contact' },
