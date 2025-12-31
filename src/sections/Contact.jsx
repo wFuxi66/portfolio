@@ -32,7 +32,7 @@ function Contact() {
 
                         {/* LinkedIn */}
                         <a
-                            href="#" // Lien vers LinkedIn
+                            href="https://linkedin.com/in/" // TODO: Ajouter ton profil LinkedIn
                             target="_blank"
                             rel="noopener noreferrer"
                             className="glass-card glow-border hover-glow p-6 group transition-all duration-300 hover:-translate-y-1"
@@ -48,7 +48,7 @@ function Contact() {
 
                         {/* GitHub */}
                         <a
-                            href="#" // Lien vers GitHub
+                            href="https://github.com/wFuxi66"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="glass-card glow-border hover-glow p-6 group transition-all duration-300 hover:-translate-y-1"
