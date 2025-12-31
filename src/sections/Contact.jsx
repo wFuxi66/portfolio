@@ -32,7 +32,7 @@ function Contact() {
 
                         {/* LinkedIn */}
                         <a
-                            href="https://linkedin.com/in/" // TODO: Ajouter ton profil LinkedIn
+                            href="https://www.linkedin.com/in/jimmy-zheng-4a9073331/"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="glass-card glow-border hover-glow p-6 group transition-all duration-300 hover:-translate-y-1"
