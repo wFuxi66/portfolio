@@ -1,29 +1,27 @@
 import SkillBadge from '../components/SkillBadge';
-import SkillBar from '../components/SkillBar';
 
 /**
- * Skills Section - Technical skills organized by category with progress bars
+ * Skills Section - Technical skills organized by category
  */
 function Skills() {
-    // Skills with levels (1-5): 1=Débutant, 2=Basique, 3=Intermédiaire, 4=Avancé, 5=Expert
     const devSkills = [
-        { name: 'HTML/CSS', level: 4 },
-        { name: 'JavaScript', level: 3 },
-        { name: 'React', level: 3 },
-        { name: 'Python', level: 4 },
-        { name: 'Java', level: 4 },
-        { name: 'C/C++', level: 3 },
-        { name: 'SQL', level: 4 },
-        { name: 'PHP', level: 3 },
-        { name: 'Git', level: 4 },
+        'HTML/CSS',
+        'JavaScript',
+        'React',
+        'Python',
+        'Java',
+        'C/C++',
+        'SQL',
+        'PHP',
+        'Git',
     ];
 
     const networkSkills = [
-        { name: 'Administration Linux', level: 4 },
-        { name: 'TCP/IP & Réseaux', level: 4 },
-        { name: 'Shell/Bash', level: 4 },
-        { name: 'Sécurité', level: 3 },
-        { name: 'Routage & Commutation', level: 3 },
+        'Administration Linux',
+        'TCP/IP & Réseaux',
+        'Shell/Bash',
+        'Sécurité',
+        'Routage & Commutation',
     ];
 
     const softSkills = [
@@ -50,14 +48,9 @@ function Skills() {
                             <h3 className="text-xl font-semibold text-white">Développement</h3>
                         </div>
 
-                        <div className="space-y-4">
+                        <div className="flex flex-wrap gap-3">
                             {devSkills.map((skill) => (
-                                <SkillBar
-                                    key={skill.name}
-                                    name={skill.name}
-                                    level={skill.level}
-                                    category="dev"
-                                />
+                                <SkillBadge key={skill} name={skill} category="dev" />
                             ))}
                         </div>
                     </div>
@@ -73,20 +66,15 @@ function Skills() {
                             <h3 className="text-xl font-semibold text-white">Réseaux & Systèmes</h3>
                         </div>
 
-                        <div className="space-y-4">
+                        <div className="flex flex-wrap gap-3">
                             {networkSkills.map((skill) => (
-                                <SkillBar
-                                    key={skill.name}
-                                    name={skill.name}
-                                    level={skill.level}
-                                    category="network"
-                                />
+                                <SkillBadge key={skill} name={skill} category="network" />
                             ))}
                         </div>
                     </div>
                 </div>
 
-                {/* Soft Skills - Badges */}
+                {/* Soft Skills */}
                 <div className="mt-8">
                     <h3 className="text-lg font-semibold text-gray-300 mb-4">Compétences transversales</h3>
                     <div className="flex flex-wrap gap-3">
@@ -101,4 +89,3 @@ function Skills() {
 }
 
 export default Skills;
-

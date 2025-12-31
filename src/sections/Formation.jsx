@@ -15,11 +15,11 @@ function Formation() {
         {
             year: '2024',
             title: 'Baccalauréat Général',
-            subtitle: 'Spécialités NSI & Mathématiques',
-            institution: 'Lycée',
-            description: 'Baccalauréat avec spécialités Numérique et Sciences Informatiques (NSI) et Mathématiques.',
+            subtitle: 'Parcours Général',
+            institution: 'Lycée Claude Monet',
+            description: 'Baccalauréat général avec spécialités scientifiques.',
             current: false,
-            highlights: ['Algorithmes', 'Programmation Python', 'Bases de données'],
+            highlights: ['NSI', 'Mathématiques'],
         },
     ];
 
@@ -42,8 +42,8 @@ function Formation() {
                                 {/* Timeline dot */}
                                 <div className="absolute left-4 md:left-1/2 w-4 h-4 transform -translate-x-1/2 md:-translate-x-1/2">
                                     <div className={`w-4 h-4 rounded-full border-2 ${formation.current
-                                            ? 'bg-cyan-600 border-cyan-400 shadow-[0_0_10px_rgba(0,229,255,0.5)]'
-                                            : 'bg-dark-900 border-cyan-600/50'
+                                        ? 'bg-cyan-600 border-cyan-400 shadow-[0_0_10px_rgba(0,229,255,0.5)]'
+                                        : 'bg-dark-900 border-cyan-600/50'
                                         }`} />
                                 </div>
 
