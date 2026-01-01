@@ -42,11 +42,10 @@ function Projects() {
     return (
         <section id="projects" className="relative">
             <div className="section-container">
-                <h2 className="section-title">Projets Clés</h2>
+                <h2 className="section-title">Projets</h2>
 
                 <p className="text-gray-400 mb-8 max-w-2xl">
-                    Découvrez une sélection de mes projets réalisés au cours de mon parcours en BUT Informatique,
-                    illustrant ma progression et mes compétences techniques.
+                    Une sélection de mes projets personnels et académiques, illustrant ma progression et mes compétences techniques.
                 </p>
 
                 <div className="grid sm:grid-cols-2 gap-6">

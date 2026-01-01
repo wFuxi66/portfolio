@@ -25,8 +25,8 @@ function About() {
                         </p>
 
                         <p className="text-gray-400 leading-relaxed">
-                            Actuellement en S3 et bientôt S4, je recherche un <span className="text-cyan-400 font-semibold">stage de 10 à 12 semaines</span> entre
-                            avril et juillet 2026 pour mettre en pratique mes compétences et contribuer activement à des projets innovants.
+                            Actuellement en S4, je recherche un <span className="text-cyan-400 font-semibold">stage de 10 à 12 semaines</span> entre
+                            avril et juillet 2026 pour mettre en pratique mes compétences et contribuer à des projets innovants.
                         </p>
                     </div>
 
