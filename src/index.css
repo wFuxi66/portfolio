@@ -8,6 +8,12 @@
     scroll-behavior: smooth;
   }
 
+  /* Text selection color */
+  ::selection {
+    background-color: rgba(0, 229, 255, 0.3);
+    color: #fff;
+  }
+
   /* Hide default cursor for custom cursor (desktop only) */
   @media (hover: hover) and (pointer: fine) {
 
