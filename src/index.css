@@ -68,11 +68,16 @@
   }
 
   .glow-border {
-    @apply border border-cyan-600/30 shadow-[0_0_15px_rgba(0, 229, 255, 0.15)];
+    @apply border border-cyan-600/30;
+    box-shadow: 0 0 15px rgba(0, 229, 255, 0.15);
   }
 
   .hover-glow {
-    @apply transition-all duration-300 hover:shadow-[0_0_25px_rgba(0, 229, 255, 0.25)] hover:border-cyan-600/50;
+    @apply transition-all duration-300 hover:border-cyan-600/50;
+  }
+
+  .hover-glow:hover {
+    box-shadow: 0 0 25px rgba(0, 229, 255, 0.25);
   }
 }
 
