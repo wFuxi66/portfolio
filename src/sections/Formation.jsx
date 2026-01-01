@@ -19,7 +19,7 @@ function Formation() {
             institution: 'Lycée Claude Monet',
             description: 'Baccalauréat général avec spécialités scientifiques.',
             current: false,
-            highlights: ['NSI', 'Mathématiques'],
+            highlights: ['Physique-Chimie', 'Mathématiques'],
         },
     ];
 
