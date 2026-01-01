@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 /**
  * KonamiCode - Easter egg that triggers when the Konami Code is entered
@@ -6,6 +6,8 @@ import { useEffect, useState } from 'react';
  */
 function KonamiCode() {
     const [activated, setActivated] = useState(false);
+    const inputSequence = useRef([]);
+
     const konamiCode = [
         'ArrowUp', 'ArrowUp',
         'ArrowDown', 'ArrowDown',
@@ -13,23 +15,22 @@ function KonamiCode() {
         'ArrowLeft', 'ArrowRight',
         'KeyB', 'KeyA'
     ];
-    const [inputSequence, setInputSequence] = useState([]);
 
     useEffect(() => {
         const handleKeyDown = (e) => {
-            const newSequence = [...inputSequence, e.code].slice(-konamiCode.length);
-            setInputSequence(newSequence);
+            inputSequence.current = [...inputSequence.current, e.code].slice(-konamiCode.length);
 
-            if (newSequence.length === konamiCode.length &&
-                newSequence.every((key, i) => key === konamiCode[i])) {
+            if (inputSequence.current.length === konamiCode.length &&
+                inputSequence.current.every((key, i) => key === konamiCode[i])) {
                 setActivated(true);
+                inputSequence.current = [];
                 setTimeout(() => setActivated(false), 5000);
             }
         };
 
         window.addEventListener('keydown', handleKeyDown);
         return () => window.removeEventListener('keydown', handleKeyDown);
-    }, [inputSequence]);
+    }, []);
 
     if (!activated) return null;
 
