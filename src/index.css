@@ -7,10 +7,20 @@
   html {
     scroll-behavior: smooth;
   }
-  
+
+  /* Hide default cursor for custom cursor (desktop only) */
+  @media (hover: hover) and (pointer: fine) {
+
+    *,
+    *::before,
+    *::after {
+      cursor: none !important;
+    }
+  }
+
   body {
     @apply bg-dark-950 text-gray-100 font-sans antialiased;
-    background-image: 
+    background-image:
       radial-gradient(ellipse at top, rgba(0, 229, 255, 0.03) 0%, transparent 50%),
       radial-gradient(ellipse at bottom right, rgba(0, 229, 255, 0.02) 0%, transparent 50%);
     min-height: 100vh;
@@ -20,15 +30,15 @@
   ::-webkit-scrollbar {
     width: 8px;
   }
-  
+
   ::-webkit-scrollbar-track {
     @apply bg-dark-900;
   }
-  
+
   ::-webkit-scrollbar-thumb {
     @apply bg-cyan-600 rounded-full;
   }
-  
+
   ::-webkit-scrollbar-thumb:hover {
     @apply bg-cyan-500;
   }
@@ -58,11 +68,11 @@
   }
 
   .glow-border {
-    @apply border border-cyan-600/30 shadow-[0_0_15px_rgba(0,229,255,0.15)];
+    @apply border border-cyan-600/30 shadow-[0_0_15px_rgba(0, 229, 255, 0.15)];
   }
 
   .hover-glow {
-    @apply transition-all duration-300 hover:shadow-[0_0_25px_rgba(0,229,255,0.25)] hover:border-cyan-600/50;
+    @apply transition-all duration-300 hover:shadow-[0_0_25px_rgba(0, 229, 255, 0.25)] hover:border-cyan-600/50;
   }
 }
 
@@ -80,6 +90,7 @@
     from {
       opacity: 0;
     }
+
     to {
       opacity: 1;
     }
@@ -90,15 +101,30 @@
       opacity: 0;
       transform: translateY(30px);
     }
+
     to {
       opacity: 1;
       transform: translateY(0);
     }
   }
 
-  .delay-100 { animation-delay: 100ms; }
-  .delay-200 { animation-delay: 200ms; }
-  .delay-300 { animation-delay: 300ms; }
-  .delay-400 { animation-delay: 400ms; }
-  .delay-500 { animation-delay: 500ms; }
+  .delay-100 {
+    animation-delay: 100ms;
+  }
+
+  .delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .delay-300 {
+    animation-delay: 300ms;
+  }
+
+  .delay-400 {
+    animation-delay: 400ms;
+  }
+
+  .delay-500 {
+    animation-delay: 500ms;
+  }
 }
