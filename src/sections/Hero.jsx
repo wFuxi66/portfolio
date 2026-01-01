@@ -1,7 +1,14 @@
+import TypeWriter from '../components/TypeWriter';
+
 /**
  * Hero Section - Main introduction with name, title, and stage objective
  */
 function Hero() {
+    const roles = [
+        'Développeur Full-Stack',
+        'Étudiant BUT Informatique',
+        'Passionné de Réseaux',
+    ];
     return (
         <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden">
             {/* Background decorative elements */}
@@ -36,8 +43,10 @@ function Hero() {
                 </h1>
 
                 {/* Title */}
-                <p className="animate-slide-up opacity-0 delay-200 text-lg sm:text-xl md:text-2xl text-gray-400 mb-4 max-w-2xl mx-auto">
-                    <span className="text-cyan-400 font-semibold">Développeur Full-Stack Junior</span>
+                <p className="animate-slide-up opacity-0 delay-200 text-lg sm:text-xl md:text-2xl text-gray-400 mb-4 max-w-2xl mx-auto h-8">
+                    <span className="text-cyan-400 font-semibold">
+                        <TypeWriter words={roles} typingSpeed={80} deletingSpeed={40} pauseTime={2500} />
+                    </span>
                 </p>
 
                 <p className="animate-slide-up opacity-0 delay-300 text-base sm:text-lg text-gray-500 mb-8 max-w-xl mx-auto">

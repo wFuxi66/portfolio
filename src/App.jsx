@@ -1,5 +1,6 @@
 import Header from './components/Header';
 import CustomCursor from './components/CustomCursor';
+import KonamiCode from './components/KonamiCode';
 import Hero from './sections/Hero';
 import About from './sections/About';
 import Formation from './sections/Formation';
@@ -14,6 +15,7 @@ function App() {
     return (
         <div className="min-h-screen bg-dark-950 cursor-none">
             <CustomCursor />
+            <KonamiCode />
             <Header />
 
             <main>
