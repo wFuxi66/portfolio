@@ -61,7 +61,7 @@ function Hero() {
                         Voir mes projets
                     </a>
                     <a
-                        href="/CV_Jimmy_ZHENG.pdf"
+                        href={`${import.meta.env.BASE_URL}CV_Jimmy_ZHENG.pdf`}
                         download
                         className="px-8 py-3 border border-cyan-600/50 text-cyan-400 font-semibold rounded-lg hover:bg-cyan-600/10 transition-all duration-300 w-full sm:w-auto inline-flex items-center justify-center gap-2"
                     >
