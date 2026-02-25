@@ -4,32 +4,10 @@ import SkillBadge from '../components/SkillBadge';
  * Skills Section - Technical skills organized by category
  */
 function Skills() {
-    const devSkills = [
-        'HTML/CSS',
-        'JavaScript',
-        'React',
-        'Python',
-        'Java',
-        'C/C++',
-        'SQL',
-        'PHP',
-        'Git',
-    ];
-
-    const networkSkills = [
-        'Administration Linux',
-        'TCP/IP & Réseaux',
-        'Shell/Bash',
-        'Sécurité',
-        'Routage & Commutation',
-    ];
-
-    const softSkills = [
-        'Gestion de Projet Agile',
-        'POO / UML',
-        'Travail en équipe',
-        'Documentation',
-    ];
+    const webSkills = ['React', 'Tailwind CSS', 'Vite', 'JavaScript', 'HTML/CSS'];
+    const softwareSkills = ['Python', 'Java', 'C/C++', 'PHP', 'SQL / MySQL'];
+    const networkSkills = ['Linux (Debian)', 'Windows', 'Docker', 'TCP/IP & VLAN', 'DNS / DHCP', 'Routage'];
+    const toolsSkills = ['Git / GitHub', 'Méthode Agile', 'POO / UML', 'Architecture REST', 'Travail en équipe'];
 
     return (
         <section id="skills" className="relative bg-dark-900/30">
@@ -37,7 +15,7 @@ function Skills() {
                 <h2 className="section-title">Compétences Techniques</h2>
 
                 <div className="grid md:grid-cols-2 gap-8 md:gap-12">
-                    {/* Development Skills */}
+                    {/* Web Development */}
                     <div className="glass-card glow-border p-6 md:p-8">
                         <div className="flex items-center gap-3 mb-6">
                             <div className="w-10 h-10 rounded-lg bg-cyan-600/20 flex items-center justify-center">
@@ -45,11 +23,27 @@ function Skills() {
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
                                 </svg>
                             </div>
-                            <h3 className="text-xl font-semibold text-white">Développement</h3>
+                            <h3 className="text-xl font-semibold text-white">Développement Web</h3>
                         </div>
-
                         <div className="flex flex-wrap gap-3">
-                            {devSkills.map((skill) => (
+                            {webSkills.map((skill) => (
+                                <SkillBadge key={skill} name={skill} category="dev" />
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* Logiciel & Data */}
+                    <div className="glass-card glow-border p-6 md:p-8">
+                        <div className="flex items-center gap-3 mb-6">
+                            <div className="w-10 h-10 rounded-lg bg-fuchsia-600/20 flex items-center justify-center">
+                                <svg className="w-5 h-5 text-fuchsia-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                </svg>
+                            </div>
+                            <h3 className="text-xl font-semibold text-white">Logiciel & Data</h3>
+                        </div>
+                        <div className="flex flex-wrap gap-3">
+                            {softwareSkills.map((skill) => (
                                 <SkillBadge key={skill} name={skill} category="dev" />
                             ))}
                         </div>
@@ -65,22 +59,28 @@ function Skills() {
                             </div>
                             <h3 className="text-xl font-semibold text-white">Réseaux & Systèmes</h3>
                         </div>
-
                         <div className="flex flex-wrap gap-3">
                             {networkSkills.map((skill) => (
                                 <SkillBadge key={skill} name={skill} category="network" />
                             ))}
                         </div>
                     </div>
-                </div>
 
-                {/* Soft Skills */}
-                <div className="mt-8">
-                    <h3 className="text-lg font-semibold text-gray-300 mb-4">Compétences transversales</h3>
-                    <div className="flex flex-wrap gap-3">
-                        {softSkills.map((skill) => (
-                            <SkillBadge key={skill} name={skill} category="dev" />
-                        ))}
+                    {/* Tools and Transverse Skills */}
+                    <div className="glass-card glow-border p-6 md:p-8">
+                        <div className="flex items-center gap-3 mb-6">
+                            <div className="w-10 h-10 rounded-lg bg-orange-600/20 flex items-center justify-center">
+                                <svg className="w-5 h-5 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+                                </svg>
+                            </div>
+                            <h3 className="text-xl font-semibold text-white">Outils & Transverse</h3>
+                        </div>
+                        <div className="flex flex-wrap gap-3">
+                            {toolsSkills.map((skill) => (
+                                <SkillBadge key={skill} name={skill} category="dev" />
+                            ))}
+                        </div>
                     </div>
                 </div>
             </div>

@@ -26,6 +26,12 @@ function Projects() {
             technologies: ['Java', 'Swing', 'UML', 'JUnit', 'Git'],
         },
         {
+            title: 'Projet Réseaux (SAE 203)',
+            semester: 'S2',
+            description: "Conception et configuration complète d'une topologie réseau simulée. Paramétrage du routage IP, déploiement d'un serveur d'adressage dynamique (DHCP) et sécurisation des accès distants aux équipements via SSH.",
+            technologies: ['Routage', 'DHCP', 'SSH', 'Linux'],
+        },
+        {
             title: 'Jeu en 2D (SDL2)',
             semester: 'S1',
             description: "Développement d'un moteur de jeu en C/C++ avec SDL2, mettant en avant l'algorithmique et la gestion mémoire bas niveau. Travail approfondi sur les structures de données et l'optimisation.",
