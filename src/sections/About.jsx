@@ -13,7 +13,7 @@ function About() {
                         <p className="text-lg text-gray-300 leading-relaxed">
                             Étudiant en <span className="text-cyan-400 font-semibold">BUT Informatique</span> à l'IUT d'Orsay,
                             j'ai fait le choix d'une <span className="text-white font-medium">double compétence</span> qui fait ma force :
-                            allier le <span className="text-cyan-400">développement d'applications Full Stack</span>
+                            allier le <span className="text-cyan-400">développement d'applications Full Stack</span>{' '}
                             à de vraies connaissances en <span className="text-emerald-400">administration systèmes et réseaux</span>.
                         </p>
 
