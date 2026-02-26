@@ -20,7 +20,7 @@ function About() {
                         <p className="text-gray-400 leading-relaxed">
                             Mon parcours B (Réseaux et Sécurité) me permet de concevoir des applications non seulement fonctionnelles,
                             mais également <span className="text-white">sécurisées et optimisées</span> pour l'infrastructure.
-                            Je comprends autant le code que l'environnement dans lequel il s'exécute —
+                            Je comprends autant le code que l'environnement dans lequel il s'exécute,
                             une vision complète du développement au déploiement.
                         </p>
 
