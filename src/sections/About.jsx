@@ -11,22 +11,22 @@ function About() {
                     {/* Main text */}
                     <div className="md:col-span-2 space-y-6">
                         <p className="text-lg text-gray-300 leading-relaxed">
-                            Étudiant passionné en <span className="text-cyan-400 font-semibold">BUT Informatique</span> à l'IUT d'Orsay,
-                            je développe une <span className="text-white font-medium">double compétence unique</span> qui me distingue :
-                            la maîtrise du <span className="text-cyan-400">développement d'applications Full-Stack</span> combinée
-                            à une expertise solide en <span className="text-emerald-400">administration systèmes et réseaux</span>.
+                            Étudiant en <span className="text-cyan-400 font-semibold">BUT Informatique</span> à l'IUT d'Orsay,
+                            j'ai fait le choix d'une <span className="text-white font-medium">double compétence</span> qui fait ma force :
+                            allier le <span className="text-cyan-400">développement d'applications Full Stack</span>
+                            à de vraies connaissances en <span className="text-emerald-400">administration systèmes et réseaux</span>.
                         </p>
 
                         <p className="text-gray-400 leading-relaxed">
-                            Mon parcours B (Réseaux et Sécurité) me permet de concevoir des applications non seulement fonctionnelles,
-                            mais également <span className="text-white">sécurisées et optimisées</span> pour l'infrastructure.
+                            Mon parcours B (Réseaux et Sécurité) me permet de concevoir des applications
+                            <span className="text-white"> performantes, sécurisées et pensées pour l'infrastructure</span>.
                             Je comprends autant le code que l'environnement dans lequel il s'exécute,
                             une vision complète du développement au déploiement.
                         </p>
 
                         <p className="text-gray-400 leading-relaxed">
                             Actuellement en S4, je recherche un <span className="text-cyan-400 font-semibold">stage de 10 à 12 semaines</span> entre
-                            avril et juillet 2026 pour mettre en pratique mes compétences et contribuer à des projets innovants.
+                            avril et juillet 2026 pour m'impliquer techniquement sur vos projets et consolider mes acquis.
                         </p>
                     </div>
 

@@ -8,7 +8,7 @@ function Projects() {
         {
             title: 'osu!scan',
             semester: 'Perso',
-            description: "Application web d'analyse de beatmaps osu!. Scanners multiples : Guest Difficulties, GD Hosts, Nominators, BN Scanner. Multi-threading pour scanner des milliers de maps en quelques secondes. Export HTML des résultats.",
+            description: "Application web d'analyse de beatmaps osu!. Scanners multiples : Guest Difficulties, GD Hosts, Nominators, BN Scanner. Multi threading pour scanner des milliers de maps en quelques secondes. Export HTML des résultats.",
             technologies: ['Python', 'Flask', 'osu! API v2', 'HTML/CSS', 'Threading'],
             githubLink: 'https://github.com/wFuxi66/osu-scan',
             liveLink: 'https://osu-scan.onrender.com',
@@ -16,7 +16,7 @@ function Projects() {
         {
             title: 'Plateforme de Création de Groupes (SAE S3)',
             semester: 'S3',
-            description: "Plateforme de création de groupes pour les services d'enseignement. Projet intégrant Analyse, SQL/Backend, Développement Web, Algorithmique et Conception POO. Application web complète avec base de données et interface moderne.",
+            description: "Développement full stack d'une plateforme web pour l'enseignement. Conception de la base de données, algorithmique back end et création d'une interface moderne.",
             technologies: ['Web', 'SQL', 'POO', 'Algorithmique', 'Backend'],
         },
         {
@@ -28,19 +28,19 @@ function Projects() {
         {
             title: 'Projet Réseaux (SAE 203)',
             semester: 'S2',
-            description: "Conception et configuration complète d'une topologie réseau simulée. Paramétrage du routage IP, déploiement d'un serveur d'adressage dynamique (DHCP) et sécurisation des accès distants aux équipements via SSH.",
+            description: "Conception et configuration complète d'une infrastructure réseau simulée. Paramétrage du routage IP, déploiement d'un serveur d'adressage dynamique (DHCP) et sécurisation des accès distants aux équipements via SSH.",
             technologies: ['Routage', 'DHCP', 'SSH', 'Linux'],
         },
         {
             title: 'Jeu en 2D (SDL2)',
             semester: 'S1',
-            description: "Développement d'un moteur de jeu en C/C++ avec SDL2, mettant en avant l'algorithmique et la gestion mémoire bas niveau. Travail approfondi sur les structures de données et l'optimisation.",
+            description: "Développement d'un moteur de jeu en C/C++ avec SDL2, axé sur l'algorithmique et la gestion de la mémoire bas niveau. Focus sur l'optimisation et les structures de données.",
             technologies: ['C', 'C++', 'SDL2', 'Algorithmique'],
         },
         {
             title: 'VirtualQuest (CWAD)',
             semester: 'S1',
-            description: "Projet d'intégration Front-end (HTML/CSS) avec cahier des charges strict : validation W3C, Responsive Design, Media Queries, Flexbox/Grid. Axé sur le respect des normes, l'identité visuelle et l'accessibilité.",
+            description: "Projet d'intégration Front end (HTML/CSS) avec cahier des charges strict : validation W3C, Responsive Design, Media Queries, Flexbox/Grid. Axé sur le respect des normes, l'identité visuelle et l'accessibilité.",
             technologies: ['HTML5', 'CSS3', 'Responsive', 'W3C'],
         },
     ];
@@ -51,7 +51,7 @@ function Projects() {
                 <h2 className="section-title">Projets</h2>
 
                 <p className="text-gray-400 mb-8 max-w-2xl">
-                    Une sélection de mes projets personnels et académiques, illustrant ma progression et mes compétences techniques.
+                    Une sélection de mes projets techniques, réalisés dans un cadre personnel ou académique.
                 </p>
 
                 <div className="grid sm:grid-cols-2 gap-6">

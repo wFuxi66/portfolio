@@ -9,9 +9,9 @@ function Contact() {
 
                 <div className="max-w-2xl mx-auto text-center">
                     <p className="text-lg text-gray-300 mb-8">
-                        Vous avez un projet, une opportunité de stage ou simplement envie d'échanger ?
+                        Je suis activement à la recherche d'un stage pour le printemps 2026.
                         <br />
-                        <span className="text-cyan-400">N'hésitez pas à me contacter !</span>
+                        <span className="text-cyan-400">N'hésitez pas à me contacter pour toute opportunité !</span>
                     </p>
 
                     {/* Contact Cards */}

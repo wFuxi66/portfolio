@@ -10,7 +10,7 @@ function Formation() {
             institution: 'IUT d\'Orsay - Université Paris-Saclay',
             description: 'Formation en 3 ans couvrant le développement logiciel, les bases de données, les réseaux et la sécurité informatique.',
             current: true,
-            highlights: ['Développement Full-Stack', 'Administration Systèmes', 'Sécurité Réseaux'],
+            highlights: ['Développement Full Stack', 'Administration Systèmes', 'Sécurité Réseaux'],
         },
         {
             year: '2024',

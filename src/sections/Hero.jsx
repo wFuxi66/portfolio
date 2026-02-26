@@ -38,7 +38,7 @@ function Hero() {
                 {/* Title */}
                 <p className="animate-slide-up opacity-0 delay-200 text-lg sm:text-xl md:text-2xl text-gray-400 mb-4 max-w-2xl mx-auto">
                     <span className="text-cyan-400 font-semibold">
-                        Développeur Full-Stack
+                        Développeur Full Stack
                     </span>
                 </p>
 
