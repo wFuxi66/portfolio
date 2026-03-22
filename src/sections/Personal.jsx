@@ -1,14 +1,11 @@
 import { motion } from 'framer-motion';
 import SpotlightCard from '../components/SpotlightCard';
 
-/**
- * Personal Section - Languages and Hobbies
- */
 function Personal() {
     const languages = [
-        { name: 'Français', level: 'Maternel', icon: '🇫🇷' },
-        { name: 'Chinois', level: 'Maternel', icon: '🇨🇳' },
-        { name: 'Anglais', level: 'B2 - Intermédiaire', icon: '🇬🇧' }
+        { name: 'Français', level: 'Maternel', code: 'FR' },
+        { name: 'Chinois', level: 'Maternel', code: 'CN' },
+        { name: 'Anglais', level: 'B2 - Intermédiaire', code: 'EN' }
     ];
 
     const hobbies = [
@@ -22,9 +19,8 @@ function Personal() {
         <section id="personal" className="relative py-20 border-t border-white/5 bg-black/20">
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid md:grid-cols-2 gap-12">
-                    {/* Languages */}
                     <div>
-                        <motion.h2 
+                        <motion.h2
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
@@ -34,19 +30,21 @@ function Personal() {
                         </motion.h2>
                         <div className="space-y-4">
                             {languages.map((lang, index) => (
-                                <motion.div 
-                                    key={index} 
+                                <motion.div
+                                    key={index}
                                     initial={{ opacity: 0, y: 20 }}
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ delay: index * 0.1 }}
                                 >
-                                    <SpotlightCard className="p-4 flex items-center justify-between">
-                                        <div className="flex items-center gap-4">
-                                            <span className="text-2xl">{lang.icon}</span>
-                                            <h3 className="text-lg font-semibold text-white">{lang.name}</h3>
+                                    <SpotlightCard className="p-5 flex items-center justify-between group">
+                                        <div className="flex items-center gap-5">
+                                            <span className="text-[10px] font-bold text-slate-500 border border-white/10 w-9 h-9 flex items-center justify-center rounded-lg bg-white/5 group-hover:text-white group-hover:border-white/20 transition-all duration-300">
+                                                {lang.code}
+                                            </span>
+                                            <h3 className="text-lg font-semibold text-white tracking-tight">{lang.name}</h3>   
                                         </div>
-                                        <span className="text-slate-300 font-mono text-sm border border-white/10 px-3 py-1 rounded-full bg-white/5">
+                                        <span className="text-slate-400 font-mono text-[10px] uppercase tracking-[0.1em] px-3 py-1.5 rounded-full border border-white/5 bg-white/[0.02]">
                                             {lang.level}
                                         </span>
                                     </SpotlightCard>
@@ -55,9 +53,8 @@ function Personal() {
                         </div>
                     </div>
 
-                    {/* Hobbies */}
                     <div>
-                        <motion.h2 
+                        <motion.h2
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
@@ -67,8 +64,8 @@ function Personal() {
                         </motion.h2>
                         <div className="grid grid-cols-2 gap-4">
                             {hobbies.map((hobby, index) => (
-                                <motion.div 
-                                    key={index} 
+                                <motion.div
+                                    key={index}
                                     initial={{ opacity: 0, y: 20 }}
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
