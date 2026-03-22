@@ -4,21 +4,25 @@ import { StarsBackground } from '../components/StarsBackground';
 
 function Hero() {
     return (
-        <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-black">
-            {/* Twinkling Stars Background with exact requested gradient */}
-            <StarsBackground 
-                starColor="#FFF" 
-                className="absolute inset-0 flex items-center justify-center bg-[radial-gradient(ellipse_at_bottom,_#262626_0%,_#000_100%)]" 
-            />
+        <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-black lg:cursor-none">
+            {/* Background stars with magnetic repulsion - ensure cursor:none */}
+            <div className="absolute inset-0 z-0 lg:cursor-none">
+                <StarsBackground 
+                    starColor="#FFF" 
+                    className="w-full h-full bg-[radial-gradient(ellipse_at_bottom,_#262626_0%,_#000_100%)] lg:cursor-none" 
+                />
+            </div>
 
-            {/* The Huge Premium Globe */}
-            <Globe />
+            {/* The 3D Globe - ensure cursor:none */}
+            <div className="relative z-10 lg:cursor-none">
+                <Globe />
+            </div>
 
             <div className="section-container text-center relative z-20 pointer-events-none mt-[-10vh]">
                 {/* Status badge - Clean Apple Style */}
                 <div className="animate-slide-up opacity-0 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-md mb-8">
                     <span className="w-2 h-2 bg-white rounded-full animate-pulse shadow-[0_0_10px_rgba(255,255,255,0.5)]"></span>
-                    <span className="text-sm font-medium text-slate-300">Recherche de Stage • Avril - Juillet 2026</span>
+                    <span className="text-sm font-medium text-slate-300 tracking-tight">Recherche de Stage • Avril - Juillet 2026</span>
                 </div>
 
                 {/* Name */}
@@ -41,6 +45,7 @@ function Hero() {
                             document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' });
                         }}
                         className="primary-button w-full sm:w-auto"
+                        aria-label="Voir mes projets"
                     >
                         Explorer mes projets
                     </a>
@@ -49,9 +54,10 @@ function Hero() {
                         target="_blank"
                         rel="noopener noreferrer"
                         className="glass-button w-full sm:w-auto group"
+                        aria-label="Consulter mon CV (PDF)"
                     >
                         <span>Voir mon CV</span>
-                        <svg className="w-4 h-4 ml-2 opacity-70 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-4 h-4 ml-2 opacity-70 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                         </svg>
                     </a>

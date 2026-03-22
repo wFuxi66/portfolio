@@ -4,8 +4,14 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Base Styles */
 @layer base {
+  /* Masquage RADICAL du curseur système sur tout le site */
+  @media (min-width: 1024px) {
+    *, *::before, *::after {
+      cursor: none !important;
+    }
+  }
+
   html {
     scroll-behavior: smooth;
   }
@@ -22,27 +28,24 @@
   }
 }
 
-/* Custom Components */
 @layer components {
   .section-container {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32;
   }
 
-  /* Glassmorphism Premium */
   .glass-button {
     @apply relative inline-flex items-center justify-center px-8 py-3.5 text-sm font-medium text-white transition-all duration-300 ease-out;
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 9999px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   }
 
   .glass-button:hover {
     background: rgba(255, 255, 255, 0.1);
     border-color: rgba(255, 255, 255, 0.2);
     transform: translateY(-1px);
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 229, 255, 0.1);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
   }
 
   .primary-button {
@@ -59,7 +62,6 @@
   }
 }
 
-/* Animations */
 @layer utilities {
   .animate-fade-in {
     animation: fadeIn 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
@@ -83,14 +85,6 @@
       opacity: 1;
       transform: translateY(0);
     }
-  }
-
-  /* Auras douces pour le fond */
-  .bg-aura-1 {
-    background: radial-gradient(circle at 50% 50%, rgba(0, 102, 255, 0.15) 0%, transparent 60%);
-  }
-  .bg-aura-2 {
-    background: radial-gradient(circle at 50% 50%, rgba(0, 229, 255, 0.1) 0%, transparent 60%);
   }
 
   .delay-100 { animation-delay: 100ms; }

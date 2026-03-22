@@ -1,4 +1,5 @@
 import Header from './components/Header';
+import CustomCursor from './components/CustomCursor';
 import Hero from './sections/Hero';
 import About from './sections/About';
 import Formation from './sections/Formation';
@@ -13,7 +14,8 @@ import Contact from './sections/Contact';
  */
 function App() {
     return (
-        <div className="min-h-screen bg-black text-slate-200">
+        <div className="min-h-screen bg-black text-slate-200 lg:cursor-none">
+            <CustomCursor />
             <Header />
 
             <main>
