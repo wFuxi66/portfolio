@@ -7,9 +7,16 @@ import ProjectCard from '../components/ProjectCard';
 function Projects() {
     const projects = [
         {
+            title: 'CHOKEN (Restaurant)',
+            semester: 'Perso',
+            description: "Développement complet du site vitrine et du système de commande en ligne pour un restaurant japonais. Interface 'Dark Warm' immersive, design responsive, gestion de panier dynamique et intégration d'animations fluides.",
+            technologies: ['Vite', 'JavaScript (ES6+)', 'CSS3', 'HTML5', 'Vercel', 'Puppeteer'],
+            liveLink: 'https://choken.vercel.app',
+        },
+        {
             title: 'osu!scan',
             semester: 'Perso',
-            description: "Application web d'analyse de beatmaps osu!. Scanners multiples : Guest Difficulties, GD Hosts, Nominators, BN Scanner. Multi threading pour scanner des milliers de maps en quelques secondes. Export HTML des résultats.",
+            description: "Application web d'analyse de beatmaps osu!. Scanners multiples : Guest Difficulties, GD Hosts, Nominators, BN Scanner. Multi-threading pour scanner des milliers de maps en quelques secondes. Export HTML des résultats.",
             technologies: ['Python', 'Flask', 'osu! API v2', 'HTML/CSS', 'Threading'],
             githubLink: 'https://github.com/wFuxi66/osu-scan',
             liveLink: 'https://osu-scan.onrender.com',
@@ -49,7 +56,7 @@ function Projects() {
     return (
         <section id="projects" className="relative">
             <div className="section-container">
-                <motion.h2 
+                <motion.h2
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
@@ -58,7 +65,7 @@ function Projects() {
                     Projets
                 </motion.h2>
 
-                <motion.p 
+                <motion.p
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
