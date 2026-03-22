@@ -26,8 +26,16 @@ function About() {
 
                         <p className="text-gray-400 leading-relaxed">
                             Actuellement en S4, je recherche un <span className="text-cyan-400 font-semibold">stage de 10 à 12 semaines</span> entre
-                            avril et juillet 2026 pour m'impliquer techniquement sur vos projets et consolider mes acquis.
+                            avril et juillet 2026. Mon objectif à court terme est de m'immerger dans un environnement professionnel pour 
+                            valider mon BUT, avec l'ambition à plus long terme de poursuivre en école d'ingénieur pour me spécialiser 
+                            dans la <span className="text-white">sécurité logicielle et les infrastructures Cloud</span>.
                         </p>
+
+                        <div className="pt-4 flex flex-wrap gap-2">
+                            <span className="px-3 py-1 text-xs font-semibold text-emerald-400 bg-emerald-600/10 rounded-full border border-emerald-600/20">Adaptabilité</span>
+                            <span className="px-3 py-1 text-xs font-semibold text-emerald-400 bg-emerald-600/10 rounded-full border border-emerald-600/20">Gestion du temps</span>
+                            <span className="px-3 py-1 text-xs font-semibold text-emerald-400 bg-emerald-600/10 rounded-full border border-emerald-600/20">Sens de l'organisation</span>
+                        </div>
                     </div>
 
                     {/* Quick info card */}

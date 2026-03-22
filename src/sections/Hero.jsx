@@ -45,7 +45,7 @@ function Hero() {
                 <p className="animate-slide-up opacity-0 delay-300 text-base sm:text-lg text-gray-500 mb-8 max-w-xl mx-auto">
                     BUT Informatique S4 • Parcours <span className="text-emerald-400 font-medium">Réseaux et Sécurité (B)</span>
                     <br />
-                    <span className="text-sm">IUT d'Orsay</span>
+                    <span className="text-sm">IUT d'Orsay • Paris 13e</span>
                 </p>
 
                 {/* CTA Buttons */}
