@@ -15,13 +15,14 @@ function About() {
                 </motion.h2>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    {/* Row 1: Large Left, Small Right */}
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         className="md:col-span-2"
                     >
-                        <SpotlightCard className="p-8 h-full flex flex-col justify-center">
+                        <SpotlightCard containerClassName="h-full" className="p-8 h-full flex flex-col justify-center">
                             <p className="text-lg text-slate-400 leading-relaxed mb-6">
                                 Étudiant en <span className="text-white font-medium">BUT Informatique</span> à l'IUT d'Orsay,
                                 j'ai fait le choix d'une <span className="text-white font-medium">double compétence</span> :
@@ -41,26 +42,28 @@ function About() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.1 }}
+                        className="md:col-span-1"
                     >
-                        <SpotlightCard className="p-8 h-full flex flex-col">
-                            <h3 className="text-lg font-semibold text-white mb-6">Objectifs & Ambitions</h3>
+                        <SpotlightCard containerClassName="h-full" className="p-8 h-full flex flex-col justify-center">
+                            <h3 className="text-lg font-semibold text-white mb-6">Objectifs</h3>
                             <div className="space-y-4 text-sm text-slate-400">
                                 <div>
                                     <p className="text-white font-medium mb-1 tracking-wide uppercase text-[10px]">Court terme</p>
-                                    <p>Valider mon BUT2 par un stage technique de 10-12 semaines (Avril 2026).</p>
+                                    <p>Stage BUT2 (Avril 2026).</p>
                                 </div>
                                 <div>
                                     <p className="text-white font-medium mb-1 tracking-wide uppercase text-[10px]">Moyen terme</p>
-                                    <p>Obtention du diplôme et poursuite d'études en école d'ingénieur ou Master.</p>
+                                    <p>Poursuite d'études en école d'ingénieur ou Master.</p>
                                 </div>
                                 <div>
                                     <p className="text-white font-medium mb-1 tracking-wide uppercase text-[10px]">Long terme</p>
-                                    <p>Devenir <span className="text-white">Software Developer</span> ou <span className="text-white">Ingénieur en Informatique</span>.</p>
+                                    <p>Devenir Ingénieur Informatique.</p>
                                 </div>
                             </div>
                         </SpotlightCard>
                     </motion.div>
 
+                    {/* Row 2: Small Left, Large Right */}
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -68,8 +71,7 @@ function About() {
                         transition={{ delay: 0.2 }}
                         className="md:col-span-1"
                     >
-                        <SpotlightCard className="p-8 h-full flex flex-col space-y-6">
-                            <h3 className="text-lg font-semibold text-white">Informations</h3>
+                        <SpotlightCard containerClassName="h-full" className="p-8 h-full flex flex-col space-y-6 justify-center">
                             <div className="space-y-5">
                                 <div className="flex items-start gap-3">
                                     <span className="text-slate-500 mt-0.5">
@@ -78,8 +80,8 @@ function About() {
                                         </svg>
                                     </span>
                                     <div>
-                                        <p className="text-xs text-slate-500 font-medium uppercase tracking-wider">Formation</p>
-                                        <p className="text-white text-sm mt-0.5">BUT Informatique</p>
+                                        <p className="text-xs text-slate-500 font-medium uppercase tracking-wider">Diplôme</p>
+                                        <p className="text-white text-sm font-medium">BUT Informatique</p>
                                     </div>
                                 </div>
                                 <div className="flex items-start gap-3">
@@ -90,7 +92,7 @@ function About() {
                                     </span>
                                     <div>
                                         <p className="text-xs text-slate-500 font-medium uppercase tracking-wider">Spécialité</p>
-                                        <p className="text-white text-sm mt-0.5">Réseaux & Sécurité</p>
+                                        <p className="text-white text-sm font-medium">Réseaux & Sécurité</p>
                                     </div>
                                 </div>
                             </div>
@@ -102,9 +104,9 @@ function About() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.3 }}
-                        className="md:col-span-2 h-full"
+                        className="md:col-span-2"
                     >
-                        <SpotlightCard className="p-8 h-full flex flex-col justify-center">
+                        <SpotlightCard containerClassName="h-full" className="p-8 h-full flex flex-col justify-center border-white/10 bg-white/[0.01]">
                             <h3 className="text-lg font-semibold text-white mb-4 italic">"Incarner la tech avec élégance et sécurité."</h3>
                             <p className="text-slate-400 text-sm leading-relaxed">
                                 Passionné par la culture japonaise et les nouvelles technologies, je m'efforce de créer des solutions qui sont non seulement fonctionnelles, mais aussi visuellement marquantes. Mon approche du développement est guidée par la rigueur de la cybersécurité et la créativité du design moderne.

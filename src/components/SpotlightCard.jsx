@@ -1,6 +1,6 @@
 import { motion, useMotionTemplate, useMotionValue, useSpring, useTransform } from "framer-motion";
 
-export default function SpotlightCard({ children, className = "" }) {
+export default function SpotlightCard({ children, className = "", containerClassName = "" }) {
     const mouseX = useMotionValue(0);
     const mouseY = useMotionValue(0);
 
@@ -36,7 +36,7 @@ export default function SpotlightCard({ children, className = "" }) {
                 transformStyle: "preserve-3d",
                 willChange: "transform",
             }}
-            className="group relative bg-white/5 border border-white/10 hover:border-white/20 rounded-2xl transition-all duration-300 overflow-hidden"
+            className={`group relative bg-white/5 border border-white/10 hover:border-white/20 rounded-2xl transition-all duration-300 overflow-hidden ${containerClassName}`}
         >
             <motion.div
                 className="pointer-events-none absolute -inset-px rounded-2xl opacity-0 transition duration-300 group-hover:opacity-100"
@@ -51,7 +51,6 @@ export default function SpotlightCard({ children, className = "" }) {
                     transform: "translateZ(0)",
                 }}
             />
-            {/* On applique la className ici pour que le flex/padding impacte les enfants directement */}
             <div 
                 className={`relative z-10 h-full w-full ${className}`}
                 style={{ 

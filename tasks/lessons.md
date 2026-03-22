@@ -16,9 +16,9 @@
 
 4. **SECURE GIT TRACKING**: Always double-check `.gitignore` before a `git add .` to avoid committing local-only directories like `.agent/`.
 
-## Progress Status
-- Portfolio theme harmonized (Black/White Premium).
-- Globe 3D and Stars interaction active.
-- Bento Grid and Spotlight Hover implemented.
-- Choken project added and text encoding fixed.
-- Favicon updated.
+5. **MANDATE COMPLIANCE IS NON-NEGOTIABLE**: Always review `gemini.md` at the start of each session. Failure to use `rtk` or follow task management rules results in technical debt and user frustration.
+   - **Root Cause**: Over-reliance on default tools (`read_file`, `replace`) instead of project-specific wrappers (`rtk`).
+   - **Fix**: Systematic use of `rtk read` and mandatory update of `tasks/todo.md` before any action.
+
+6. **BENTO GRID STABILITY**: When using `row-span` or `col-span`, always ensure the underlying component (like `SpotlightCard`) has `h-full` on its outermost element to prevent gaps. Use a dedicated prop like `containerClassName` for this.
+
