@@ -13,7 +13,7 @@ import Contact from './sections/Contact';
  */
 function App() {
     return (
-        <div className="min-h-screen bg-dark-950">
+        <div className="min-h-screen bg-black text-slate-200">
             <Header />
 
             <main>
@@ -28,12 +28,12 @@ function App() {
             </main>
 
             {/* Footer */}
-            <footer className="border-t border-dark-800/50 py-8">
+            <footer className="border-t border-white/10 py-8 bg-black">
                 <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                    <p className="text-gray-500 text-sm">
+                    <p className="text-slate-500 text-sm">
                         © {new Date().getFullYear()} Jimmy ZHENG. Tous droits réservés.
                     </p>
-                    <p className="text-gray-600 text-xs mt-2">
+                    <p className="text-slate-600 text-xs mt-2">
                         Développé avec React & Tailwind CSS
                     </p>
                 </div>

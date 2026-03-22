@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import ProjectCard from '../components/ProjectCard';
 
 /**
@@ -48,23 +49,43 @@ function Projects() {
     return (
         <section id="projects" className="relative">
             <div className="section-container">
-                <h2 className="section-title">Projets</h2>
+                <motion.h2 
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="text-3xl font-bold text-white mb-6 tracking-tight"
+                >
+                    Projets
+                </motion.h2>
 
-                <p className="text-gray-400 mb-8 max-w-2xl">
+                <motion.p 
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.1 }}
+                    className="text-slate-400 mb-10 max-w-2xl text-lg"
+                >
                     Une sélection de mes projets techniques, réalisés dans un cadre personnel ou académique.
-                </p>
+                </motion.p>
 
                 <div className="grid sm:grid-cols-2 gap-6">
                     {projects.map((project, index) => (
-                        <ProjectCard
+                        <motion.div
                             key={index}
-                            title={project.title}
-                            semester={project.semester}
-                            description={project.description}
-                            technologies={project.technologies}
-                            githubLink={project.githubLink}
-                            liveLink={project.liveLink}
-                        />
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: index * 0.1 }}
+                        >
+                            <ProjectCard
+                                title={project.title}
+                                semester={project.semester}
+                                description={project.description}
+                                technologies={project.technologies}
+                                githubLink={project.githubLink}
+                                liveLink={project.liveLink}
+                            />
+                        </motion.div>
                     ))}
                 </div>
             </div>

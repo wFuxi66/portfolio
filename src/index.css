@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,92 +10,68 @@
     scroll-behavior: smooth;
   }
 
-  /* Text selection color */
   ::selection {
-    background-color: rgba(0, 229, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.2);
     color: #fff;
   }
 
   body {
-    @apply bg-dark-950 text-gray-100 font-sans antialiased;
-    background-image:
-      radial-gradient(ellipse at top, rgba(0, 229, 255, 0.03) 0%, transparent 50%),
-      radial-gradient(ellipse at bottom right, rgba(0, 229, 255, 0.02) 0%, transparent 50%);
+    @apply bg-black text-slate-200 antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
     min-height: 100vh;
-  }
-
-  /* Scrollbar Styling */
-  ::-webkit-scrollbar {
-    width: 8px;
-  }
-
-  ::-webkit-scrollbar-track {
-    @apply bg-dark-900;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    @apply bg-cyan-600 rounded-full;
-  }
-
-  ::-webkit-scrollbar-thumb:hover {
-    @apply bg-cyan-500;
   }
 }
 
 /* Custom Components */
 @layer components {
   .section-container {
-    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24;
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32;
   }
 
-  .section-title {
-    @apply text-3xl md:text-4xl font-bold text-cyan-600 mb-8 md:mb-12 relative inline-block;
+  /* Glassmorphism Premium */
+  .glass-button {
+    @apply relative inline-flex items-center justify-center px-8 py-3.5 text-sm font-medium text-white transition-all duration-300 ease-out;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 9999px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   }
 
-  .section-title::after {
-    content: '';
-    @apply absolute -bottom-2 left-0 w-full h-0.5 bg-gradient-to-r from-cyan-600 to-transparent;
+  .glass-button:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-1px);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 229, 255, 0.1);
   }
 
-  .glass-card {
-    @apply bg-dark-900/60 backdrop-blur-sm border border-dark-700/50 rounded-xl;
+  .primary-button {
+    @apply relative inline-flex items-center justify-center px-8 py-3.5 text-sm font-medium text-black transition-all duration-300 ease-out bg-white rounded-full;
   }
 
-  .text-gradient {
-    @apply bg-gradient-to-r from-cyan-400 to-cyan-600 bg-clip-text text-transparent;
+  .primary-button:hover {
+    @apply bg-gray-200 transform -translate-y-[1px];
+    box-shadow: 0 10px 40px rgba(255, 255, 255, 0.2);
   }
 
-  .glow-border {
-    @apply relative overflow-hidden border border-cyan-500/40 rounded-xl shadow-[0_0_20px_rgba(34,211,238,0.35)];
-  }
-
-  .hover-glow {
-    @apply transition-shadow duration-300 ease-out;
-  }
-
-  .hover-glow:hover {
-    @apply shadow-[0_0_25px_rgba(34,211,238,0.55)];
+  .text-glow {
+    text-shadow: 0 0 40px rgba(255, 255, 255, 0.5);
   }
 }
 
 /* Animations */
 @layer utilities {
   .animate-fade-in {
-    animation: fadeIn 0.6s ease-out forwards;
+    animation: fadeIn 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
 
   .animate-slide-up {
-    animation: slideUp 0.6s ease-out forwards;
+    animation: slideUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
 
   @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-
-    to {
-      opacity: 1;
-    }
+    from { opacity: 0; }
+    to { opacity: 1; }
   }
 
   @keyframes slideUp {
@@ -101,30 +79,23 @@
       opacity: 0;
       transform: translateY(30px);
     }
-
     to {
       opacity: 1;
       transform: translateY(0);
     }
   }
 
-  .delay-100 {
-    animation-delay: 100ms;
+  /* Auras douces pour le fond */
+  .bg-aura-1 {
+    background: radial-gradient(circle at 50% 50%, rgba(0, 102, 255, 0.15) 0%, transparent 60%);
+  }
+  .bg-aura-2 {
+    background: radial-gradient(circle at 50% 50%, rgba(0, 229, 255, 0.1) 0%, transparent 60%);
   }
 
-  .delay-200 {
-    animation-delay: 200ms;
-  }
-
-  .delay-300 {
-    animation-delay: 300ms;
-  }
-
-  .delay-400 {
-    animation-delay: 400ms;
-  }
-
-  .delay-500 {
-    animation-delay: 500ms;
-  }
+  .delay-100 { animation-delay: 100ms; }
+  .delay-200 { animation-delay: 200ms; }
+  .delay-300 { animation-delay: 300ms; }
+  .delay-400 { animation-delay: 400ms; }
+  .delay-500 { animation-delay: 500ms; }
 }

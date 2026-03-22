@@ -1,3 +1,6 @@
+import { motion } from 'framer-motion';
+import SpotlightCard from '../components/SpotlightCard';
+
 /**
  * Formation Section - Academic timeline showing educational progression
  */
@@ -24,33 +27,44 @@ function Formation() {
     ];
 
     return (
-        <section id="formation" className="relative">
+        <section id="formation" className="relative border-t border-white/5 bg-black/20">
             <div className="section-container">
-                <h2 className="section-title">Formation</h2>
+                <motion.h2 
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="text-3xl font-bold text-white mb-16 tracking-tight"
+                >
+                    Formation
+                </motion.h2>
 
-                <div className="relative">
+                <div className="relative max-w-4xl mx-auto">
                     {/* Timeline line */}
-                    <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-cyan-600 via-cyan-600/50 to-transparent transform md:-translate-x-1/2" />
+                    <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-[1px] bg-white/10 transform md:-translate-x-1/2" />
 
-                    <div className="space-y-8">
+                    <div className="space-y-12">
                         {formations.map((formation, index) => (
-                            <div
+                            <motion.div
                                 key={index}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: index * 0.1 }}
                                 className={`relative flex flex-col md:flex-row gap-8 ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
                                     }`}
                             >
                                 {/* Timeline dot */}
-                                <div className="absolute left-4 md:left-1/2 w-4 h-4 transform -translate-x-1/2 md:-translate-x-1/2">
-                                    <div className={`w-4 h-4 rounded-full border-2 ${formation.current
-                                        ? 'bg-cyan-600 border-cyan-400 shadow-[0_0_10px_rgba(0,229,255,0.5)]'
-                                        : 'bg-dark-900 border-cyan-600/50'
+                                <div className="absolute left-4 md:left-1/2 w-3 h-3 transform -translate-x-[5px] md:-translate-x-1/2 mt-6 md:mt-1.5">
+                                    <div className={`w-3 h-3 rounded-full border-[2px] ${formation.current
+                                        ? 'bg-white border-white'
+                                        : 'bg-black border-white/30'
                                         }`} />
                                 </div>
 
                                 {/* Year badge - hidden on mobile, shown as part of card */}
                                 <div className={`hidden md:flex md:w-1/2 ${index % 2 === 0 ? 'justify-end pr-12' : 'justify-start pl-12'
                                     }`}>
-                                    <span className="text-cyan-400 font-mono font-bold text-lg">
+                                    <span className="text-slate-300 font-mono text-sm mt-1">
                                         {formation.year}
                                     </span>
                                 </div>
@@ -58,30 +72,29 @@ function Formation() {
                                 {/* Content card */}
                                 <div className={`ml-12 md:ml-0 md:w-1/2 ${index % 2 === 0 ? 'md:pl-12' : 'md:pr-12'
                                     }`}>
-                                    <div className={`glass-card glow-border p-6 ${formation.current ? 'ring-1 ring-cyan-500/30' : ''
-                                        }`}>
+                                    <SpotlightCard className="p-6">
                                         {/* Mobile year */}
-                                        <span className="md:hidden text-cyan-400 font-mono font-bold text-sm mb-2 block">
+                                        <span className="md:hidden text-slate-300 font-mono text-sm mb-3 block">
                                             {formation.year}
                                         </span>
 
                                         {formation.current && (
-                                            <span className="inline-flex items-center gap-1.5 px-2 py-1 text-xs font-semibold text-emerald-400 bg-emerald-600/20 rounded-full mb-3">
-                                                <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-pulse" />
+                                            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 text-xs font-medium text-white bg-white/10 rounded-full mb-4 border border-white/10">
+                                                <span className="w-1.5 h-1.5 bg-white rounded-full animate-pulse" />
                                                 En cours
                                             </span>
                                         )}
 
-                                        <h3 className="text-xl font-bold text-white mb-1">
+                                        <h3 className="text-lg font-bold text-white mb-1">
                                             {formation.title}
                                         </h3>
-                                        <p className="text-cyan-400 font-medium text-sm mb-2">
+                                        <p className="text-slate-300 font-medium text-sm mb-2">
                                             {formation.subtitle}
                                         </p>
-                                        <p className="text-gray-400 text-sm mb-3">
+                                        <p className="text-slate-500 text-sm mb-4">
                                             {formation.institution}
                                         </p>
-                                        <p className="text-gray-300 text-sm mb-4">
+                                        <p className="text-slate-400 text-sm mb-5 leading-relaxed">
                                             {formation.description}
                                         </p>
 
@@ -89,15 +102,15 @@ function Formation() {
                                             {formation.highlights.map((highlight, i) => (
                                                 <span
                                                     key={i}
-                                                    className="px-2 py-1 text-xs font-mono text-cyan-300/80 bg-cyan-600/10 rounded border border-cyan-600/20"
+                                                    className="px-2 py-1 text-xs font-mono text-slate-300 bg-white/5 rounded border border-white/10"
                                                 >
                                                     {highlight}
                                                 </span>
                                             ))}
                                         </div>
-                                    </div>
+                                    </SpotlightCard>
                                 </div>
-                            </div>
+                            </motion.div>
                         ))}
                     </div>
                 </div>

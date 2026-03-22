@@ -34,8 +34,8 @@ function Header() {
 
     return (
         <header
-            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-                ? 'bg-dark-950/90 backdrop-blur-md shadow-lg shadow-dark-950/50'
+            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-transparent ${isScrolled
+                ? 'bg-black/80 backdrop-blur-md border-white/10'
                 : 'bg-transparent'
                 }`}
         >
@@ -44,12 +44,12 @@ function Header() {
                     {/* Logo / Name */}
                     <a
                         href="#"
-                        className="text-xl md:text-2xl font-bold text-white hover:text-cyan-400 transition-colors duration-300"
+                        className="text-xl md:text-2xl font-bold text-white transition-colors duration-300"
                         onClick={(e) => scrollToSection(e, '#hero')}
                     >
-                        <span className="text-cyan-600">&lt;</span>
+                        <span className="text-slate-500">&lt;</span>
                         Jimmy
-                        <span className="text-cyan-600">/&gt;</span>
+                        <span className="text-slate-500">/&gt;</span>
                     </a>
 
                     {/* Desktop Navigation */}
@@ -59,10 +59,10 @@ function Header() {
                                 key={link.href}
                                 href={link.href}
                                 onClick={(e) => scrollToSection(e, link.href)}
-                                className="text-gray-300 hover:text-cyan-400 transition-colors duration-300 font-medium relative group"
+                                className="text-slate-400 hover:text-white transition-colors duration-300 font-medium relative group"
                             >
                                 {link.label}
-                                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-cyan-600 transition-all duration-300 group-hover:w-full"></span>
+                                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
                             </a>
                         ))}
                     </div>
@@ -70,7 +70,7 @@ function Header() {
                     {/* Mobile Menu Button */}
                     <button
                         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                        className="md:hidden text-gray-300 hover:text-cyan-400 transition-colors duration-300"
+                        className="md:hidden text-slate-400 hover:text-white transition-colors duration-300"
                         aria-label="Toggle menu"
                     >
                         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -88,13 +88,13 @@ function Header() {
                     className={`md:hidden transition-all duration-300 overflow-hidden ${isMobileMenuOpen ? 'max-h-64 pb-4' : 'max-h-0'
                         }`}
                 >
-                    <div className="flex flex-col space-y-4 pt-4 border-t border-dark-800/50">
+                    <div className="flex flex-col space-y-4 pt-4 border-t border-white/10">
                         {navLinks.map((link) => (
                             <a
                                 key={link.href}
                                 href={link.href}
                                 onClick={(e) => scrollToSection(e, link.href)}
-                                className="text-gray-300 hover:text-cyan-400 transition-colors duration-300 font-medium"
+                                className="text-slate-400 hover:text-white transition-colors duration-300 font-medium"
                             >
                                 {link.label}
                             </a>
