@@ -19,6 +19,7 @@ function Personal() {
         <section id="personal" className="relative py-20 border-t border-white/5 bg-black/20">
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid md:grid-cols-2 gap-12">
+                    {/* Langues */}
                     <div>
                         <motion.h2
                             initial={{ opacity: 0, y: 20 }}
@@ -37,22 +38,27 @@ function Personal() {
                                     viewport={{ once: true }}
                                     transition={{ delay: index * 0.1 }}
                                 >
-                                    <SpotlightCard className="p-5 flex items-center justify-between group">
-                                        <div className="flex items-center gap-5">
-                                            <span className="text-[10px] font-bold text-slate-500 border border-white/10 w-9 h-9 flex items-center justify-center rounded-lg bg-white/5 group-hover:text-white group-hover:border-white/20 transition-all duration-300">
-                                                {lang.code}
+                                    <SpotlightCard className="p-5 group">
+                                        <div className="flex flex-row items-center justify-between w-full">
+                                            <div className="flex items-center gap-5">
+                                                <span className="text-[10px] font-bold text-slate-500 border border-white/10 w-9 h-9 flex items-center justify-center rounded-lg bg-white/5 group-hover:text-white group-hover:border-white/20 transition-all duration-300 flex-shrink-0 uppercase">
+                                                    {lang.code}
+                                                </span>
+                                                <h3 className="text-lg font-semibold text-white tracking-tight whitespace-nowrap">
+                                                    {lang.name}
+                                                </h3>
+                                            </div>
+                                            <span className="text-slate-400 font-mono text-[10px] uppercase tracking-[0.1em] px-3 py-1.5 rounded-full border border-white/5 bg-white/[0.02] whitespace-nowrap ml-4">
+                                                {lang.level}
                                             </span>
-                                            <h3 className="text-lg font-semibold text-white tracking-tight">{lang.name}</h3>   
                                         </div>
-                                        <span className="text-slate-400 font-mono text-[10px] uppercase tracking-[0.1em] px-3 py-1.5 rounded-full border border-white/5 bg-white/[0.02]">
-                                            {lang.level}
-                                        </span>
                                     </SpotlightCard>
                                 </motion.div>
                             ))}
                         </div>
                     </div>
 
+                    {/* Centres d'intérêt */}
                     <div>
                         <motion.h2
                             initial={{ opacity: 0, y: 20 }}
