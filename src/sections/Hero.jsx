@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import Globe from '../components/Globe';
 import { StarsBackground } from '../components/StarsBackground';
 
