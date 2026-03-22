@@ -13,9 +13,9 @@ function Personal() {
 
     const hobbies = [
         { name: 'Badminton', description: 'Compétition & Loisir' },
-        { name: 'Musique', description: 'J-Pop / Asiatique' },
+        { name: 'Musique', description: 'J-Pop & Musique Asiatique' },
         { name: 'Jeux Vidéo', description: 'Technique & Stratégie' },
-        { name: 'Lecture', description: 'Light Novel' }
+        { name: 'Lecture', description: 'Light Novel & Manga' }
     ];
 
     return (

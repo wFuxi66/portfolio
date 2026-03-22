@@ -14,26 +14,7 @@ function Hero() {
             {/* The Huge Premium Globe */}
             <Globe />
 
-            <div className="section-container text-center relative z-20 pointer-events-none mt-[-5vh]">
-                {/* Avatar / Illustration Placeholder */}
-                <motion.div 
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
-                    className="mb-8 relative inline-block"
-                >
-                    <div className="w-24 h-24 sm:w-32 sm:h-32 rounded-full bg-gradient-to-b from-white/10 to-transparent border border-white/20 backdrop-blur-sm p-1 mx-auto relative overflow-hidden">
-                        <div className="w-full h-full rounded-full bg-slate-900 flex items-center justify-center overflow-hidden">
-                            {/* Minimalist Developer Avatar Illustration */}
-                            <svg viewBox="0 0 100 100" className="w-20 h-20 sm:w-28 sm:h-28 text-white/20 translate-y-2">
-                                <path fill="currentColor" d="M50 50c11 0 20-9 20-20s-9-20-20-20-20 9-20 20 9 20 20 20zm0 10c-15 0-35 8-35 20v5h70v-5c0-12-20-20-35-20z" />
-                            </svg>
-                        </div>
-                    </div>
-                    {/* Status dot */}
-                    <div className="absolute bottom-1 right-1 sm:bottom-2 sm:right-2 w-4 h-4 sm:w-5 sm:h-5 bg-emerald-500 rounded-full border-4 border-black animate-pulse"></div>
-                </motion.div>
-
+            <div className="section-container text-center relative z-20 pointer-events-none mt-[-10vh]">
                 {/* Status badge - Clean Apple Style */}
                 <div className="animate-slide-up opacity-0 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-md mb-8">
                     <span className="w-2 h-2 bg-white rounded-full animate-pulse shadow-[0_0_10px_rgba(255,255,255,0.5)]"></span>
