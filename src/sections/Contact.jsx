@@ -100,11 +100,10 @@ function Contact() {
                         >
                             <SpotlightCard containerClassName="h-full" className="p-6 flex flex-col items-center justify-center h-full">
                                 <div className="w-12 h-12 mb-4 rounded-full bg-white/5 flex items-center justify-center shrink-0">
-                                    <svg className="w-5 h-5 text-slate-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-label="Localisation : Paris 13e">       
+                                    <svg className="w-5 h-5 text-slate-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                                         <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/>
                                     </svg>
-                                </div>
-                                <h3 className="font-medium text-white mb-1 text-sm">Localisation</h3>
+                                </div>                                <h3 className="font-medium text-white mb-1 text-sm">Localisation</h3>
                                 <p className="text-[11px] text-slate-500">Paris 13e</p>
                             </SpotlightCard>
                         </motion.div>                    </div>

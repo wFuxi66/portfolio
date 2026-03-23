@@ -1,21 +1,14 @@
 import SpotlightCard from './SpotlightCard';
 
 /**
- * ProjectCard - A modern card component for displaying project information
- * @param {string} title - Project title
- * @param {string} semester - Semester (e.g., "S1", "S2", "S3", "Perso")
- * @param {string} description - Project description
- * @param {string[]} technologies - List of technologies used
- * @param {string} githubLink - Optional link to GitHub repository
- * @param {string} liveLink - Optional link to live demo
+ * ProjectCard - Component to showcase a project with STAR methodology support
  */
-function ProjectCard({ title, semester, description, technologies = [], githubLink, liveLink }) {
+function ProjectCard({ title, semester, description, star, technologies = [], githubLink, liveLink }) {
     const isPersonal = semester === 'Perso';
 
     return (
         <SpotlightCard className="flex flex-col h-full p-6" containerClassName="h-full">
             <div className="relative z-10 flex flex-col h-full">
-                {/* Header */}
                 <div className="flex items-start justify-between mb-4">
                     <div className="flex-1">
                         <span className="inline-block px-3 py-1 text-xs font-medium rounded-full mb-3 text-slate-300 bg-white/5 border border-white/10">
@@ -26,7 +19,6 @@ function ProjectCard({ title, semester, description, technologies = [], githubLi
                         </h3>
                     </div>
 
-                    {/* Links */}
                     <div className="flex gap-2 ml-4">
                         {liveLink && (
                             <a
@@ -37,7 +29,7 @@ function ProjectCard({ title, semester, description, technologies = [], githubLi
                                 aria-label={`Voir la démo de ${title}`}
                                 title="Voir la démo"
                             >
-                                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"> 
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                                 </svg>
                             </a>
@@ -68,12 +60,21 @@ function ProjectCard({ title, semester, description, technologies = [], githubLi
                     </div>
                 </div>
 
-                {/* Description */}
-                <p className="text-slate-400 text-sm leading-relaxed mb-6 flex-grow">
-                    {description}
-                </p>
+                <div className="flex-grow mb-6">
+                    {star ? (
+                        <div className="space-y-2.5">
+                            <p className="text-sm leading-relaxed"><span className="text-white font-bold mr-2">S</span><span className="text-slate-400">{star.s}</span></p>
+                            <p className="text-sm leading-relaxed"><span className="text-white font-bold mr-2">T</span><span className="text-slate-400">{star.t}</span></p>
+                            <p className="text-sm leading-relaxed"><span className="text-white font-bold mr-2">A</span><span className="text-slate-400">{star.a}</span></p>
+                            <p className="text-sm leading-relaxed"><span className="text-white font-bold mr-2">R</span><span className="text-slate-400">{star.r}</span></p>
+                        </div>
+                    ) : (
+                        <p className="text-slate-400 text-sm leading-relaxed">
+                            {description}
+                        </p>
+                    )}
+                </div>
 
-                {/* Technologies */}
                 <div className="flex flex-wrap gap-2 pt-4 border-t border-white/5">
                     {technologies.map((tech, index) => (
                         <span

@@ -5,7 +5,7 @@ function Personal() {
     const languages = [
         { name: 'Français', level: 'Maternel', code: 'FR' },
         { name: 'Chinois', level: 'Maternel', code: 'CN' },
-        { name: 'Anglais', level: 'B2 - Intermédiaire', code: 'EN' }
+        { name: 'Anglais', level: 'Intermédiaire (B2)', code: 'EN' }
     ];
 
     const hobbies = [

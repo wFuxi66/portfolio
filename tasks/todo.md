@@ -1,11 +1,34 @@
-# Bento Grid Aesthetic Overhaul
+# Portfolio Compliance Checklist
 
-- [x] Clear emojis from `Personal.jsx` (Mandate violation)
-- [x] Audit `About.jsx` for perfect rectangular alignment with `containerClassName="h-full"`
-- [x] Audit `Skills.jsx` for perfect rectangular alignment with `containerClassName="h-full"`
-- [x] Update `tasks/lessons.md` with failure root-cause analysis
-- [x] Transition About and Skills to a 2x2 grid layout
-- [x] Implement alternating 2-1/1-2 "Asymmetric Balance" layout for About and Skills
-- [x] Verify aesthetic flow and ensure zero gaps on localhost
-- [x] Add "Moyen terme" objective in About.jsx (PDF Compliance)
-- [x] Harmonize contact box sizes in Contact.jsx
+## [x] PDF Criteria
+- [x] **Présentation personnelle**
+  - [x] Prénom NOM
+  - [x] **Photo (Emplacement ajouté - Placeholder)**
+  - [x] Phrase de présentation
+  - [x] Coordonnées mail
+  - [x] Coordonnées tel
+- [x] **Parcours scolaire/universitaire** (Depuis le bac inclus)
+- [x] **Compétences**
+  - [x] Informatiques
+  - [x] **Langues (Niveaux Européens mis à jour : C2 pour Maternel)**
+- [x] **Parcours professionnel** (STAR utilisé pour CHOKEN)
+- [x] **Projets réalisés**
+  - [x] 3-4 projets (7 présents)
+  - [x] Preuves/Liens
+  - [x] Tags de compétences
+  - [x] **Description STAR (Améliorée pour plus de structure)**
+- [x] **Ambitions** (Court/Moyen/Long terme + Poursuite BUT)
+- [x] **Centres d'intérêt**
+
+## [x] Technical & Quality (Gemini.md)
+- [x] Pure Black Theme (#000000)
+- [x] **A11Y (ARIA labels OK, `aria-hidden` ajouté aux SVGs)**
+- [x] No typos (Initial check)
+- [x] Responsive Design
+
+## [x] Completed Actions
+1. [x] Ajouter un emplacement pour la photo dans `Hero.jsx`.
+2. [x] Mettre à jour les niveaux de langues dans `Personal.jsx` (C2 pour Maternel).
+3. [x] Affiner les descriptions de projets pour mieux refléter la structure STAR.
+4. [x] Ajouter `aria-hidden="true"` aux SVGs décoratifs.
+5. [x] Vérification finale de l'orthographe et de la syntaxe.

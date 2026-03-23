@@ -25,7 +25,6 @@ function Hero() {
                     <span className="text-sm font-medium text-slate-300 tracking-tight">Recherche de Stage • Avril - Juillet 2026</span>
                 </div>
 
-                {/* Name */}
                 <h1 className="animate-slide-up opacity-0 delay-100 text-6xl sm:text-7xl md:text-9xl font-semibold mb-6 tracking-tight">
                     <span className="text-white text-glow">Jimmy Zheng</span>
                 </h1>
