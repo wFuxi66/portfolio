@@ -68,7 +68,7 @@ function Personal() {
                         >
                             Centres d'intérêt
                         </motion.h2>
-                        <div className="grid grid-cols-2 gap-4">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             {hobbies.map((hobby, index) => (
                                 <motion.div
                                     key={index}
@@ -78,16 +78,15 @@ function Personal() {
                                     transition={{ delay: index * 0.1 }}
                                     className="group h-full"
                                 >
-                                    <SpotlightCard className="p-6 h-full">
+                                    <SpotlightCard className="p-5 sm:p-6 h-full" containerClassName="h-full">
                                         <h3 className="text-white font-bold mb-2 group-hover:text-slate-300 transition-colors">
                                             {hobby.name}
                                         </h3>
-                                        <p className="text-slate-400 text-sm italic">{hobby.description}</p>
+                                        <p className="text-slate-400 text-sm italic">{hobby.description}</p>    
                                     </SpotlightCard>
                                 </motion.div>
                             ))}
-                        </div>
-                    </div>
+                        </div>                    </div>
                 </div>
             </div>
         </section>

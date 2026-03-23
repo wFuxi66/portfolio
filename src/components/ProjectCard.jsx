@@ -13,7 +13,7 @@ function ProjectCard({ title, semester, description, technologies = [], githubLi
     const isPersonal = semester === 'Perso';
 
     return (
-        <SpotlightCard className="flex flex-col h-full p-6">
+        <SpotlightCard className="flex flex-col h-full p-6" containerClassName="h-full">
             <div className="relative z-10 flex flex-col h-full">
                 {/* Header */}
                 <div className="flex items-start justify-between mb-4">

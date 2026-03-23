@@ -31,7 +31,7 @@ function Skills() {
                         viewport={{ once: true }}
                         className="md:col-span-2"
                     >
-                        <SpotlightCard containerClassName="h-full" className="p-8 h-full flex flex-col justify-center">
+                        <SpotlightCard containerClassName="h-full" className="p-6 md:p-8 h-full flex flex-col justify-center">
                             <div className="flex items-center gap-4 mb-6">
                                 <div className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center">
                                     <svg className="w-5 h-5 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -55,7 +55,7 @@ function Skills() {
                         transition={{ delay: 0.1 }}
                         className="md:col-span-1"
                     >
-                        <SpotlightCard containerClassName="h-full" className="p-8 h-full flex flex-col justify-center">
+                        <SpotlightCard containerClassName="h-full" className="p-6 md:p-8 h-full flex flex-col justify-center">
                             <div className="flex items-center gap-4 mb-6">
                                 <div className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center">
                                     <svg className="w-5 h-5 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -80,7 +80,7 @@ function Skills() {
                         transition={{ delay: 0.2 }}
                         className="md:col-span-1"
                     >
-                        <SpotlightCard containerClassName="h-full" className="p-8 h-full flex flex-col justify-center">
+                        <SpotlightCard containerClassName="h-full" className="p-6 md:p-8 h-full flex flex-col justify-center">
                             <div className="flex items-center gap-4 mb-6">
                                 <div className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center">
                                     <svg className="w-5 h-5 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -104,7 +104,7 @@ function Skills() {
                         transition={{ delay: 0.3 }}
                         className="md:col-span-2"
                     >
-                        <SpotlightCard containerClassName="h-full" className="p-8 h-full flex flex-col justify-center border-white/10 bg-white/[0.01]">
+                        <SpotlightCard containerClassName="h-full" className="p-6 md:p-8 h-full flex flex-col justify-center border-white/10 bg-white/[0.01]">
                             <div className="flex items-center gap-4 mb-6">
                                 <div className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center">
                                     <svg className="w-5 h-5 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
