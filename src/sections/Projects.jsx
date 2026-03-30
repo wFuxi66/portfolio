@@ -10,7 +10,7 @@ function Projects() {
 
     const projects = [
         {
-            title: 'CHOKEN (Restaurant)',
+            title: 'CHOKEN (WIP)',
             category: 'selection',
             semester: 'Perso',
             star: {
@@ -98,8 +98,8 @@ function Projects() {
         },
     ];
 
-    const filteredProjects = filter === 'all' 
-        ? projects 
+    const filteredProjects = filter === 'all'
+        ? projects
         : projects.filter(p => p.category === filter);
 
     return (
@@ -129,38 +129,35 @@ function Projects() {
                     <div className="flex p-1 bg-white/5 border border-white/10 rounded-xl backdrop-blur-sm self-start">
                         <button
                             onClick={() => setFilter('selection')}
-                            className={`px-4 py-2 text-sm font-medium rounded-lg transition-all duration-300 ${
-                                filter === 'selection' 
-                                ? 'bg-white text-black shadow-lg' 
-                                : 'text-slate-400 hover:text-white'
-                            }`}
+                            className={`px-4 py-2 text-sm font-medium rounded-lg transition-all duration-300 ${filter === 'selection'
+                                    ? 'bg-white text-black shadow-lg'
+                                    : 'text-slate-400 hover:text-white'
+                                }`}
                         >
                             Perso
                         </button>
                         <button
                             onClick={() => setFilter('academic')}
-                            className={`px-4 py-2 text-sm font-medium rounded-lg transition-all duration-300 ${
-                                filter === 'academic' 
-                                ? 'bg-white text-black shadow-lg' 
-                                : 'text-slate-400 hover:text-white'
-                            }`}
+                            className={`px-4 py-2 text-sm font-medium rounded-lg transition-all duration-300 ${filter === 'academic'
+                                    ? 'bg-white text-black shadow-lg'
+                                    : 'text-slate-400 hover:text-white'
+                                }`}
                         >
                             Scolaire
                         </button>
                         <button
                             onClick={() => setFilter('all')}
-                            className={`px-4 py-2 text-sm font-medium rounded-lg transition-all duration-300 ${
-                                filter === 'all' 
-                                ? 'bg-white text-black shadow-lg' 
-                                : 'text-slate-400 hover:text-white'
-                            }`}
+                            className={`px-4 py-2 text-sm font-medium rounded-lg transition-all duration-300 ${filter === 'all'
+                                    ? 'bg-white text-black shadow-lg'
+                                    : 'text-slate-400 hover:text-white'
+                                }`}
                         >
                             Tous
                         </button>
                     </div>
                 </div>
 
-                <motion.div 
+                <motion.div
                     layout
                     className="grid sm:grid-cols-2 gap-6"
                 >
@@ -188,12 +185,12 @@ function Projects() {
                 </motion.div>
 
                 {filter === 'selection' && (
-                    <motion.div 
+                    <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         className="mt-12 text-center"
                     >
-                        <button 
+                        <button
                             onClick={() => setFilter('academic')}
                             className="text-slate-500 hover:text-white text-sm font-medium transition-colors inline-flex items-center gap-2 group"
                         >
