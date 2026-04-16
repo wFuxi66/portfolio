@@ -91,6 +91,7 @@ function Projects() {
                                     githubLink={project.githubLink}
                                     liveLink={project.liveLink}
                                     image={project.image}
+                                    imageFit={project.imageFit}
                                 />
                             </motion.div>
                         ))}

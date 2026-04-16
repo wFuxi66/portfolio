@@ -34,6 +34,7 @@ export const projects = [
         category: 'selection',
         semester: 'Perso',
         image: 'images/project-osuscan.png',
+        imageFit: 'contain',
         description: "Scanner de beatmaps multi-threadé qui analyse des bibliothèques entières en quelques secondes via l'API osu! v2.",
         details: "Outil d'analyse de beatmaps pour osu!, permettant de scanner des bibliothèques entières en quelques secondes. Utilise l'API officielle osu! v2 avec authentification OAuth, implémente le multi-threading Python pour traiter plusieurs maps en parallèle, et génère des rapports HTML détaillés avec statistiques filtrables. Hébergé sur Render.",
         technologies: ['Python', 'Flask', 'osu! API v2', 'Threading'],

@@ -36,7 +36,7 @@ function ImagePlaceholder({ title }) {
     );
 }
 
-function ProjectCard({ title, semester, description, details, technologies = [], githubLink, liveLink, image }) {
+function ProjectCard({ title, semester, description, details, technologies = [], githubLink, liveLink, image, imageFit = 'cover' }) {
     const [showDetails, setShowDetails] = useState(false);
     const isPersonal = semester === 'Perso';
     const imgSrc = image ? `${import.meta.env.BASE_URL}${image}` : null;
@@ -47,7 +47,11 @@ function ProjectCard({ title, semester, description, details, technologies = [],
                 {/* Image area */}
                 <div className="h-44 shrink-0 border-b border-white/5 overflow-hidden">
                     {imgSrc
-                        ? <img src={imgSrc} alt={`Aperçu ${title}`} className="w-full h-full object-cover" />
+                        ? imageFit === 'contain'
+                            ? <div className="w-full h-full flex items-center justify-center p-6" style={{ background: '#161b2e' }}>
+                                <img src={imgSrc} alt={`Aperçu ${title}`} className="max-w-full max-h-full object-contain" />
+                              </div>
+                            : <img src={imgSrc} alt={`Aperçu ${title}`} className="w-full h-full object-cover" />
                         : <ImagePlaceholder title={title} />
                     }
                 </div>
