@@ -25,8 +25,6 @@ function Contact() {
                         className="text-lg text-slate-400 mb-8"
                     >
                         {meta.contactBlurb}
-                        <br />
-                        <span className="text-white font-medium">N'hésitez pas à me contacter pour toute opportunité.</span>
                     </motion.p>
 
                     <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">

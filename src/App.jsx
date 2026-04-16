@@ -53,15 +53,33 @@ function App() {
                     <Contact />
                 </main>
 
-                <footer className="py-10 mt-4">
-                    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                        <div className="inline-block px-6 py-3 rounded-full glass text-center">
-                            <p className="text-slate-400 text-sm">
-                                © {new Date().getFullYear()} Jimmy ZHENG
-                            </p>
-                            <p className="text-slate-600 text-xs mt-1">
-                                React & Tailwind CSS
-                            </p>
+                <footer className="py-12 mt-4 border-t border-white/[0.06]">
+                    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
+                            <div className="flex items-center gap-3">
+                                <span className="text-white font-semibold tracking-tight">Jimmy Zheng</span>
+                                <span className="text-white/20">·</span>
+                                <span className="text-slate-500 text-sm">Développeur Full Stack</span>
+                            </div>
+                            <div className="flex items-center gap-6">
+                                <a
+                                    href="https://www.linkedin.com/in/jimmy-zheng-4a9073331/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-slate-500 hover:text-white transition-colors text-sm"
+                                    aria-label="LinkedIn"
+                                >
+                                    LinkedIn
+                                </a>
+                                <a
+                                    href="mailto:zhengjimmy66@gmail.com"
+                                    className="text-slate-500 hover:text-white transition-colors text-sm"
+                                    aria-label="Email"
+                                >
+                                    Email
+                                </a>
+                                <span className="text-slate-700 text-xs">© {new Date().getFullYear()}</span>
+                            </div>
                         </div>
                     </div>
                 </footer>
