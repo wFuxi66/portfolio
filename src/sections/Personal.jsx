@@ -1,20 +1,8 @@
 import { motion } from 'framer-motion';
 import SpotlightCard from '../components/SpotlightCard';
+import { languages, hobbies } from '../data/personal';
 
 function Personal() {
-    const languages = [
-        { name: 'Français', level: 'Maternel', code: 'FR' },
-        { name: 'Chinois', level: 'Maternel', code: 'CN' },
-        { name: 'Anglais', level: 'Intermédiaire (B2)', code: 'EN' }
-    ];
-
-    const hobbies = [
-        { name: 'Badminton', description: 'Compétition & Loisir' },
-        { name: 'Musique', description: 'J-Pop & Musique Asiatique' },
-        { name: 'Jeux Vidéo', description: 'Technique & Stratégie' },
-        { name: 'Lecture', description: 'Light Novel & Manga' }
-    ];
-
     return (
         <section id="personal" className="relative py-20 border-t border-white/5 bg-black/20">
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -82,11 +70,12 @@ function Personal() {
                                         <h3 className="text-white font-bold mb-2 group-hover:text-slate-300 transition-colors">
                                             {hobby.name}
                                         </h3>
-                                        <p className="text-slate-400 text-sm italic">{hobby.description}</p>    
+                                        <p className="text-slate-400 text-sm italic">{hobby.description}</p>
                                     </SpotlightCard>
                                 </motion.div>
                             ))}
-                        </div>                    </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

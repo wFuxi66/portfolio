@@ -1,31 +1,15 @@
 import { motion } from 'framer-motion';
 import SpotlightCard from '../components/SpotlightCard';
+import { experiences } from '../data/experience';
 
 /**
  * Experience Section - Professional background (STAR Method)
  */
 function Experience() {
-    const experiences = [
-        {
-            company: 'Restaurant CHOKEN',
-            role: 'Polyvalent (Service & Gestion)',
-            period: 'Depuis Juin 2025',
-            location: 'Pontoise',
-            description: "Expérience en milieu exigeant nécessitant une grande réactivité et un sens du service client irréprochable.",
-            details: [
-                "Situation : Équipe en flux tendu lors des services de pointe.",
-                "Tâche : Assurer un service fluide, la prise de commande et la gestion des stocks.",
-                "Action : Coordination directe avec la cuisine et optimisation du dressage des tables pour réduire l'attente.",
-                "Résultat : Amélioration de la satisfaction client et fluidification des pics d'activité."
-            ],
-            skills: ['Adaptabilité', 'Travail en équipe', 'Gestion du stress', 'Organisation']
-        }
-    ];
-
     return (
         <section id="experience" className="relative">
             <div className="section-container">
-                <motion.h2 
+                <motion.h2
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
@@ -36,8 +20,8 @@ function Experience() {
 
                 <div className="space-y-6 max-w-4xl mx-auto">
                     {experiences.map((exp, index) => (
-                        <motion.div 
-                            key={index} 
+                        <motion.div
+                            key={index}
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}

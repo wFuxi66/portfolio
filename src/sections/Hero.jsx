@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import Globe from '../components/Globe';
 import { StarsBackground } from '../components/StarsBackground';
+import { meta } from '../data/meta';
 
 function Hero() {
     return (
@@ -22,7 +23,7 @@ function Hero() {
                 {/* Status badge - Clean Apple Style */}
                 <div className="animate-slide-up opacity-0 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-md mb-8">
                     <span className="w-2 h-2 bg-white rounded-full animate-pulse shadow-[0_0_10px_rgba(255,255,255,0.5)]"></span>
-                    <span className="text-sm font-medium text-slate-300 tracking-tight">Recherche de Stage • Avril - Juillet 2026</span>
+                    <span className="text-sm font-medium text-slate-300 tracking-tight">{meta.status}</span>
                 </div>
 
                 <h1 className="animate-slide-up opacity-0 delay-100 text-6xl sm:text-7xl md:text-9xl font-semibold mb-6 tracking-tight">

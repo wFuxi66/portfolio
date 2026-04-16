@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import SpotlightCard from '../components/SpotlightCard';
+import { meta } from '../data/meta';
 
 function Contact() {
     return (
@@ -23,7 +24,7 @@ function Contact() {
                         transition={{ delay: 0.1 }}
                         className="text-lg text-slate-400 mb-8"
                     >
-                        Je suis activement à la recherche d'un stage pour le printemps 2026.
+                        {meta.contactBlurb}
                         <br />
                         <span className="text-white font-medium">N'hésitez pas à me contacter pour toute opportunité.</span>
                     </motion.p>
@@ -34,7 +35,7 @@ function Contact() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: 0.2 }}
-                            href="mailto:zhengjimmy66@gmail.com"
+                            href={`mailto:${meta.email}`}
                             className="group transition-all duration-300 flex flex-col h-full"
                             aria-label="Envoyer un email à Jimmy Zheng"
                         >
@@ -45,7 +46,7 @@ function Contact() {
                                     </svg>
                                 </div>
                                 <h3 className="font-medium text-white mb-1 text-sm">Email</h3>
-                                <p className="text-[11px] text-slate-500 group-hover:text-slate-300 transition-colors break-all leading-tight">zhengjimmy66@gmail.com</p>
+                                <p className="text-[11px] text-slate-500 group-hover:text-slate-300 transition-colors break-all leading-tight">{meta.email}</p>
                             </SpotlightCard>
                         </motion.a>
 
@@ -54,7 +55,7 @@ function Contact() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: 0.3 }}
-                            href="tel:+33767696993"
+                            href={`tel:${meta.phone}`}
                             className="group transition-all duration-300 flex flex-col h-full"
                             aria-label="Appeler Jimmy Zheng"
                         >
@@ -65,7 +66,7 @@ function Contact() {
                                     </svg>
                                 </div>
                                 <h3 className="font-medium text-white mb-1 text-sm">Téléphone</h3>
-                                <p className="text-[11px] text-slate-500 group-hover:text-slate-300 transition-colors">07 67 69 69 93</p>
+                                <p className="text-[11px] text-slate-500 group-hover:text-slate-300 transition-colors">{meta.phoneDisplay}</p>
                             </SpotlightCard>
                         </motion.a>
 
@@ -74,7 +75,7 @@ function Contact() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: 0.4 }}
-                            href="https://www.linkedin.com/in/jimmy-zheng-4a9073331/"
+                            href={meta.linkedin}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="group transition-all duration-300 flex flex-col h-full"
@@ -121,10 +122,10 @@ function Contact() {
                                 <span className="text-white text-sm font-medium">Disponible pour un stage</span>
                             </div>
                             <h3 className="text-xl font-bold text-white mb-2 text-center tracking-tight">Stage de 10 à 12 semaines</h3>    
-                            <p className="text-slate-400 mb-8 text-sm text-center">Avril - Juillet 2026 • IUT d'Orsay</p>   
+                            <p className="text-slate-400 mb-8 text-sm text-center">{meta.internshipPeriod}</p>   
                             <div className="flex justify-center">
                                 <a
-                                    href="mailto:zhengjimmy66@gmail.com?subject=Opportunité de stage - Jimmy ZHENG" 
+                                    href={`mailto:${meta.email}?subject=Opportunité de stage - Jimmy ZHENG`}
                                     className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-white text-black font-semibold text-sm rounded-full hover:bg-slate-200 transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.1)]"
                                     aria-label="Envoyer un email de proposition de stage"
                                 >
