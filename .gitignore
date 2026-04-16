@@ -23,3 +23,7 @@ Thumbs.db
 
 # Agent Tools
 .agent/
+
+# AI / Claude tooling
+tasks/
+.claude/
