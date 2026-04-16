@@ -9,6 +9,7 @@ import Skills from './sections/Skills';
 import Projects from './sections/Projects';
 import Personal from './sections/Personal';
 import Contact from './sections/Contact';
+import { meta } from './data/meta';
 
 function App() {
     return (
@@ -60,7 +61,7 @@ function App() {
                             </div>
                             <div className="flex items-center gap-6">
                                 <a
-                                    href="https://www.linkedin.com/in/jimmy-zheng-4a9073331/"
+                                    href={meta.linkedin}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="text-slate-500 hover:text-white transition-colors text-sm"
@@ -69,7 +70,7 @@ function App() {
                                     LinkedIn
                                 </a>
                                 <a
-                                    href="mailto:zhengjimmy66@gmail.com"
+                                    href={`mailto:${meta.email}`}
                                     className="text-slate-500 hover:text-white transition-colors text-sm"
                                     aria-label="Email"
                                 >

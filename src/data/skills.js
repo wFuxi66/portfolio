@@ -2,7 +2,7 @@ export const skillCategories = [
     {
         label: 'Développement Web',
         icon: 'web',
-        skills: ['React', 'Tailwind CSS', 'Vite', 'JavaScript', 'HTML/CSS'],
+        skills: ['React', 'Angular', 'Symfony', 'Tailwind CSS', 'Vite', 'JavaScript', 'HTML/CSS'],
         colSpan: 2,
     },
     {
@@ -20,7 +20,7 @@ export const skillCategories = [
     {
         label: 'Outils & Transverse',
         icon: 'tools',
-        skills: ['Git / GitHub', 'Méthode Agile', 'POO / UML', 'Architecture REST', 'Travail en équipe'],
+        skills: ['Git / GitHub', 'n8n', 'Claude API', 'Méthode Agile', 'POO / UML', 'Architecture REST', 'Travail en équipe'],
         colSpan: 2,
     },
 ];
