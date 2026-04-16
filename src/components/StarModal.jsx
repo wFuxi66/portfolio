@@ -1,12 +1,14 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import { motion } from 'framer-motion';
 
 function StarModal({ title, semester, details, technologies = [], githubLink, liveLink, onClose }) {
     const isPersonal = semester === 'Perso';
     const badgeLabel = isPersonal ? 'Projet Personnel' : `Semestre ${semester}`;
+    const closeButtonRef = useRef(null);
 
     useEffect(() => {
+        closeButtonRef.current?.focus();
         const onKey = (e) => { if (e.key === 'Escape') onClose(); };
         document.addEventListener('keydown', onKey);
         document.body.style.overflow = 'hidden';
@@ -30,6 +32,9 @@ function StarModal({ title, semester, details, technologies = [], githubLink, li
 
             {/* Panel */}
             <motion.div
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="modal-title"
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 40 }}
@@ -59,11 +64,12 @@ function StarModal({ title, semester, details, technologies = [], githubLink, li
                             <span className="inline-block px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-widest text-slate-400 bg-white/5 border border-white/10 rounded-full mb-3">
                                 {badgeLabel}
                             </span>
-                            <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight leading-tight truncate">
+                            <h2 id="modal-title" className="text-2xl sm:text-3xl font-bold text-white tracking-tight leading-tight truncate">
                                 {title}
                             </h2>
                         </div>
                         <button
+                            ref={closeButtonRef}
                             onClick={onClose}
                             className="shrink-0 mt-0.5 w-8 h-8 flex items-center justify-center rounded-full bg-white/5 hover:bg-white/10 text-slate-400 hover:text-white transition-all duration-200 border border-white/10"
                             aria-label="Fermer"
@@ -99,7 +105,7 @@ function StarModal({ title, semester, details, technologies = [], githubLink, li
 
                 {/* Footer actions */}
                 {(liveLink || githubLink) && (
-                    <div className="px-6 pb-6 pt-2 flex flex-wrap gap-3 border-t border-white/[0.07] mt-0 pt-5">
+                    <div className="px-6 pb-6 pt-5 flex flex-wrap gap-3 border-t border-white/[0.07]">
                         {liveLink && (
                             <a
                                 href={liveLink}
