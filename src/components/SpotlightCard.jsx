@@ -12,13 +12,11 @@ export default function SpotlightCard({ children, className = "", containerClass
     const springRotateY = useSpring(rotateY, springConfig);
 
     function handleMouseMove({ currentTarget, clientX, clientY }) {
-        let { left, top, width, height } = currentTarget.getBoundingClientRect();
+        const { left, top, width, height } = currentTarget.getBoundingClientRect();
         mouseX.set(clientX - left);
         mouseY.set(clientY - top);
-        const xPct = (clientX - left) / width;
-        const yPct = (clientY - top) / height;
-        rotateX.set((yPct - 0.5) * -10); 
-        rotateY.set((xPct - 0.5) * 10);  
+        rotateX.set(((clientY - top) / height - 0.5) * -10);
+        rotateY.set(((clientX - left) / width - 0.5) * 10);
     }
 
     function handleMouseLeave() {
@@ -35,25 +33,37 @@ export default function SpotlightCard({ children, className = "", containerClass
                 rotateY: springRotateY,
                 transformStyle: "preserve-3d",
                 willChange: "transform",
+                /* Glass material */
+                background: 'rgba(255, 255, 255, 0.04)',
+                backdropFilter: 'blur(24px) saturate(180%)',
+                WebkitBackdropFilter: 'blur(24px) saturate(180%)',
+                border: '1px solid rgba(255, 255, 255, 0.10)',
+                boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.13), 0 8px 32px rgba(0,0,0,0.45)',
             }}
-            className={`group relative bg-white/5 border border-white/10 hover:border-white/20 rounded-2xl transition-all duration-300 overflow-hidden ${containerClassName}`}
+            className={`group relative rounded-2xl transition-colors duration-300 overflow-hidden ${containerClassName}`}
+            whileHover={{
+                boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.18), 0 12px 48px rgba(0,0,0,0.55)',
+            }}
         >
+            {/* Spotlight glow */}
             <motion.div
                 className="pointer-events-none absolute -inset-px rounded-2xl opacity-0 transition duration-300 group-hover:opacity-100"
                 style={{
                     background: useMotionTemplate`
                         radial-gradient(
-                            650px circle at ${mouseX}px ${mouseY}px,
-                            rgba(255, 255, 255, 0.08),
-                            transparent 80%
+                            600px circle at ${mouseX}px ${mouseY}px,
+                            rgba(255, 255, 255, 0.07),
+                            transparent 75%
                         )
                     `,
                     transform: "translateZ(0)",
                 }}
             />
-            <div 
+
+            {/* Content */}
+            <div
                 className={`relative z-10 h-full w-full ${className}`}
-                style={{ 
+                style={{
                     transform: "translateZ(1px)",
                     backfaceVisibility: "hidden",
                     WebkitFontSmoothing: "antialiased",

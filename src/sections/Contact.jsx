@@ -4,7 +4,7 @@ import { meta } from '../data/meta';
 
 function Contact() {
     return (
-        <section id="contact" className="relative border-t border-white/5 bg-black/20" aria-labelledby="contact-title">
+        <section id="contact" className="relative" aria-labelledby="contact-title">
             <div className="section-container">
                 <motion.h2 
                     id="contact-title"

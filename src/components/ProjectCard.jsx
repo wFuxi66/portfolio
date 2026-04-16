@@ -12,19 +12,24 @@ function ImagePlaceholder({ title }) {
         .toUpperCase();
 
     return (
-        <div className="relative w-full h-full flex items-center justify-center bg-[#080808]">
+        <div className="relative w-full h-full flex items-center justify-center overflow-hidden"
+            style={{ background: 'rgba(255,255,255,0.02)' }}
+        >
             {/* Dot grid */}
             <div
-                className="absolute inset-0 opacity-20"
+                className="absolute inset-0"
                 style={{
-                    backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.25) 1px, transparent 1px)',
-                    backgroundSize: '20px 20px',
+                    backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.12) 1px, transparent 1px)',
+                    backgroundSize: '22px 22px',
+                    opacity: 0.6,
                 }}
             />
-            {/* Subtle radial glow */}
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(255,255,255,0.03)_0%,_transparent_70%)]" />
+            {/* Radial glow */}
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(100,100,200,0.08)_0%,_transparent_65%)]" />
             {/* Initials */}
-            <span className="relative text-2xl font-bold text-white/10 font-mono tracking-widest select-none">
+            <span className="relative text-3xl font-bold tracking-widest select-none"
+                style={{ color: 'rgba(255,255,255,0.07)', fontFamily: 'monospace' }}
+            >
                 {initials}
             </span>
         </div>

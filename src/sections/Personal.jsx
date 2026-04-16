@@ -4,7 +4,7 @@ import { languages, hobbies } from '../data/personal';
 
 function Personal() {
     return (
-        <section id="personal" className="relative py-20 border-t border-white/5 bg-black/20">
+        <section id="personal" className="relative py-20">
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid md:grid-cols-2 gap-12">
                     {/* Langues */}

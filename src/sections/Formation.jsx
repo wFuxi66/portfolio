@@ -7,7 +7,7 @@ import { formations } from '../data/formation';
  */
 function Formation() {
     return (
-        <section id="formation" className="relative border-t border-white/5 bg-black/20">
+        <section id="formation" className="relative">
             <div className="section-container">
                 <motion.h2
                     initial={{ opacity: 0, y: 20 }}

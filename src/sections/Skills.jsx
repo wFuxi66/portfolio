@@ -23,7 +23,7 @@ const icons = {
  */
 function Skills() {
     return (
-        <section id="skills" className="relative border-t border-white/5 bg-black/20">
+        <section id="skills" className="relative">
             <div className="section-container">
                 <motion.h2
                     initial={{ opacity: 0, y: 20 }}
