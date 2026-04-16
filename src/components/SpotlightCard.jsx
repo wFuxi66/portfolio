@@ -29,7 +29,6 @@ export default function SpotlightCard({ children, className = "", containerClass
                 rotateX: springRotateX,
                 rotateY: springRotateY,
                 transformStyle: "preserve-3d",
-                willChange: "transform",
             }}
             className={`spotlight-card group relative rounded-2xl overflow-hidden ${containerClassName}`}
         >
