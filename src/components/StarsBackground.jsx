@@ -13,8 +13,9 @@ export const StarsBackground = ({ starColor = '#ffffff', className = '' }) => {
     let mouse = { x: null, y: null };
 
     const handleMouseMove = (e) => {
-      mouse.x = e.clientX;
-      mouse.y = e.clientY;
+      const rect = canvas.getBoundingClientRect();
+      mouse.x = e.clientX - rect.left;
+      mouse.y = e.clientY - rect.top;
     };
 
     const handleMouseLeave = () => {
