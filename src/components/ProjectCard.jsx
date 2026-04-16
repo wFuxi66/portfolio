@@ -39,14 +39,15 @@ function ImagePlaceholder({ title }) {
 function ProjectCard({ title, semester, description, details, technologies = [], githubLink, liveLink, image }) {
     const [showDetails, setShowDetails] = useState(false);
     const isPersonal = semester === 'Perso';
+    const imgSrc = image ? `${import.meta.env.BASE_URL}${image}` : null;
 
     return (
         <>
             <SpotlightCard containerClassName="h-full" className="flex flex-col h-full">
                 {/* Image area */}
                 <div className="h-44 shrink-0 border-b border-white/5 overflow-hidden">
-                    {image
-                        ? <img src={image} alt={`Aperçu ${title}`} className="w-full h-full object-cover" />
+                    {imgSrc
+                        ? <img src={imgSrc} alt={`Aperçu ${title}`} className="w-full h-full object-cover" />
                         : <ImagePlaceholder title={title} />
                     }
                 </div>
