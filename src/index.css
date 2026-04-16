@@ -30,9 +30,22 @@
 
   body {
     @apply text-slate-200 antialiased;
-    background-color: #03030c;
+    background-color: #040404;
     font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
     min-height: 100vh;
+  }
+
+  /* Grain texture overlay for premium depth */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size: 180px 180px;
+    opacity: 0.028;
+    mix-blend-mode: overlay;
   }
 }
 
@@ -47,11 +60,68 @@
   }
 
   .glass-heavy {
-    background: rgba(8, 8, 22, 0.82);
+    background: rgba(8, 8, 8, 0.85);
     backdrop-filter: var(--blur-heavy);
     -webkit-backdrop-filter: var(--blur-heavy);
     border: 1px solid var(--glass-border);
     box-shadow: var(--glass-shadow);
+  }
+
+  /* ── Liquid Glass Card ───────────────────────────────────── */
+  .spotlight-card {
+    isolation: isolate;
+    background: linear-gradient(135deg, rgba(15,15,15,0.55), rgba(8,8,8,0.48));
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    border: 1px solid rgba(255,255,255,0.085);
+    box-shadow:
+      0 0 0 0.5px rgba(255,255,255,0.07),
+      inset 0 1px 0 rgba(255,255,255,0.13),
+      0 4px 24px -4px rgba(0,0,0,0.42);
+    transition: box-shadow 0.35s cubic-bezier(0.4,0,0.2,1);
+  }
+
+  @supports (backdrop-filter: url('#x')) {
+    .spotlight-card {
+      backdrop-filter: url(#glass-refract) blur(24px) saturate(180%);
+    }
+  }
+
+  .spotlight-card:hover {
+    box-shadow:
+      0 0 0 0.5px rgba(255,255,255,0.14),
+      inset 0 1px 0 rgba(255,255,255,0.22),
+      0 8px 40px -8px rgba(0,0,0,0.55);
+  }
+
+  /* Top-edge specular highlight line */
+  .specular-line {
+    position: absolute;
+    top: 0;
+    left: 12%;
+    right: 12%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.45) 50%, transparent);
+    animation: specular-breathe 5s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 3;
+  }
+
+  /* Diagonal shimmer sweep */
+  .shimmer-layer {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      108deg,
+      transparent 30%,
+      rgba(255,255,255,0.04) 50%,
+      transparent 70%
+    );
+    background-size: 200% 100%;
+    animation: shimmer-sweep 10s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 1;
+    border-radius: inherit;
   }
 
   /* ── Layout ─────────────────────────────────────────────── */
@@ -105,6 +175,16 @@
   @keyframes slideUp {
     from { opacity: 0; transform: translateY(30px); }
     to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes specular-breathe {
+    0%, 100% { opacity: 0.5; }
+    50%       { opacity: 1; }
+  }
+
+  @keyframes shimmer-sweep {
+    0%   { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
   }
 
   .delay-100 { animation-delay: 100ms; }
