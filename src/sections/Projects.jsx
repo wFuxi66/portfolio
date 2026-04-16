@@ -75,7 +75,7 @@ function Projects() {
                     <AnimatePresence mode='popLayout'>
                         {filteredProjects.map((project) => (
                             <motion.div
-                                key={project.title}
+                                key={project.id}
                                 layout
                                 initial={{ opacity: 0, scale: 0.9 }}
                                 animate={{ opacity: 1, scale: 1 }}

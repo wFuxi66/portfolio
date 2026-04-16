@@ -1,5 +1,6 @@
 export const projects = [
     {
+        id: 'portfolio',
         title: 'Portfolio',
         category: 'selection',
         semester: 'Perso',
@@ -10,6 +11,7 @@ export const projects = [
         githubLink: 'https://github.com/wFuxi66/portfolio',
     },
     {
+        id: 'glitch-party',
         title: 'Glitch Party',
         category: 'selection',
         semester: 'Perso',
@@ -20,6 +22,7 @@ export const projects = [
         liveLink: 'https://glitch-party.xyz',
     },
     {
+        id: 'choken',
         title: 'CHOKEN (WIP)',
         category: 'selection',
         semester: 'Perso',
@@ -30,6 +33,7 @@ export const projects = [
         liveLink: 'https://choken.vercel.app',
     },
     {
+        id: 'osuscan',
         title: 'osu!scan',
         category: 'selection',
         semester: 'Perso',
@@ -42,6 +46,7 @@ export const projects = [
         liveLink: 'https://osu-scan.onrender.com',
     },
     {
+        id: 'projetsae',
         title: 'Application de création de groupes',
         category: 'academic',
         semester: 'S3',
@@ -53,6 +58,7 @@ export const projects = [
         githubLink: 'https://github.com/wFuxi66/projetsae',
     },
     {
+        id: 'projet-transverse',
         title: 'Projet Transverse (SAE 1256)',
         category: 'academic',
         semester: 'S2',
@@ -63,6 +69,7 @@ export const projects = [
         githubLink: 'https://github.com/wFuxi66/projet-transverse',
     },
     {
+        id: 'reseau-firewall',
         title: 'Configuration Réseau & Firewall',
         category: 'academic',
         semester: 'S2',
@@ -72,6 +79,7 @@ export const projects = [
         technologies: ['Linux', 'Réseau', 'Sécurité', 'iptables'],
     },
     {
+        id: 'jeu-video-2d',
         title: 'Jeu vidéo 2D en C++',
         category: 'academic',
         semester: 'S1',
@@ -82,6 +90,7 @@ export const projects = [
         githubLink: 'https://github.com/wFuxi66/s102',
     },
     {
+        id: 'cwad',
         title: 'Site web responsive',
         category: 'academic',
         semester: 'S1',
