@@ -13,8 +13,8 @@ export const projects = [
     {
         id: 'glitch-party',
         title: 'Glitch Party',
-        category: 'selection',
-        semester: 'Perso',
+        category: 'academic',
+        semester: 'S4',
         image: 'images/project-glitch-party.webp',
         description: "Jeu multijoueur colocalisé en temps réel — cachez-vous parmi des NPCs IA sur un écran partagé et éliminez vos adversaires depuis vos téléphones.",
         details: "Développé en équipe de 3 dans le cadre d'un projet universitaire. Les joueurs contrôlent leur personnage via leur téléphone sur un écran partagé, en se dissimulant parmi 25 NPCs contrôlés par l'IA. Le jeu propose 8 effets 'Glitch' aléatoires (glace, vitesse double, contrôles inversés, arène rétrécissante...) et trois actions par joueur : Boost, Push et Blast. Architecture Node.js + Socket.io pour le temps réel, moteur 3D Three.js custom avec 12 skins procéduraux et spatial hashing pour les performances. Déployé via Docker sur glitch-party.xyz.",
