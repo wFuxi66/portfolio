@@ -49,7 +49,7 @@ function About() {
                             <div className="space-y-4 text-sm text-slate-400">
                                 <div>
                                     <p className="text-white font-medium mb-1 tracking-wide uppercase text-[10px]">Court terme</p>
-                                    <p>Stage BUT2 (Avril 2026).</p>
+                                    <p>Stage BUT2 chez USTS (Avril - Juillet 2026).</p>
                                 </div>
                                 <div>
                                     <p className="text-white font-medium mb-1 tracking-wide uppercase text-[10px]">Moyen terme</p>

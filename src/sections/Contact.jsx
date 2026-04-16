@@ -119,13 +119,13 @@ function Contact() {
                         <SpotlightCard className="p-8 flex flex-col items-center">
                             <div className="flex items-center justify-center gap-2 mb-4">
                                 <span className="w-2 h-2 bg-white rounded-full animate-pulse shadow-[0_0_8px_rgba(255,255,255,0.4)]" aria-hidden="true"></span>
-                                <span className="text-white text-sm font-medium">Disponible pour un stage</span>
+                                <span className="text-white text-sm font-medium">Actuellement en stage</span>
                             </div>
-                            <h3 className="text-xl font-bold text-white mb-2 text-center tracking-tight">Stage de 10 à 12 semaines</h3>    
-                            <p className="text-slate-400 mb-8 text-sm text-center">{meta.internshipPeriod}</p>   
+                            <h3 className="text-xl font-bold text-white mb-2 text-center tracking-tight">USTS — Paris 13e</h3>
+                            <p className="text-slate-400 mb-8 text-sm text-center">{meta.internshipPeriod}</p>
                             <div className="flex justify-center">
                                 <a
-                                    href={`mailto:${meta.email}?subject=Opportunité de stage - Jimmy ZHENG`}
+                                    href={`mailto:${meta.email}?subject=Opportunité - Jimmy ZHENG`}
                                     className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-white text-black font-semibold text-sm rounded-full hover:bg-slate-200 transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.1)]"
                                     aria-label="Envoyer un email de proposition de stage"
                                 >
