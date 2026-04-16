@@ -1,5 +1,15 @@
 export const projects = [
     {
+        title: 'Portfolio',
+        category: 'selection',
+        semester: 'Perso',
+        image: null,
+        description: "Ce portfolio — glassmorphism, animations Framer Motion et design system CSS custom.",
+        details: "Conçu de zéro avec React + Vite et un design system liquid glass custom. Animations orchestrées via Framer Motion, palette monochrome intentionnelle, composants SpotlightCard avec 3D tilt et spotlight de souris. Déployé sur GitHub Pages.",
+        technologies: ['React', 'Vite', 'Framer Motion', 'Tailwind CSS', 'CSS custom'],
+        githubLink: 'https://github.com/wFuxi66/portfolio',
+    },
+    {
         title: 'Glitch Party',
         category: 'selection',
         semester: 'Perso',
