@@ -81,9 +81,12 @@ export const projects = [
         title: 'Site web responsive',
         category: 'academic',
         semester: 'S1',
-        image: null,
+        image: 'images/project-cwad.png',
+        imageFit: 'contain',
         description: "Intégration d'une maquette web responsive en HTML/CSS pur — media queries, flexbox et accessibilité WCAG.",
         details: "Intégration d'une maquette web en HTML/CSS pur, sans framework. Mise en page responsive avec media queries et flexbox, respect des standards WCAG pour l'accessibilité (contrastes, sémantique HTML5, navigation clavier). Validé sur mobile, tablette et desktop.",
         technologies: ['HTML5', 'CSS3', 'Responsive', 'W3C'],
+        githubLink: 'https://github.com/wFuxi66/cwad',
+        liveLink: 'https://wfuxi66.github.io/cwad/',
     },
 ];
