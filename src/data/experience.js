@@ -16,7 +16,7 @@ export const experiences = [
     {
         company: 'Restaurant CHOKEN',
         role: 'Polyvalent (Service & Gestion)',
-        period: 'Depuis Juin 2025',
+        period: 'Juin - Août 2025',
         location: 'Pontoise',
         description: "Expérience en milieu exigeant nécessitant une grande réactivité et un sens du service client irréprochable.",
         details: [
