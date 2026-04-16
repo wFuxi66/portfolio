@@ -56,7 +56,7 @@ export const projects = [
         title: 'Projet Transverse (SAE 1256)',
         category: 'academic',
         semester: 'S2',
-        image: null,
+        image: 'images/project-projet-transverse.png',
         description: "Logiciel de gestion de résidents et d'infrastructures pour la Cité Internationale Universitaire de Paris.",
         details: "Logiciel de gestion développé en Java pour la Cité Internationale Universitaire de Paris (CIUP). Permet le suivi des résidents, la gestion des équipements et la visualisation des données d'infrastructure. Développé en équipe de 4 avec modélisation UML complète (diagrammes de classes, séquences), interface graphique Swing et tests unitaires JUnit.",
         technologies: ['Java', 'Swing', 'UML', 'JUnit', 'Git'],
