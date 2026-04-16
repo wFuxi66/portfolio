@@ -1,14 +1,16 @@
+import { lazy, Suspense } from 'react';
 import { GlassFilters } from 'glass-refraction';
 import Header from './components/Header';
 import Hero from './sections/Hero';
-import About from './sections/About';
-import Formation from './sections/Formation';
-import Experience from './sections/Experience';
-import Skills from './sections/Skills';
-import Projects from './sections/Projects';
-import Personal from './sections/Personal';
-import Contact from './sections/Contact';
 import { meta } from './data/meta';
+
+const About      = lazy(() => import('./sections/About'));
+const Formation  = lazy(() => import('./sections/Formation'));
+const Experience = lazy(() => import('./sections/Experience'));
+const Skills     = lazy(() => import('./sections/Skills'));
+const Projects   = lazy(() => import('./sections/Projects'));
+const Personal   = lazy(() => import('./sections/Personal'));
+const Contact    = lazy(() => import('./sections/Contact'));
 
 function App() {
     return (
@@ -40,13 +42,15 @@ function App() {
 
                 <main>
                     <Hero />
-                    <About />
-                    <Formation />
-                    <Experience />
-                    <Skills />
-                    <Projects />
-                    <Personal />
-                    <Contact />
+                    <Suspense fallback={null}>
+                        <About />
+                        <Formation />
+                        <Experience />
+                        <Skills />
+                        <Projects />
+                        <Personal />
+                        <Contact />
+                    </Suspense>
                 </main>
 
                 <footer className="py-12 mt-4 border-t border-white/[0.06]">
