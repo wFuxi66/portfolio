@@ -129,7 +129,11 @@ function ProjectCard({ title, semester, description, details, technologies = [],
                 {showDetails && (
                     <StarModal
                         title={title}
+                        semester={semester}
                         details={details}
+                        technologies={technologies}
+                        githubLink={githubLink}
+                        liveLink={liveLink}
                         onClose={() => setShowDetails(false)}
                     />
                 )}

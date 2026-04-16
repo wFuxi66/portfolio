@@ -1,6 +1,5 @@
 import { GlassFilters } from 'glass-refraction';
 import Header from './components/Header';
-import CustomCursor from './components/CustomCursor';
 import Hero from './sections/Hero';
 import About from './sections/About';
 import Formation from './sections/Formation';
@@ -13,7 +12,7 @@ import { meta } from './data/meta';
 
 function App() {
     return (
-        <div className="min-h-screen text-slate-200 lg:cursor-none" style={{ backgroundColor: '#040404' }}>
+        <div className="min-h-screen text-slate-200" style={{ backgroundColor: '#040404' }}>
 
             {/* ── Monochrome depth field — give glass something to blur ── */}
             <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden" aria-hidden="true">
@@ -37,7 +36,6 @@ function App() {
             {/* ── Content ── */}
             <div className="relative z-10">
                 <GlassFilters scale={10} strongScale={18} baseFrequency="0.012 0.010" />
-                <CustomCursor />
                 <Header />
 
                 <main>

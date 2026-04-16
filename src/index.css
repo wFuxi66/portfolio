@@ -15,10 +15,6 @@
 }
 
 @layer base {
-  @media (min-width: 1024px) {
-    *, *::before, *::after { cursor: none !important; }
-  }
-
   html { scroll-behavior: smooth; }
 
   section[id] { scroll-margin-top: 88px; }

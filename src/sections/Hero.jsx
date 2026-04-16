@@ -4,17 +4,17 @@ import { meta } from '../data/meta';
 
 function Hero() {
     return (
-        <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden lg:cursor-none">
+        <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden">
             {/* Stars — transparent bg so depth orbs show through */}
-            <div className="absolute inset-0 z-0 lg:cursor-none">
+            <div className="absolute inset-0 z-0">
                 <StarsBackground
                     starColor="#FFF"
-                    className="w-full h-full bg-transparent lg:cursor-none"
+                    className="w-full h-full bg-transparent"
                 />
             </div>
 
             {/* Globe */}
-            <div className="relative z-10 lg:cursor-none">
+            <div className="relative z-10">
                 <Globe />
             </div>
 
