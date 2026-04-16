@@ -39,10 +39,12 @@ function FeaturedCard({ exp }) {
                 <div className="flex-1 min-w-0">
                     <div className="flex flex-wrap items-center gap-2 mb-1">
                         <h3 className="text-xl font-bold text-white tracking-tight">{exp.company}</h3>
-                        <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-widest text-white bg-white/10 rounded-full border border-white/10">
-                            <span className="w-1.5 h-1.5 bg-white rounded-full animate-pulse" aria-hidden="true" />
-                            En cours
-                        </span>
+                        {exp.current && (
+                            <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-widest text-white bg-white/10 rounded-full border border-white/10">
+                                <span className="w-1.5 h-1.5 bg-white rounded-full animate-pulse" aria-hidden="true" />
+                                En cours
+                            </span>
+                        )}
                     </div>
                     <p className="text-slate-400 text-sm font-medium">{exp.role}</p>
                 </div>

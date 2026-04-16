@@ -2,6 +2,7 @@ export const experiences = [
     {
         company: 'USTS',
         role: 'Développeur Stagiaire — Applications IA',
+        current: true,
         period: 'Avril - Juillet 2026',
         location: 'Paris 13e',
         description: "Stage de développement au sein d'une startup spécialisée en intelligence artificielle, axé sur la création d'applications sur mesure augmentées par des agents IA.",
