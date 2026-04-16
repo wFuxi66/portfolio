@@ -1,8 +1,26 @@
 export const projects = [
     {
+        title: 'Glitch Party',
+        category: 'selection',
+        semester: 'Perso',
+        image: null,
+        description: "Jeu multijoueur colocalisé en temps réel — cachez-vous parmi des NPCs IA sur un écran partagé et éliminez vos adversaires depuis vos téléphones.",
+        star: {
+            s: "Dans le cadre d'un projet universitaire en équipe de 3, nous voulions créer un jeu original mettant en valeur nos compétences en développement web temps réel.",
+            t: "Développer un jeu colocalisé où des joueurs humains, cachés parmi des NPCs contrôlés par l'IA, s'affrontent sur un grand écran partagé en contrôlant leur personnage depuis leur téléphone.",
+            a: "Architecture temps réel Node.js + Socket.io, moteur 3D Three.js custom (12 skins procéduraux, ragdoll, effets visuels), physique avec spatial hashing pour les performances, 8 effets 'Glitch' dynamiques et manettes mobiles tactiles. Déploiement Docker.",
+            r: "Jeu complet déployé sur glitch-party.xyz, jouable sans installation. Présenté en soutenance avec retours très positifs sur l'originalité et la qualité technique.",
+        },
+        technologies: ['Node.js', 'Socket.io', 'Three.js', 'JavaScript', 'Docker'],
+        githubLink: 'https://github.com/Figurant16/glitch_party',
+        liveLink: 'https://glitch-party.xyz',
+    },
+    {
         title: 'CHOKEN (WIP)',
         category: 'selection',
         semester: 'Perso',
+        image: null,
+        description: "Site vitrine pour un restaurant japonais — animations CSS avancées, menu interactif et expérience utilisateur ultra-fluide.",
         star: {
             s: "Un restaurant japonais souhaitait moderniser sa présence en ligne et proposer un menu interactif.",
             t: "Concevoir une interface immersive reflétant l'identité visuelle de l'établissement tout en restant ultra-fluide.",
@@ -16,6 +34,8 @@ export const projects = [
         title: 'osu!scan',
         category: 'selection',
         semester: 'Perso',
+        image: null,
+        description: "Scanner de beatmaps multi-threadé qui analyse des bibliothèques entières en quelques secondes via l'API osu! v2.",
         star: {
             s: "L'analyse des données de beatmaps sur osu! était lente et laborieuse via les outils existants.",
             t: "Créer un scanner capable de traiter des milliers de maps simultanément pour extraire des statistiques précises.",
@@ -30,6 +50,8 @@ export const projects = [
         title: 'Application de création de groupes',
         category: 'academic',
         semester: 'S3',
+        image: null,
+        description: "Application complète (web + bureau) pour automatiser la répartition des étudiants en groupes TD/TP à l'IUT d'Orsay.",
         star: {
             s: "L'IUT d'Orsay avait besoin d'automatiser la répartition des étudiants en groupes TD/TP, un processus alors manuel et source d'erreurs.",
             t: "Concevoir une application complète (web + bureau) gérant les contraintes de disponibilité et de composition des groupes.",
@@ -42,6 +64,8 @@ export const projects = [
         title: 'Projet Transverse (SAE 1256)',
         category: 'academic',
         semester: 'S2',
+        image: null,
+        description: "Logiciel de gestion de résidents et d'infrastructures pour la Cité Internationale Universitaire de Paris.",
         star: {
             s: "La Cité Internationale Universitaire de Paris (CIUP) avait besoin d'un outil pour gérer ses infrastructures et résidents.",
             t: "Développer une application de bureau robuste permettant le suivi des données et la gestion des équipements.",
@@ -54,6 +78,8 @@ export const projects = [
         title: 'Configuration Réseau & Firewall',
         category: 'academic',
         semester: 'S2',
+        image: null,
+        description: "Infrastructure réseau multi-sous-réseaux sécurisée avec iptables, NAT, VLANs et politique de sécurité documentée.",
         star: {
             s: "TP réseau en BUT Informatique : mise en situation d'un administrateur système devant sécuriser une infrastructure multi-sous-réseaux.",
             t: "Configurer et sécuriser un réseau complet avec isolation des zones et contrôle du trafic entrant/sortant.",
@@ -66,6 +92,8 @@ export const projects = [
         title: 'Jeu vidéo 2D en C++',
         category: 'academic',
         semester: 'S1',
+        image: null,
+        description: "Jeu vidéo 2D complet avec détection de collisions, sprites et boucle de jeu, développé en C++ avec SDL2.",
         star: {
             s: "Projet de 1ère année BUT : développer un jeu vidéo complet en équipe, sans bibliothèque graphique externe imposée.",
             t: "Créer un jeu 2D jouable avec animations fluides, détection de collisions et logique de niveaux progressifs.",
@@ -78,6 +106,8 @@ export const projects = [
         title: 'Site web responsive',
         category: 'academic',
         semester: 'S1',
+        image: null,
+        description: "Intégration d'une maquette web responsive en HTML/CSS pur — media queries, flexbox et accessibilité WCAG.",
         star: {
             s: "SAÉ de 1ère année BUT : intégrer une maquette en respectant des critères stricts d'accessibilité et d'ergonomie.",
             t: "Produire un site consultable sur tous les supports (mobile, tablette, desktop) sans framework CSS.",
