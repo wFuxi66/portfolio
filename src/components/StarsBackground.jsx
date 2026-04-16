@@ -24,7 +24,7 @@ export const StarsBackground = ({ starColor = '#ffffff', className = '' }) => {
     };
 
     window.addEventListener('mousemove', handleMouseMove);
-    window.addEventListener('mouseout', handleMouseLeave);
+    document.documentElement.addEventListener('mouseleave', handleMouseLeave);
 
     const resize = () => {
       canvas.width = window.innerWidth;
@@ -70,8 +70,8 @@ export const StarsBackground = ({ starColor = '#ffffff', className = '' }) => {
         if (mouse.x !== null && mouse.y !== null) {
           dx = mouse.x - star.x;
           dy = mouse.y - star.y;
-          const distance = Math.sqrt(dx * dx + dy * dy);
-          if (distance < 100) {
+          const distSq = dx * dx + dy * dy;
+          if (distSq < 10000) {
             // Push stars away from the cursor
             star.x -= dx * 0.03;
             star.y -= dy * 0.03;
@@ -96,7 +96,7 @@ export const StarsBackground = ({ starColor = '#ffffff', className = '' }) => {
     return () => {
       window.removeEventListener('resize', resize);
       window.removeEventListener('mousemove', handleMouseMove);
-      window.removeEventListener('mouseout', handleMouseLeave);
+      document.documentElement.removeEventListener('mouseleave', handleMouseLeave);
       cancelAnimationFrame(animationFrameId);
     };
   }, [starColor]);
