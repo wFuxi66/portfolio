@@ -20,10 +20,3 @@ Thumbs.db
 .env
 .env.local
 .env.*.local
-
-# Agent Tools
-.agent/
-
-# AI / Claude tooling
-tasks/
-.claude/
