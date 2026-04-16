@@ -48,7 +48,7 @@ function ProjectCard({ title, semester, description, details, technologies = [],
                 <div className="h-44 shrink-0 border-b border-white/5 overflow-hidden">
                     {imgSrc
                         ? imageFit === 'contain'
-                            ? <div className="w-full h-full flex items-center justify-center p-6" style={{ background: '#161b2e' }}>
+                            ? <div className="w-full h-full flex items-center justify-center p-3" style={{ background: '#0a0a0f' }}>
                                 <img src={imgSrc} alt={`Aperçu ${title}`} className="max-w-full max-h-full object-contain" />
                               </div>
                             : <img src={imgSrc} alt={`Aperçu ${title}`} className="w-full h-full object-cover" />
