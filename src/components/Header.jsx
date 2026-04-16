@@ -77,7 +77,8 @@ function Header() {
                 <button
                     onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                     className="md:hidden ml-auto text-slate-400 hover:text-white transition-colors"
-                    aria-label="Ouvrir le menu"
+                    aria-label={isMobileMenuOpen ? "Fermer le menu" : "Ouvrir le menu"}
+                    aria-expanded={isMobileMenuOpen}
                 >
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                         {isMobileMenuOpen
