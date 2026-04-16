@@ -13,15 +13,19 @@ export default function Globe() {
     window.addEventListener('resize', onResize)
     onResize()
 
+    if (!canvasRef.current) return;
+    const dpr = Math.min(window.devicePixelRatio, 2);
+    const isMobile = width < 768;
+
     const globe = createGlobe(canvasRef.current, {
-      devicePixelRatio: 2,
-      width: width * 2,
-      height: width * 2,
+      devicePixelRatio: dpr,
+      width: width * dpr,
+      height: width * dpr,
       phi: 0,
       theta: 0.15,
       dark: 1,
-      diffuse: 2, // Rend le globe plus "solide"
-      mapSamples: 25000, // Extrêmement dense et détaillé
+      diffuse: 2,
+      mapSamples: isMobile ? 8000 : 25000,
       mapBrightness: 4,
       baseColor: [0.1, 0.1, 0.1], // Gris très sombre pour la base
       markerColor: [1, 1, 1], // Inutilisé car pas de marqueurs
@@ -33,8 +37,8 @@ export default function Globe() {
           phi += 0.001; 
         }
         state.phi = phi + pointerInteractionMovement.current;
-        state.width = width * 2;
-        state.height = width * 2;
+        state.width = width * dpr;
+        state.height = width * dpr;
       }
     });
 
