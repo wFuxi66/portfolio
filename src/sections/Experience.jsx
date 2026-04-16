@@ -133,7 +133,7 @@ function Experience() {
                 </motion.h2>
 
                 <div className="space-y-4 max-w-4xl mx-auto">
-                    {/* Featured — current role */}
+                    {/* Featured (current role) */}
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}

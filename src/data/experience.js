@@ -1,7 +1,7 @@
 export const experiences = [
     {
         company: 'USTS',
-        role: 'Développeur Stagiaire — Applications IA',
+        role: 'Développeur Stagiaire · Applications IA',
         current: true,
         period: 'Avril - Juillet 2026',
         location: 'Paris 13e',

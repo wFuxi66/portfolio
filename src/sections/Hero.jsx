@@ -5,7 +5,7 @@ import { meta } from '../data/meta';
 function Hero() {
     return (
         <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden">
-            {/* Stars — transparent bg so depth orbs show through */}
+            {/* Stars (transparent bg so depth orbs show through) */}
             <div className="absolute inset-0 z-0">
                 <StarsBackground
                     starColor="#FFF"

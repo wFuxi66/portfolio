@@ -16,7 +16,7 @@ function App() {
     return (
         <div className="min-h-screen text-slate-200" style={{ backgroundColor: '#040404' }}>
 
-            {/* ── Monochrome depth field — give glass something to blur ── */}
+            {/* Monochrome depth field (gives glass something to blur) */}
             <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden" aria-hidden="true">
                 <div style={{
                     position: 'absolute', top: '-10%', left: '-8%',
@@ -35,7 +35,7 @@ function App() {
                 }} />
             </div>
 
-            {/* ── Content ── */}
+            {/* Content */}
             <div className="relative z-10">
                 <GlassFilters scale={10} strongScale={18} baseFrequency="0.012 0.010" />
                 <Header />

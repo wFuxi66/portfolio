@@ -59,7 +59,7 @@ function Header() {
                     ))}
                 </nav>
 
-                {/* CV link — desktop */}
+                {/* CV link (desktop) */}
                 <a
                     href={`${import.meta.env.BASE_URL}CV_Jimmy_ZHENG.pdf`}
                     target="_blank"

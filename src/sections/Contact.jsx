@@ -119,7 +119,7 @@ function Contact() {
                                 <span className="w-2 h-2 bg-white rounded-full animate-pulse shadow-[0_0_8px_rgba(255,255,255,0.4)]" aria-hidden="true"></span>
                                 <span className="text-white text-sm font-medium">Actuellement en stage</span>
                             </div>
-                            <h3 className="text-xl font-bold text-white mb-2 text-center tracking-tight">USTS — Paris 13e</h3>
+                            <h3 className="text-xl font-bold text-white mb-2 text-center tracking-tight">USTS · Paris 13e</h3>
                             <p className="text-slate-400 mb-8 text-sm text-center">{meta.internshipPeriod}</p>
                             <div className="flex justify-center">
                                 <a
