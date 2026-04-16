@@ -85,10 +85,12 @@ function Projects() {
                                 <ProjectCard
                                     title={project.title}
                                     semester={project.semester}
-                                    star={project.star}
+                                    description={project.description}
+                                    details={project.details}
                                     technologies={project.technologies}
                                     githubLink={project.githubLink}
                                     liveLink={project.liveLink}
+                                    image={project.image}
                                 />
                             </motion.div>
                         ))}

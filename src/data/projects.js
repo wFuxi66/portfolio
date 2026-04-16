@@ -5,14 +5,8 @@ export const projects = [
         semester: 'Perso',
         image: null,
         description: "Jeu multijoueur colocalisé en temps réel — cachez-vous parmi des NPCs IA sur un écran partagé et éliminez vos adversaires depuis vos téléphones.",
-        star: {
-            s: "Dans le cadre d'un projet universitaire en équipe de 3, nous voulions créer un jeu original mettant en valeur nos compétences en développement web temps réel.",
-            t: "Développer un jeu colocalisé où des joueurs humains, cachés parmi des NPCs contrôlés par l'IA, s'affrontent sur un grand écran partagé en contrôlant leur personnage depuis leur téléphone.",
-            a: "Architecture temps réel Node.js + Socket.io, moteur 3D Three.js custom (12 skins procéduraux, ragdoll, effets visuels), physique avec spatial hashing pour les performances, 8 effets 'Glitch' dynamiques et manettes mobiles tactiles. Déploiement Docker.",
-            r: "Jeu complet déployé sur glitch-party.xyz, jouable sans installation. Présenté en soutenance avec retours très positifs sur l'originalité et la qualité technique.",
-        },
+        details: "Développé en équipe de 3 dans le cadre d'un projet universitaire. Les joueurs contrôlent leur personnage via leur téléphone sur un écran partagé, en se dissimulant parmi 25 NPCs contrôlés par l'IA. Le jeu propose 8 effets 'Glitch' aléatoires (glace, vitesse double, contrôles inversés, arène rétrécissante...) et trois actions par joueur : Boost, Push et Blast. Architecture Node.js + Socket.io pour le temps réel, moteur 3D Three.js custom avec 12 skins procéduraux et spatial hashing pour les performances. Déployé via Docker sur glitch-party.xyz.",
         technologies: ['Node.js', 'Socket.io', 'Three.js', 'JavaScript', 'Docker'],
-        githubLink: 'https://github.com/Figurant16/glitch_party',
         liveLink: 'https://glitch-party.xyz',
     },
     {
@@ -21,12 +15,7 @@ export const projects = [
         semester: 'Perso',
         image: null,
         description: "Site vitrine pour un restaurant japonais — animations CSS avancées, menu interactif et expérience utilisateur ultra-fluide.",
-        star: {
-            s: "Un restaurant japonais souhaitait moderniser sa présence en ligne et proposer un menu interactif.",
-            t: "Concevoir une interface immersive reflétant l'identité visuelle de l'établissement tout en restant ultra-fluide.",
-            a: "Développement d'un site vitrine avec animations CSS avancées, gestion dynamique du panier en JavaScript pur et optimisation du SEO.",
-            r: "Plateforme performante livrée, offrant une expérience utilisateur fluide et une vitrine digitale élégante.",
-        },
+        details: "Site vitrine pour le restaurant japonais CHOKEN à Pontoise. Conçu pour refléter l'identité visuelle de l'établissement avec des animations CSS avancées et une navigation fluide. Menu interactif géré en JavaScript pur, optimisation SEO et compatibilité multi-supports complète. Déployé sur Vercel.",
         technologies: ['Vite', 'JavaScript', 'CSS3', 'HTML5', 'Vercel'],
         liveLink: 'https://choken.vercel.app',
     },
@@ -36,12 +25,7 @@ export const projects = [
         semester: 'Perso',
         image: null,
         description: "Scanner de beatmaps multi-threadé qui analyse des bibliothèques entières en quelques secondes via l'API osu! v2.",
-        star: {
-            s: "L'analyse des données de beatmaps sur osu! était lente et laborieuse via les outils existants.",
-            t: "Créer un scanner capable de traiter des milliers de maps simultanément pour extraire des statistiques précises.",
-            a: "Utilisation de l'API v2 d'osu!, implémentation du multi-threading en Python (Flask) et génération de rapports HTML automatisés.",
-            r: "Outil capable de scanner une bibliothèque entière en quelques secondes, utilisé par la communauté pour gagner un temps précieux.",
-        },
+        details: "Outil d'analyse de beatmaps pour osu!, permettant de scanner des bibliothèques entières en quelques secondes. Utilise l'API officielle osu! v2 avec authentification OAuth, implémente le multi-threading Python pour traiter plusieurs maps en parallèle, et génère des rapports HTML détaillés avec statistiques filtrables. Hébergé sur Render.",
         technologies: ['Python', 'Flask', 'osu! API v2', 'Threading'],
         githubLink: 'https://github.com/wFuxi66/osu-scan',
         liveLink: 'https://osu-scan.onrender.com',
@@ -52,12 +36,7 @@ export const projects = [
         semester: 'S3',
         image: null,
         description: "Application complète (web + bureau) pour automatiser la répartition des étudiants en groupes TD/TP à l'IUT d'Orsay.",
-        star: {
-            s: "L'IUT d'Orsay avait besoin d'automatiser la répartition des étudiants en groupes TD/TP, un processus alors manuel et source d'erreurs.",
-            t: "Concevoir une application complète (web + bureau) gérant les contraintes de disponibilité et de composition des groupes.",
-            a: "Développement en équipe avec méthodologie Agile : back-end Java, base de données SQL, interface web PHP/HTML/CSS, sprints réguliers et revues de code sur GitLab.",
-            r: "Application fonctionnelle livrée, permettant la génération automatique des groupes avec gestion des contraintes en quelques secondes.",
-        },
+        details: "Application développée en équipe avec la méthode Agile sur 3 sprints. Permet aux administrateurs de l'IUT d'Orsay de répartir automatiquement les étudiants en groupes TD/TP en respectant leurs contraintes de disponibilité. Architecture en couches : back-end Java avec logique métier, base de données SQL, interface web PHP/HTML/CSS. Suivi de version et revues de code sur GitLab.",
         technologies: ['Java', 'PHP', 'SQL', 'Agile'],
     },
     {
@@ -66,12 +45,7 @@ export const projects = [
         semester: 'S2',
         image: null,
         description: "Logiciel de gestion de résidents et d'infrastructures pour la Cité Internationale Universitaire de Paris.",
-        star: {
-            s: "La Cité Internationale Universitaire de Paris (CIUP) avait besoin d'un outil pour gérer ses infrastructures et résidents.",
-            t: "Développer une application de bureau robuste permettant le suivi des données et la gestion des équipements.",
-            a: "Modélisation UML complète, développement en Java avec interface Swing et mise en place de tests unitaires (JUnit) en équipe de 4.",
-            r: "Logiciel fonctionnel livré, démontrant une gestion fiable des données et une architecture logicielle propre.",
-        },
+        details: "Logiciel de gestion développé en Java pour la Cité Internationale Universitaire de Paris (CIUP). Permet le suivi des résidents, la gestion des équipements et la visualisation des données d'infrastructure. Développé en équipe de 4 avec modélisation UML complète (diagrammes de classes, séquences), interface graphique Swing et tests unitaires JUnit.",
         technologies: ['Java', 'Swing', 'UML', 'JUnit', 'Git'],
     },
     {
@@ -80,12 +54,7 @@ export const projects = [
         semester: 'S2',
         image: null,
         description: "Infrastructure réseau multi-sous-réseaux sécurisée avec iptables, NAT, VLANs et politique de sécurité documentée.",
-        star: {
-            s: "TP réseau en BUT Informatique : mise en situation d'un administrateur système devant sécuriser une infrastructure multi-sous-réseaux.",
-            t: "Configurer et sécuriser un réseau complet avec isolation des zones et contrôle du trafic entrant/sortant.",
-            a: "Mise en place de règles iptables, NAT, VLANs et filtrage applicatif sur routeurs Linux. Rédaction d'une politique de sécurité réseau documentée.",
-            r: "Infrastructure sécurisée et opérationnelle, avec isolation effective des zones et blocage des flux non autorisés.",
-        },
+        details: "Configuration d'une infrastructure réseau multi-sous-réseaux en environnement Linux. Mise en place de règles iptables pour le filtrage du trafic entrant/sortant, configuration du NAT, segmentation en VLANs et filtrage applicatif sur routeurs Linux. Rédaction d'une politique de sécurité réseau complète documentant les choix d'architecture.",
         technologies: ['Linux', 'Réseau', 'Sécurité', 'iptables'],
     },
     {
@@ -94,12 +63,7 @@ export const projects = [
         semester: 'S1',
         image: null,
         description: "Jeu vidéo 2D complet avec détection de collisions, sprites et boucle de jeu, développé en C++ avec SDL2.",
-        star: {
-            s: "Projet de 1ère année BUT : développer un jeu vidéo complet en équipe, sans bibliothèque graphique externe imposée.",
-            t: "Créer un jeu 2D jouable avec animations fluides, détection de collisions et logique de niveaux progressifs.",
-            a: "Programmation orientée objet en C++, gestion des sprites, physique et boucle de jeu. Collaboration via Git et Code::Blocks avec répartition des tâches par module.",
-            r: "Jeu 2D complet et jouable livré en fin de semestre, démontrant la maîtrise de la POO et du travail collaboratif.",
-        },
+        details: "Jeu vidéo 2D développé en C++ avec SDL2 dans le cadre d'un projet de première année BUT. Implémentation de la boucle de jeu, gestion des sprites et animations, détection de collisions et logique de niveaux progressifs. Développé en équipe avec répartition des modules (physique, rendu, logique) et suivi de version Git.",
         technologies: ['C++', 'SDL2', 'Git', 'POO'],
     },
     {
@@ -108,12 +72,7 @@ export const projects = [
         semester: 'S1',
         image: null,
         description: "Intégration d'une maquette web responsive en HTML/CSS pur — media queries, flexbox et accessibilité WCAG.",
-        star: {
-            s: "SAÉ de 1ère année BUT : intégrer une maquette en respectant des critères stricts d'accessibilité et d'ergonomie.",
-            t: "Produire un site consultable sur tous les supports (mobile, tablette, desktop) sans framework CSS.",
-            a: "Développement HTML/CSS pur avec media queries, flexbox et animations CSS. Respect des contrastes WCAG et sémantique HTML5.",
-            r: "Site fonctionnel et validé sur tous les supports, bien noté pour la qualité du code et le respect des standards web.",
-        },
+        details: "Intégration d'une maquette web en HTML/CSS pur, sans framework. Mise en page responsive avec media queries et flexbox, respect des standards WCAG pour l'accessibilité (contrastes, sémantique HTML5, navigation clavier). Validé sur mobile, tablette et desktop.",
         technologies: ['HTML5', 'CSS3', 'Responsive', 'W3C'],
     },
 ];

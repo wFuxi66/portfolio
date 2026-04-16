@@ -36,8 +36,8 @@ function ImagePlaceholder({ title }) {
     );
 }
 
-function ProjectCard({ title, semester, description, star, technologies = [], githubLink, liveLink, image }) {
-    const [showStar, setShowStar] = useState(false);
+function ProjectCard({ title, semester, description, details, technologies = [], githubLink, liveLink, image }) {
+    const [showDetails, setShowDetails] = useState(false);
     const isPersonal = semester === 'Perso';
 
     return (
@@ -110,13 +110,13 @@ function ProjectCard({ title, semester, description, star, technologies = [], gi
                         ))}
                     </div>
 
-                    {/* STAR trigger */}
-                    {star && (
+                    {/* Details trigger */}
+                    {details && (
                         <button
-                            onClick={() => setShowStar(true)}
+                            onClick={() => setShowDetails(true)}
                             className="self-start flex items-center gap-1.5 text-xs text-slate-500 hover:text-white border border-white/5 hover:border-white/20 rounded-full px-3 py-1.5 transition-all duration-200"
                         >
-                            Méthode STAR
+                            Plus d'infos
                             <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                             </svg>
@@ -126,11 +126,11 @@ function ProjectCard({ title, semester, description, star, technologies = [], gi
             </SpotlightCard>
 
             <AnimatePresence>
-                {showStar && (
+                {showDetails && (
                     <StarModal
                         title={title}
-                        star={star}
-                        onClose={() => setShowStar(false)}
+                        details={details}
+                        onClose={() => setShowDetails(false)}
                     />
                 )}
             </AnimatePresence>
