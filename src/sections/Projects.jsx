@@ -37,8 +37,14 @@ function Projects() {
                         </motion.p>
                     </div>
 
-                    <div className="flex p-1 bg-white/5 border border-white/10 rounded-xl backdrop-blur-sm self-start">
+                    <div
+                        role="tablist"
+                        aria-label="Filtrer les projets"
+                        className="flex p-1 bg-white/5 border border-white/10 rounded-xl backdrop-blur-sm self-start"
+                    >
                         <button
+                            role="tab"
+                            aria-selected={filter === 'selection'}
                             onClick={() => setFilter('selection')}
                             className={`px-4 py-2 text-sm font-medium rounded-lg transition-all duration-300 ${filter === 'selection'
                                     ? 'bg-white text-black shadow-lg'
@@ -48,6 +54,8 @@ function Projects() {
                             Perso
                         </button>
                         <button
+                            role="tab"
+                            aria-selected={filter === 'academic'}
                             onClick={() => setFilter('academic')}
                             className={`px-4 py-2 text-sm font-medium rounded-lg transition-all duration-300 ${filter === 'academic'
                                     ? 'bg-white text-black shadow-lg'
@@ -57,6 +65,8 @@ function Projects() {
                             Scolaire
                         </button>
                         <button
+                            role="tab"
+                            aria-selected={filter === 'all'}
                             onClick={() => setFilter('all')}
                             className={`px-4 py-2 text-sm font-medium rounded-lg transition-all duration-300 ${filter === 'all'
                                     ? 'bg-white text-black shadow-lg'
