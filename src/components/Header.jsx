@@ -74,7 +74,7 @@ function Header() {
                             key={link.href}
                             href={link.href}
                             onClick={(e) => scrollTo(e, link.href)}
-                            aria-current={active === link.href ? 'true' : undefined}
+                            aria-current={active === link.href ? 'location' : undefined}
                             className={clsx(
                                 'px-3 py-1.5 text-xs font-medium rounded-full transition-all duration-200',
                                 active === link.href
@@ -133,7 +133,7 @@ function Header() {
                                     key={link.href}
                                     href={link.href}
                                     onClick={(e) => scrollTo(e, link.href)}
-                                    aria-current={active === link.href ? 'true' : undefined}
+                                    aria-current={active === link.href ? 'location' : undefined}
                                     className={clsx(
                                         'px-4 py-2.5 text-sm font-medium rounded-xl transition-all duration-200',
                                         active === link.href
