@@ -8,7 +8,6 @@ export default {
         extend: {
             fontFamily: {
                 sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
-                mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
             },
         },
     },
