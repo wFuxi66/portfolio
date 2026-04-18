@@ -33,6 +33,14 @@ function useActiveSection() {
     return active;
 }
 
+const pillStyle = {
+    background: 'rgba(8, 8, 8, 0.85)',
+    backdropFilter: 'blur(40px) saturate(200%)',
+    WebkitBackdropFilter: 'blur(40px) saturate(200%)',
+    border: '1px solid rgba(255, 255, 255, 0.10)',
+    boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.12), 0 20px 50px rgba(0,0,0,0.6)',
+};
+
 function Header() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const active = useActiveSection();
@@ -42,14 +50,6 @@ function Header() {
         const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         document.querySelector(href)?.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth' });
         setIsMobileMenuOpen(false);
-    };
-
-    const pillStyle = {
-        background: 'rgba(8, 8, 8, 0.85)',
-        backdropFilter: 'blur(40px) saturate(200%)',
-        WebkitBackdropFilter: 'blur(40px) saturate(200%)',
-        border: '1px solid rgba(255, 255, 255, 0.10)',
-        boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.12), 0 20px 50px rgba(0,0,0,0.6)',
     };
 
     return (
