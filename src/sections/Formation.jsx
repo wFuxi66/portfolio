@@ -25,7 +25,7 @@ function Formation() {
                     <div className="space-y-12">
                         {formations.map((formation, index) => (
                             <motion.div
-                                key={index}
+                                key={formation.year}
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
@@ -68,9 +68,9 @@ function Formation() {
                                         <p className="text-slate-400 text-sm mb-5 leading-relaxed">{formation.description}</p>
 
                                         <div className="flex flex-wrap gap-2">
-                                            {formation.highlights.map((highlight, i) => (
+                                            {formation.highlights.map((highlight) => (
                                                 <span
-                                                    key={i}
+                                                    key={highlight}
                                                     className="px-2 py-1 text-xs font-mono text-slate-300 bg-white/5 rounded border border-white/10"
                                                 >
                                                     {highlight}
