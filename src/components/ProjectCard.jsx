@@ -50,15 +50,20 @@ function ProjectCard({ title, semester, description, details, technologies = [],
                     {imgSrc && !imgError
                         ? imageFit === 'contain'
                             ? <div className="w-full h-full flex items-center justify-center p-3" style={{ background: '#0a0a0f' }}>
-                                <picture>
-                                    <source srcSet={imgSrc.replace(/\.(png|gif)$/, '.webp')} type="image/webp" />
-                                    <img src={imgSrc} alt={`Aperçu ${title}`} width="640" height="176" className="max-w-full max-h-full object-contain" loading="lazy" onError={() => setImgError(true)} />
-                                </picture>
+                                {imgSrc.match(/\.gif$/i)
+                                    ? <img src={imgSrc} alt={`Aperçu ${title}`} className="max-w-full max-h-full object-contain" loading="lazy" onError={() => setImgError(true)} />
+                                    : <picture style={{ display: 'contents' }}>
+                                        <source srcSet={imgSrc.replace(/\.png$/, '.webp')} type="image/webp" />
+                                        <img src={imgSrc} alt={`Aperçu ${title}`} width="640" height="176" className="max-w-full max-h-full object-contain" loading="lazy" onError={() => setImgError(true)} />
+                                      </picture>
+                                }
                               </div>
-                            : <picture>
-                                <source srcSet={imgSrc.replace(/\.(png|gif)$/, '.webp')} type="image/webp" />
-                                <img src={imgSrc} alt={`Aperçu ${title}`} width="640" height="176" className="w-full h-full object-cover" loading="lazy" onError={() => setImgError(true)} />
-                              </picture>
+                            : imgSrc.match(/\.gif$/i)
+                                ? <img src={imgSrc} alt={`Aperçu ${title}`} className="w-full h-full object-cover" loading="lazy" onError={() => setImgError(true)} />
+                                : <picture style={{ display: 'contents' }}>
+                                    <source srcSet={imgSrc.replace(/\.png$/, '.webp')} type="image/webp" />
+                                    <img src={imgSrc} alt={`Aperçu ${title}`} width="640" height="176" className="w-full h-full object-cover" loading="lazy" onError={() => setImgError(true)} />
+                                  </picture>
                         : <ImagePlaceholder title={title} />
                     }
                 </div>

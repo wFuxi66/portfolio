@@ -56,7 +56,7 @@ function Header() {
         <header className="fixed top-0 inset-x-0 z-50 flex flex-col items-center pt-4 px-4 gap-3 pointer-events-none">
 
             <div
-                className="pointer-events-auto flex items-center gap-3 px-4 py-2.5 rounded-full w-full max-w-2xl"
+                className="pointer-events-auto flex items-center gap-3 px-4 py-2.5 rounded-full w-full max-w-3xl"
                 style={pillStyle}
             >
                 <a
@@ -125,7 +125,7 @@ function Header() {
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: -8, scale: 0.97 }}
                         transition={{ duration: 0.18 }}
-                        className="pointer-events-auto w-full max-w-2xl rounded-2xl p-4"
+                        className="pointer-events-auto w-full max-w-3xl rounded-2xl p-4"
                         style={pillStyle}
                     >
                         <nav className="flex flex-col gap-1" aria-label="Navigation mobile">
