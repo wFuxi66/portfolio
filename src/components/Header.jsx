@@ -39,7 +39,8 @@ function Header() {
 
     const scrollTo = (e, href) => {
         e.preventDefault();
-        document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
+        const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        document.querySelector(href)?.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth' });
         setIsMobileMenuOpen(false);
     };
 

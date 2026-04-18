@@ -52,7 +52,8 @@ function Hero() {
                         href="#projects"
                         onClick={(e) => {
                             e.preventDefault();
-                            document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' });
+                            const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+                            document.querySelector('#projects')?.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth' });
                         }}
                         className="primary-button w-full sm:w-auto"
                         aria-label="Voir mes projets"
