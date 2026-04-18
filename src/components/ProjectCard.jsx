@@ -38,6 +38,7 @@ function ImagePlaceholder({ title }) {
 
 function ProjectCard({ title, semester, description, details, technologies = [], githubLink, liveLink, image, imageFit = 'cover' }) {
     const [showDetails, setShowDetails] = useState(false);
+    const [imgError, setImgError] = useState(false);
     const isPersonal = semester === 'Perso';
     const imgSrc = image ? `${import.meta.env.BASE_URL}${image}` : null;
 
@@ -46,17 +47,17 @@ function ProjectCard({ title, semester, description, details, technologies = [],
             <SpotlightCard containerClassName="h-full" className="flex flex-col h-full">
                 {/* Image area */}
                 <div className="h-44 shrink-0 border-b border-white/5 overflow-hidden">
-                    {imgSrc
+                    {imgSrc && !imgError
                         ? imageFit === 'contain'
                             ? <div className="w-full h-full flex items-center justify-center p-3" style={{ background: '#0a0a0f' }}>
                                 <picture>
                                     <source srcSet={imgSrc.replace(/\.(png|gif)$/, '.webp')} type="image/webp" />
-                                    <img src={imgSrc} alt={`Aperçu ${title}`} width="640" height="176" className="max-w-full max-h-full object-contain" loading="lazy" onError={(e) => { e.currentTarget.style.display = 'none'; }} />
+                                    <img src={imgSrc} alt={`Aperçu ${title}`} width="640" height="176" className="max-w-full max-h-full object-contain" loading="lazy" onError={() => setImgError(true)} />
                                 </picture>
                               </div>
                             : <picture>
                                 <source srcSet={imgSrc.replace(/\.(png|gif)$/, '.webp')} type="image/webp" />
-                                <img src={imgSrc} alt={`Aperçu ${title}`} width="640" height="176" className="w-full h-full object-cover" loading="lazy" onError={(e) => { e.currentTarget.style.display = 'none'; }} />
+                                <img src={imgSrc} alt={`Aperçu ${title}`} width="640" height="176" className="w-full h-full object-cover" loading="lazy" onError={() => setImgError(true)} />
                               </picture>
                         : <ImagePlaceholder title={title} />
                     }
