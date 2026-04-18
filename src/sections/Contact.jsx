@@ -90,22 +90,27 @@ function Contact() {
                             </SpotlightCard>
                         </motion.a>
 
-                        <motion.div
+                        <motion.a
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: 0.5 }}
-                            className="flex flex-col h-full"
+                            href="https://maps.google.com/?q=Paris+13e+France"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="group transition-all duration-300 flex flex-col h-full"
+                            aria-label="Voir Paris 13e sur Google Maps"
                         >
                             <SpotlightCard containerClassName="h-full" className="p-6 flex flex-col items-center justify-center h-full">
-                                <div className="w-12 h-12 mb-4 rounded-full bg-white/5 flex items-center justify-center shrink-0">
-                                    <svg className="w-5 h-5 text-slate-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                                <div className="w-12 h-12 mb-4 rounded-full bg-white/5 group-hover:bg-white/10 transition-all duration-300 flex items-center justify-center shrink-0">
+                                    <svg className="w-5 h-5 text-slate-400 group-hover:text-white transition-colors" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                                         <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/>
                                     </svg>
-                                </div>                                <h3 className="font-medium text-white mb-1 text-sm">Localisation</h3>
-                                <p className="text-[11px] text-slate-500">Paris 13e</p>
+                                </div>
+                                <h3 className="font-medium text-white mb-1 text-sm">Localisation</h3>
+                                <p className="text-[11px] text-slate-500 group-hover:text-slate-300 transition-colors">Paris 13e</p>
                             </SpotlightCard>
-                        </motion.div>                    </div>
+                        </motion.a>                    </div>
 
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
