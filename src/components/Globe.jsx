@@ -9,7 +9,10 @@ export default function Globe() {
   useEffect(() => {
     let phi = 0;
     let width = 0;
-    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const mql = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let reducedMotion = mql.matches;
+    const onMotionChange = (e) => { reducedMotion = e.matches; };
+    mql.addEventListener('change', onMotionChange);
     const onResize = () => canvasRef.current && (width = canvasRef.current.offsetWidth)
     window.addEventListener('resize', onResize)
     onResize()
@@ -46,6 +49,7 @@ export default function Globe() {
     return () => {
       globe.destroy();
       window.removeEventListener('resize', onResize);
+      mql.removeEventListener('change', onMotionChange);
     };
   }, []);
 
