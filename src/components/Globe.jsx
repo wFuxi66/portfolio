@@ -9,6 +9,7 @@ export default function Globe() {
   useEffect(() => {
     let phi = 0;
     let width = 0;
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const onResize = () => canvasRef.current && (width = canvasRef.current.offsetWidth)
     window.addEventListener('resize', onResize)
     onResize()
@@ -33,8 +34,8 @@ export default function Globe() {
       markers: [], // Plus de points/cercles blancs
       onRender: (state) => {
         // Rotation très lente pour un effet majestueux
-        if (!pointerInteracting.current) {
-          phi += 0.001; 
+        if (!pointerInteracting.current && !reducedMotion) {
+          phi += 0.001;
         }
         state.phi = phi + pointerInteractionMovement.current;
         state.width = width * dpr;

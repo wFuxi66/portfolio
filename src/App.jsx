@@ -15,6 +15,7 @@ const Contact    = lazy(() => import('./sections/Contact'));
 function App() {
     return (
         <div className="min-h-screen text-slate-200" style={{ backgroundColor: '#040404' }}>
+            <a href="#main" className="skip-link">Aller au contenu principal</a>
 
             {/* Monochrome depth field (gives glass something to blur) */}
             <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden" aria-hidden="true">
@@ -40,9 +41,9 @@ function App() {
                 <GlassFilters scale={10} strongScale={18} baseFrequency="0.012 0.010" />
                 <Header />
 
-                <main>
+                <main id="main">
                     <Hero />
-                    <Suspense fallback={null}>
+                    <Suspense fallback={<div className="min-h-[40vh]" aria-hidden="true" />}>
                         <About />
                         <Formation />
                         <Experience />
