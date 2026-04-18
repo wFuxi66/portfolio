@@ -18,7 +18,7 @@ function Personal() {
                             Langues
                         </motion.h2>
                         <div className="space-y-4">
-                            {languages.map((lang) => (
+                            {languages.map((lang, index) => (
                                 <motion.div
                                     key={lang.code}
                                     initial={{ opacity: 0, y: 20 }}
@@ -57,7 +57,7 @@ function Personal() {
                             Centres d'intérêt
                         </motion.h2>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            {hobbies.map((hobby) => (
+                            {hobbies.map((hobby, index) => (
                                 <motion.div
                                     key={hobby.name}
                                     initial={{ opacity: 0, y: 20 }}
