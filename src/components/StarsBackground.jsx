@@ -9,7 +9,8 @@ export const StarsBackground = ({ starColor = '#ffffff', className = '' }) => {
 
     const ctx = canvas.getContext('2d');
     let animationFrameId;
-    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const mql = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let reducedMotion = mql.matches;
     let mouse = { x: null, y: null };
 
     const handleMouseMove = (e) => {
@@ -19,14 +20,7 @@ export const StarsBackground = ({ starColor = '#ffffff', className = '' }) => {
     };
     const handleMouseLeave = () => { mouse.x = null; mouse.y = null; };
 
-    const resize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    };
-    window.addEventListener('resize', resize);
-    resize();
-
-    const stars = Array.from({ length: 250 }, () => ({
+    const makeStars = () => Array.from({ length: 250 }, () => ({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
       baseX: Math.random() * canvas.width,
@@ -36,47 +30,62 @@ export const StarsBackground = ({ starColor = '#ffffff', className = '' }) => {
       alphaChange: (Math.random() * 0.02 + 0.005) * (Math.random() < 0.5 ? 1 : -1),
     }));
 
-    if (reducedMotion) {
-      ctx.fillStyle = starColor;
-      stars.forEach(star => {
-        ctx.globalAlpha = star.alpha;
-        ctx.beginPath();
-        ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
-        ctx.fill();
-      });
-      return () => window.removeEventListener('resize', resize);
-    }
-
-    window.addEventListener('mousemove', handleMouseMove);
-    document.documentElement.addEventListener('mouseleave', handleMouseLeave);
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    let stars = makeStars();
 
     const draw = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       ctx.fillStyle = starColor;
       stars.forEach(star => {
-        star.alpha += star.alphaChange;
-        if (star.alpha <= 0.1) { star.alpha = 0.1; star.alphaChange = Math.abs(star.alphaChange); }
-        else if (star.alpha >= 0.8) { star.alpha = 0.8; star.alphaChange = -Math.abs(star.alphaChange); }
-        if (mouse.x !== null && mouse.y !== null) {
-          const dx = mouse.x - star.x;
-          const dy = mouse.y - star.y;
-          if (dx * dx + dy * dy < 10000) { star.x -= dx * 0.03; star.y -= dy * 0.03; }
+        if (!reducedMotion) {
+          star.alpha += star.alphaChange;
+          if (star.alpha <= 0.1) { star.alpha = 0.1; star.alphaChange = Math.abs(star.alphaChange); }
+          else if (star.alpha >= 0.8) { star.alpha = 0.8; star.alphaChange = -Math.abs(star.alphaChange); }
+          if (mouse.x !== null && mouse.y !== null) {
+            const dx = mouse.x - star.x;
+            const dy = mouse.y - star.y;
+            if (dx * dx + dy * dy < 10000) { star.x -= dx * 0.03; star.y -= dy * 0.03; }
+          }
+          star.x += (star.baseX - star.x) * 0.02;
+          star.y += (star.baseY - star.y) * 0.02;
         }
-        star.x += (star.baseX - star.x) * 0.02;
-        star.y += (star.baseY - star.y) * 0.02;
         ctx.globalAlpha = star.alpha;
         ctx.beginPath();
         ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
         ctx.fill();
       });
-      animationFrameId = requestAnimationFrame(draw);
+      if (!reducedMotion) {
+        animationFrameId = requestAnimationFrame(draw);
+      }
+    };
+
+    const resize = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      stars = makeStars();
+      if (reducedMotion) draw();
+    };
+
+    const onMotionChange = (e) => {
+      reducedMotion = e.matches;
+      if (reducedMotion) {
+        cancelAnimationFrame(animationFrameId);
+        draw();
+      } else {
+        draw();
+      }
     };
 
     const handleVisibilityChange = () => {
       if (document.hidden) { cancelAnimationFrame(animationFrameId); }
-      else { draw(); }
+      else if (!reducedMotion) { draw(); }
     };
 
+    window.addEventListener('resize', resize);
+    window.addEventListener('mousemove', handleMouseMove);
+    document.documentElement.addEventListener('mouseleave', handleMouseLeave);
+    mql.addEventListener('change', onMotionChange);
     document.addEventListener('visibilitychange', handleVisibilityChange);
     draw();
 
@@ -84,6 +93,7 @@ export const StarsBackground = ({ starColor = '#ffffff', className = '' }) => {
       window.removeEventListener('resize', resize);
       window.removeEventListener('mousemove', handleMouseMove);
       document.documentElement.removeEventListener('mouseleave', handleMouseLeave);
+      mql.removeEventListener('change', onMotionChange);
       document.removeEventListener('visibilitychange', handleVisibilityChange);
       cancelAnimationFrame(animationFrameId);
     };
