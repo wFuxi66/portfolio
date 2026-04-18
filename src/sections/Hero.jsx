@@ -4,7 +4,7 @@ import { meta } from '../data/meta';
 
 function Hero() {
     return (
-        <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+        <section id="hero" className="min-h-[100dvh] flex items-center justify-center relative overflow-hidden">
             {/* Stars (transparent bg so depth orbs show through) */}
             <div className="absolute inset-0 z-0">
                 <StarsBackground
@@ -36,7 +36,7 @@ function Hero() {
                 </div>
 
                 {/* Name */}
-                <h1 className="animate-slide-up opacity-0 delay-100 text-6xl sm:text-7xl md:text-9xl font-bold mb-6 tracking-tight">
+                <h1 className="animate-slide-up opacity-0 delay-100 font-bold mb-6 tracking-tight" style={{ fontSize: 'clamp(3rem, 1rem + 7vw, 8rem)' }}>
                     <span className="text-white text-glow">Jimmy Zheng</span>
                 </h1>
 

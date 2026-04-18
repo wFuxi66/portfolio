@@ -24,7 +24,7 @@ function Personal() {
                                     initial={{ opacity: 0, y: 20 }}
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
-                                    transition={{ delay: index * 0.1 }}
+                                    transition={{ delay: index * 0.04 }}
                                 >
                                     <SpotlightCard className="p-5 group">
                                         <div className="flex flex-row items-center justify-between w-full">
@@ -63,7 +63,7 @@ function Personal() {
                                     initial={{ opacity: 0, y: 20 }}
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
-                                    transition={{ delay: index * 0.1 }}
+                                    transition={{ delay: index * 0.04 }}
                                     className="group h-full"
                                 >
                                     <SpotlightCard className="p-5 sm:p-6 h-full" containerClassName="h-full">
