@@ -6,15 +6,36 @@ function StarModal({ title, semester, details, technologies = [], githubLink, li
     const isPersonal = semester === 'Perso';
     const badgeLabel = isPersonal ? 'Projet Personnel' : `Semestre ${semester}`;
     const closeButtonRef = useRef(null);
+    const panelRef = useRef(null);
+    const previouslyFocused = useRef(null);
 
     useEffect(() => {
+        previouslyFocused.current = document.activeElement;
         closeButtonRef.current?.focus();
-        const onKey = (e) => { if (e.key === 'Escape') onClose(); };
+
+        const onKey = (e) => {
+            if (e.key === 'Escape') { onClose(); return; }
+            if (e.key === 'Tab' && panelRef.current) {
+                const focusable = panelRef.current.querySelectorAll(
+                    'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+                );
+                if (!focusable.length) return;
+                const first = focusable[0];
+                const last = focusable[focusable.length - 1];
+                if (e.shiftKey && document.activeElement === first) {
+                    last.focus(); e.preventDefault();
+                } else if (!e.shiftKey && document.activeElement === last) {
+                    first.focus(); e.preventDefault();
+                }
+            }
+        };
+
         document.addEventListener('keydown', onKey);
         document.body.style.overflow = 'hidden';
         return () => {
             document.removeEventListener('keydown', onKey);
             document.body.style.overflow = '';
+            previouslyFocused.current?.focus();
         };
     }, [onClose]);
 
@@ -32,6 +53,7 @@ function StarModal({ title, semester, details, technologies = [], githubLink, li
 
             {/* Panel */}
             <motion.div
+                ref={panelRef}
                 role="dialog"
                 aria-modal="true"
                 aria-labelledby="modal-title"
