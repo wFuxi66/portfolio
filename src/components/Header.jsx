@@ -47,8 +47,12 @@ function Header() {
 
     const scrollTo = (e, href) => {
         e.preventDefault();
+        const el = document.querySelector(href);
+        if (!el) return;
         const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        document.querySelector(href)?.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth' });
+        const headerH = document.querySelector('header')?.offsetHeight ?? 80;
+        const top = el.getBoundingClientRect().top + window.scrollY - headerH - 16;
+        window.scrollTo({ top, behavior: reduced ? 'auto' : 'smooth' });
         setIsMobileMenuOpen(false);
     };
 
