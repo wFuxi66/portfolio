@@ -51,7 +51,8 @@ function Header() {
         if (!el) return;
         const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         const headerH = document.querySelector('header')?.offsetHeight ?? 80;
-        const top = el.getBoundingClientRect().top + window.scrollY - headerH - 16;
+        const target = el.querySelector('h1, h2, h3') ?? el;
+        const top = target.getBoundingClientRect().top + window.scrollY - headerH - 24;
         window.scrollTo({ top, behavior: reduced ? 'auto' : 'smooth' });
         setIsMobileMenuOpen(false);
     };
