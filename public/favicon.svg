@@ -1,5 +1,29 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-  <rect width="100" height="100" rx="20" fill="#000000"/>
-  <rect width="100" height="100" rx="20" fill="none" stroke="#333333" stroke-width="4"/>
-  <text x="50" y="70" font-family="Inter, system-ui, sans-serif" font-size="55" font-weight="600" text-anchor="middle" fill="#FFFFFF" letter-spacing="-2">JZ</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="10" fill="#0b0d11"/>
+  <g stroke="#8a5a2e" stroke-width="2" fill="none" stroke-linecap="round">
+    <path d="M6 22 H16 V30"/>
+    <path d="M6 42 H16 V36"/>
+    <path d="M58 22 H48 V30"/>
+    <path d="M58 42 H48 V36"/>
+    <path d="M20 6 V14 H26"/>
+    <path d="M44 6 V14 H38"/>
+    <path d="M20 58 V50 H26"/>
+    <path d="M44 58 V50 H38"/>
+  </g>
+  <rect x="21" y="21" width="22" height="22" rx="3" fill="#15181d" stroke="#c07a3e" stroke-width="2.4"/>
+  <g fill="#d8b06a">
+    <rect x="16" y="25" width="5" height="2.4" rx="1"/>
+    <rect x="16" y="30" width="5" height="2.4" rx="1"/>
+    <rect x="16" y="35" width="5" height="2.4" rx="1"/>
+    <rect x="43" y="25" width="5" height="2.4" rx="1"/>
+    <rect x="43" y="30" width="5" height="2.4" rx="1"/>
+    <rect x="43" y="35" width="5" height="2.4" rx="1"/>
+    <rect x="25" y="16" width="2.4" height="5" rx="1"/>
+    <rect x="30" y="16" width="2.4" height="5" rx="1"/>
+    <rect x="35" y="16" width="2.4" height="5" rx="1"/>
+    <rect x="25" y="43" width="2.4" height="5" rx="1"/>
+    <rect x="30" y="43" width="2.4" height="5" rx="1"/>
+    <rect x="35" y="43" width="2.4" height="5" rx="1"/>
+  </g>
+  <circle cx="38" cy="38" r="2.4" fill="#ff5c34"/>
 </svg>

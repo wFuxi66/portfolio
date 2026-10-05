@@ -10,7 +10,8 @@ export default defineConfig({
                 manualChunks: {
                     'react-vendor': ['react', 'react-dom'],
                     'framer': ['framer-motion'],
-                    'cobe': ['cobe'],
+                    'three': ['three'],
+                    'r3f': ['@react-three/fiber'],
                 },
             },
         },

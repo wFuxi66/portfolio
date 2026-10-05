@@ -1,133 +1,47 @@
 import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import Reveal from '../components/Reveal';
+import SectionHeader from '../components/SectionHeader';
 import ProjectCard from '../components/ProjectCard';
-import { projects } from '../data/projects';
+import { projects, projectFilters } from '../data/projects';
 
-/**
- * Projects Section - Full list of academic and personal projects with STAR methodology
- */
-function Projects() {
-    const [filter, setFilter] = useState('selection');
-
-    const filteredProjects = filter === 'all'
-        ? projects
-        : projects.filter(p => p.category === filter);
+export default function Projects() {
+    const [filter, setFilter] = useState('all');
+    const list = filter === 'all' ? projects : projects.filter((p) => p.category === filter);
 
     return (
-        <section id="projects" className="relative">
-            <div className="section-container">
-                <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
-                    <div>
-                        <motion.h2
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            className="text-3xl font-bold text-white mb-4 tracking-tight"
-                        >
-                            Projets
-                        </motion.h2>
-                        <motion.p
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: 0.1 }}
-                            className="text-slate-400 max-w-xl text-lg"
-                        >
-                            Une immersion dans mes réalisations, du développement de produits aux projets académiques.
-                        </motion.p>
-                    </div>
+        <section id="projets" className="relative py-20 md:py-28">
+            <div className="mx-auto max-w-6xl px-5 sm:px-8">
+                <SectionHeader
+                    index="04"
+                    title="Projets"
+                    meta={`DOC 04 · ${String(projects.length).padStart(2, '0')} MODULES MONTÉS`}
+                />
 
-                    <div
-                        role="tablist"
-                        aria-label="Filtrer les projets"
-                        className="flex p-1 bg-white/5 border border-white/10 rounded-xl backdrop-blur-sm self-start"
-                    >
+                <Reveal className="mb-7 flex flex-wrap items-center gap-2">
+                    {projectFilters.map((f) => (
                         <button
-                            role="tab"
-                            aria-selected={filter === 'selection'}
-                            onClick={() => setFilter('selection')}
-                            className={`px-4 py-2 text-sm font-medium rounded-lg transition-all duration-300 ${filter === 'selection'
-                                    ? 'bg-white text-black shadow-lg'
-                                    : 'text-slate-400 hover:text-white'
-                                }`}
+                            key={f.id}
+                            type="button"
+                            onClick={() => setFilter(f.id)}
+                            className={`btn !px-4 !py-2 ${filter === f.id ? 'btn-primary' : ''}`}
+                            aria-pressed={filter === f.id}
                         >
-                            Perso
+                            {f.label}
                         </button>
-                        <button
-                            role="tab"
-                            aria-selected={filter === 'academic'}
-                            onClick={() => setFilter('academic')}
-                            className={`px-4 py-2 text-sm font-medium rounded-lg transition-all duration-300 ${filter === 'academic'
-                                    ? 'bg-white text-black shadow-lg'
-                                    : 'text-slate-400 hover:text-white'
-                                }`}
-                        >
-                            Scolaire
-                        </button>
-                        <button
-                            role="tab"
-                            aria-selected={filter === 'all'}
-                            onClick={() => setFilter('all')}
-                            className={`px-4 py-2 text-sm font-medium rounded-lg transition-all duration-300 ${filter === 'all'
-                                    ? 'bg-white text-black shadow-lg'
-                                    : 'text-slate-400 hover:text-white'
-                                }`}
-                        >
-                            Tous
-                        </button>
-                    </div>
+                    ))}
+                    <span className="ml-auto hidden font-mono text-[10px] uppercase tracking-[0.2em] text-muted sm:block">
+                        {String(list.length).padStart(2, '0')} / {String(projects.length).padStart(2, '0')} affichés
+                    </span>
+                </Reveal>
+
+                <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+                    {list.map((p, i) => (
+                        <Reveal key={p.id} delay={Math.min(i, 5) * 0.05} className="h-full">
+                            <ProjectCard project={p} />
+                        </Reveal>
+                    ))}
                 </div>
-
-                <motion.div
-                    layout
-                    className="grid sm:grid-cols-2 gap-6"
-                >
-                    <AnimatePresence mode='popLayout'>
-                        {filteredProjects.map((project) => (
-                            <motion.div
-                                key={project.id}
-                                layout
-                                initial={{ opacity: 0, scale: 0.9 }}
-                                animate={{ opacity: 1, scale: 1 }}
-                                exit={{ opacity: 0, scale: 0.9 }}
-                                transition={{ duration: 0.3 }}
-                            >
-                                <ProjectCard
-                                    title={project.title}
-                                    semester={project.semester}
-                                    description={project.description}
-                                    details={project.details}
-                                    technologies={project.technologies}
-                                    githubLink={project.githubLink}
-                                    liveLink={project.liveLink}
-                                    image={project.image}
-                                    imageFit={project.imageFit}
-                                />
-                            </motion.div>
-                        ))}
-                    </AnimatePresence>
-                </motion.div>
-
-                {filter === 'selection' && (
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        className="mt-12 text-center"
-                    >
-                        <button
-                            onClick={() => setFilter('academic')}
-                            className="text-slate-500 hover:text-white text-sm font-medium transition-colors inline-flex items-center gap-2 group"
-                        >
-                            Découvrir mes projets scolaires
-                            <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                            </svg>
-                        </button>
-                    </motion.div>
-                )}
             </div>
         </section>
     );
 }
-
-export default Projects;

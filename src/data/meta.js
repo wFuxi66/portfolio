@@ -1,11 +1,20 @@
 export const meta = {
+    name: 'Jimmy Zheng',
+    board: 'JZ-2027',
+    role: 'Développeur Full-Stack',
+    kicker: 'BUT Informatique · IUT d\'Orsay — Université Paris-Saclay',
+    heroLine: 'Je conçois, développe et mets en production des applications complètes — du schéma de base de données à l\'interface, sans perdre de vue le réseau, la donnée et la prod.',
     email: 'zhengjimmy66@gmail.com',
-    phone: '+33767696993',
-    phoneDisplay: '07 67 69 69 93',
+    phone: '07 67 69 69 93',
+    phoneHref: 'tel:+33767696993',
+    github: 'https://github.com/wFuxi66',
+    githubLabel: 'github.com/wFuxi66',
     linkedin: 'https://www.linkedin.com/in/jimmy-zheng-4a9073331/',
-    // Hero badge
-    status: 'Stagiaire Développeur IA • USTS',
-    // Contact section
-    contactBlurb: "Actuellement en stage chez USTS jusqu'en juillet 2026. N'hésitez pas à me contacter pour toute opportunité future.",
-    internshipPeriod: "Disponible après juillet 2026",
+    linkedinLabel: 'LinkedIn',
+    location: 'Paris 13e (75013)',
+    status: 'Recherche de stage',
+    internship: '18 janvier → 14 mai 2027',
+    internshipShort: '18 janv. → 14 mai 2027',
+    cvPath: `${import.meta.env.BASE_URL}CV_Jimmy_ZHENG.pdf`,
+    rev: 'RÉV. 2.0 — 2026.10',
 };

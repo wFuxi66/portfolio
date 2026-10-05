@@ -1,7 +1,7 @@
 {
   "name": "portfolio-jimmy-zheng",
   "private": true,
-  "version": "1.0.0",
+  "version": "2.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -10,12 +10,15 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fontsource-variable/ibm-plex-sans": "^5.3.0",
+    "@fontsource-variable/space-grotesk": "^5.3.0",
+    "@fontsource/ibm-plex-mono": "^5.3.0",
+    "@react-three/fiber": "8.18.0",
     "clsx": "^2.1.1",
-    "cobe": "^2.0.1",
     "framer-motion": "^12.38.0",
-    "glass-refraction": "^0.1.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "three": "0.170.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.43",

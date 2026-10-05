@@ -1,163 +1,78 @@
-import { motion } from 'framer-motion';
-import SpotlightCard from '../components/SpotlightCard';
+import Reveal from '../components/Reveal';
+import SectionHeader from '../components/SectionHeader';
 import { experiences } from '../data/experience';
 
-function CompanyBadge({ name, size = 'lg' }) {
-    const initials = name
-        .split(/\s+/)
-        .slice(0, 2)
-        .map((w) => w[0])
-        .join('')
-        .toUpperCase();
-
-    if (size === 'lg') {
-        return (
-            <div
-                className="w-14 h-14 rounded-xl flex items-center justify-center shrink-0 border border-white/10"
-                style={{ background: 'rgba(255,255,255,0.05)' }}
-            >
-                <span className="text-lg font-bold text-white/60 tracking-tight font-mono">{initials}</span>
-            </div>
-        );
-    }
-    return (
-        <div
-            className="w-9 h-9 rounded-lg flex items-center justify-center shrink-0 border border-white/10"
-            style={{ background: 'rgba(255,255,255,0.04)' }}
-        >
-            <span className="text-xs font-bold text-white/50 tracking-tight font-mono">{initials}</span>
-        </div>
-    );
-}
-
-function FeaturedCard({ exp }) {
-    return (
-        <SpotlightCard className="p-7 md:p-9">
-            {/* Top row */}
-            <div className="flex items-start gap-5 mb-7">
-                <CompanyBadge name={exp.company} size="lg" />
-                <div className="flex-1 min-w-0">
-                    <div className="flex flex-wrap items-center gap-2 mb-1">
-                        <h3 className="text-xl font-bold text-white tracking-tight">{exp.company}</h3>
-                        {exp.current && (
-                            <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-widest text-white bg-white/10 rounded-full border border-white/10">
-                                <span className="w-1.5 h-1.5 bg-white rounded-full animate-pulse" aria-hidden="true" />
-                                En cours
-                            </span>
-                        )}
-                    </div>
-                    <p className="text-slate-400 text-sm font-medium">{exp.role}</p>
-                </div>
-                <div className="hidden sm:block text-right shrink-0">
-                    <p className="text-slate-300 font-mono text-xs">{exp.period}</p>
-                    <p className="text-slate-600 text-xs mt-1">{exp.location}</p>
-                </div>
-            </div>
-
-            {/* Mobile period */}
-            <p className="sm:hidden text-slate-500 font-mono text-xs mb-5">{exp.period} · {exp.location}</p>
-
-            {/* Description */}
-            <p className="text-slate-400 text-sm leading-relaxed border-l-2 border-white/10 pl-4 mb-6">
-                {exp.description}
-            </p>
-
-            {/* Details */}
-            <ul className="space-y-2.5 mb-7">
-                {exp.details.map((detail, i) => (
-                    <li key={i} className="text-slate-400 text-sm flex gap-3 leading-relaxed">
-                        <span className="text-white/20 mt-1.5 shrink-0">
-                            <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 8 8">
-                                <circle cx="4" cy="4" r="1.5" />
-                            </svg>
-                        </span>
-                        {detail}
-                    </li>
-                ))}
-            </ul>
-
-            {/* Skills */}
-            <div className="flex flex-wrap gap-2 pt-6 border-t border-white/[0.06]">
-                {exp.skills.map((skill) => (
-                    <span key={skill} className="px-3 py-1 text-xs font-medium text-slate-300 bg-white/5 rounded-full border border-white/10">
-                        {skill}
-                    </span>
-                ))}
-            </div>
-        </SpotlightCard>
-    );
-}
-
-function CompactCard({ exp }) {
-    return (
-        <SpotlightCard className="px-6 py-5">
-            <div className="flex items-center gap-4">
-                <CompanyBadge name={exp.company} size="sm" />
-                <div className="flex-1 min-w-0">
-                    <div className="flex flex-wrap items-baseline gap-x-2 gap-y-0.5">
-                        <h3 className="text-sm font-semibold text-white">{exp.company}</h3>
-                        <span className="text-slate-600 text-xs font-mono hidden sm:inline">{exp.period}</span>
-                    </div>
-                    <p className="text-slate-500 text-xs mt-0.5 truncate">{exp.role}</p>
-                </div>
-                <div className="shrink-0 text-right hidden sm:block">
-                    <p className="text-slate-600 text-xs">{exp.location}</p>
-                </div>
-            </div>
-
-            {/* Skills inline */}
-            <div className="flex flex-wrap gap-1.5 mt-4 pl-[52px]">
-                {exp.skills.map((skill) => (
-                    <span key={skill} className="px-2 py-0.5 text-[10px] font-medium text-slate-500 bg-white/[0.03] rounded-full border border-white/[0.07]">
-                        {skill}
-                    </span>
-                ))}
-            </div>
-        </SpotlightCard>
-    );
-}
-
-function Experience() {
-    const [featured, ...secondary] = experiences;
+export default function Experience() {
+    const [main, ...rest] = experiences;
 
     return (
-        <section id="experience" className="relative">
-            <div className="section-container">
-                <motion.h2
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="text-3xl font-bold text-white mb-12 tracking-tight"
-                >
-                    Expérience Professionnelle
-                </motion.h2>
+        <section id="experience" className="relative py-20 md:py-28">
+            <div className="mx-auto max-w-6xl px-5 sm:px-8">
+                <SectionHeader index="03" title="Expérience" meta="DOC 03 · ÉTAGE EN PRODUCTION" />
 
-                <div className="space-y-4 max-w-4xl mx-auto">
-                    {/* Featured (current role) */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                    >
-                        <FeaturedCard exp={featured} />
-                    </motion.div>
+                <div className="flex flex-col gap-6">
+                    <Reveal className="panel p-6 md:p-9">
+                        <div className="flex flex-wrap items-start justify-between gap-4">
+                            <div>
+                                <div className="silk-label text-copper-bright">{main.contract}</div>
+                                <h3 className="mt-2 font-display text-2xl font-semibold tracking-tight text-silk md:text-3xl">
+                                    {main.company}
+                                </h3>
+                                <div className="mt-1.5 text-sm text-muted">
+                                    {main.role} · {main.kind}
+                                </div>
+                            </div>
+                            <div className="text-right font-mono text-[11px] uppercase tracking-[0.16em] text-muted">
+                                <div>{main.period}</div>
+                                <div className="mt-1">{main.location}</div>
+                            </div>
+                        </div>
 
-                    {/* Secondary roles */}
-                    {secondary.map((exp, index) => (
-                        <motion.div
-                            key={exp.company}
-                            initial={{ opacity: 0, y: 16 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: 0.1 + index * 0.05 }}
-                        >
-                            <CompactCard exp={exp} />
-                        </motion.div>
+                        <p className="mt-5 max-w-3xl text-[15px] leading-relaxed text-silk/80">{main.summary}</p>
+
+                        <ul className="mt-7 grid gap-x-8 gap-y-3 sm:grid-cols-2">
+                            {main.points.map((p) => (
+                                <li key={p} className="flex gap-3 text-sm leading-relaxed text-silk/75">
+                                    <span className="pad-dot" aria-hidden="true" />
+                                    <span>{p}</span>
+                                </li>
+                            ))}
+                        </ul>
+
+                        <div className="mt-7 flex flex-wrap gap-1.5">
+                            {main.tech.map((t) => (
+                                <span key={t} className="pad">
+                                    {t}
+                                </span>
+                            ))}
+                        </div>
+                    </Reveal>
+
+                    {rest.map((exp, i) => (
+                        <Reveal key={exp.id} delay={0.06 * (i + 1)} className="panel p-6">
+                            <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-2">
+                                <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                                    <h3 className="font-display text-lg font-semibold tracking-tight text-silk">
+                                        {exp.company}
+                                    </h3>
+                                    <span className="font-mono text-[11px] text-muted">{exp.role}</span>
+                                </div>
+                                <span className="font-mono text-[11px] uppercase tracking-[0.16em] text-muted">
+                                    {exp.period} · {exp.location}
+                                </span>
+                            </div>
+                            <p className="mt-4 max-w-3xl text-sm leading-relaxed text-silk/70">{exp.summary}</p>
+                            <div className="mt-4 flex flex-wrap gap-1.5">
+                                {exp.tech.map((t) => (
+                                    <span key={t} className="pad">
+                                        {t}
+                                    </span>
+                                ))}
+                            </div>
+                        </Reveal>
                     ))}
                 </div>
             </div>
         </section>
     );
 }
-
-export default Experience;

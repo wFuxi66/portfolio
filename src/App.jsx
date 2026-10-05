@@ -1,92 +1,55 @@
-import { lazy, Suspense } from 'react';
-import { GlassFilters } from 'glass-refraction';
-import Header from './components/Header';
+import { useEffect } from 'react';
+import { MotionConfig } from 'framer-motion';
+import BoardCanvas from './three/BoardCanvas';
+import Hud from './components/Hud';
+import Crosshair from './components/Crosshair';
+import Footer from './components/Footer';
 import Hero from './sections/Hero';
-import { meta } from './data/meta';
+import Profil from './sections/Profil';
+import Formation from './sections/Formation';
+import Experience from './sections/Experience';
+import Projects from './sections/Projects';
+import Skills from './sections/Skills';
+import Contact from './sections/Contact';
+import { initSceneTracking } from './lib/sceneState';
+import { sectionIds } from './data/sections';
 
-const About      = lazy(() => import('./sections/About'));
-const Formation  = lazy(() => import('./sections/Formation'));
-const Experience = lazy(() => import('./sections/Experience'));
-const Skills     = lazy(() => import('./sections/Skills'));
-const Projects   = lazy(() => import('./sections/Projects'));
-const Personal   = lazy(() => import('./sections/Personal'));
-const Contact    = lazy(() => import('./sections/Contact'));
+export default function App() {
+    useEffect(() => initSceneTracking(sectionIds), []);
 
-function App() {
+    // Deep links: the browser resolves #anchors before React mounts, so scroll again.
+    useEffect(() => {
+        const { hash } = window.location;
+        if (!hash) return undefined;
+        const timer = window.setTimeout(() => {
+            document.querySelector(hash)?.scrollIntoView({ behavior: 'auto', block: 'start' });
+        }, 350);
+        return () => window.clearTimeout(timer);
+    }, []);
+
     return (
-        <div className="min-h-screen text-slate-200" style={{ backgroundColor: '#040404' }}>
-            <a href="#main" className="skip-link">Aller au contenu principal</a>
+        <MotionConfig reducedMotion="user">
+            <div className="relative min-h-screen">
+                <a href="#main" className="skip-link">
+                    Aller au contenu principal
+                </a>
 
-            {/* Monochrome depth field (gives glass something to blur) */}
-            <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden" aria-hidden="true">
-                <div style={{
-                    position: 'absolute', top: '-10%', left: '-8%',
-                    width: 700, height: 700, borderRadius: '50%',
-                    background: '#ffffff', filter: 'blur(160px)', opacity: 0.05,
-                }} />
-                <div style={{
-                    position: 'absolute', top: '40%', right: '-12%',
-                    width: 520, height: 520, borderRadius: '50%',
-                    background: '#ffffff', filter: 'blur(140px)', opacity: 0.04,
-                }} />
-                <div style={{
-                    position: 'absolute', bottom: '8%', left: '18%',
-                    width: 700, height: 500, borderRadius: '50%',
-                    background: '#ffffff', filter: 'blur(170px)', opacity: 0.035,
-                }} />
-            </div>
+                <BoardCanvas />
+                <Crosshair />
+                <Hud />
 
-            {/* Content */}
-            <div className="relative z-10">
-                <GlassFilters scale={10} strongScale={18} baseFrequency="0.012 0.010" />
-                <Header />
-
-                <main id="main">
+                <main id="main" className="relative z-10">
                     <Hero />
-                    <Suspense fallback={<div className="min-h-[40vh]" aria-hidden="true" />}>
-                        <About />
-                        <Formation />
-                        <Experience />
-                        <Skills />
-                        <Projects />
-                        <Personal />
-                        <Contact />
-                    </Suspense>
+                    <Profil />
+                    <Formation />
+                    <Experience />
+                    <Projects />
+                    <Skills />
+                    <Contact />
                 </main>
 
-                <footer className="py-12 mt-4 border-t border-white/[0.06]">
-                    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                        <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
-                            <div className="flex items-center gap-3">
-                                <span className="text-white font-semibold tracking-tight">Jimmy Zheng</span>
-                                <span className="text-white/20">·</span>
-                                <span className="text-slate-500 text-sm">Développeur Full Stack</span>
-                            </div>
-                            <div className="flex items-center gap-6">
-                                <a
-                                    href={meta.linkedin}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="text-slate-500 hover:text-white transition-colors text-sm"
-                                    aria-label="LinkedIn"
-                                >
-                                    LinkedIn
-                                </a>
-                                <a
-                                    href={`mailto:${meta.email}`}
-                                    className="text-slate-500 hover:text-white transition-colors text-sm"
-                                    aria-label="Email"
-                                >
-                                    Email
-                                </a>
-                                <span className="text-slate-700 text-xs">© {new Date().getFullYear()}</span>
-                            </div>
-                        </div>
-                    </div>
-                </footer>
+                <Footer />
             </div>
-        </div>
+        </MotionConfig>
     );
 }
-
-export default App;

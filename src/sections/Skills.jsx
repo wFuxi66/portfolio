@@ -1,73 +1,51 @@
-import { motion } from 'framer-motion';
-import SkillBadge from '../components/SkillBadge';
-import SpotlightCard from '../components/SpotlightCard';
-import { skillCategories } from '../data/skills';
+import Reveal from '../components/Reveal';
+import SectionHeader from '../components/SectionHeader';
+import { skillModules } from '../data/skills';
 
-const icons = {
-    web: (
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-    ),
-    software: (
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-    ),
-    network: (
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-    ),
-    tools: (
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
-    ),
-};
-
-/**
- * Skills Section - Technical skills organized in an asymmetrical 2-1/1-2 Bento Grid
- */
-function Skills() {
+export default function Skills() {
     return (
-        <section id="skills" className="relative">
-            <div className="section-container">
-                <motion.h2
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="text-3xl font-bold text-white mb-12 tracking-tight"
-                >
-                    Compétences Techniques
-                </motion.h2>
+        <section id="competences" className="relative py-20 md:py-28">
+            <div className="mx-auto max-w-6xl px-5 sm:px-8">
+                <SectionHeader
+                    index="05"
+                    title="Compétences"
+                    meta={`DOC 05 · ${String(skillModules.length).padStart(2, '0')} MODULES — NOMENCLATURE`}
+                />
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    {skillCategories.map((category, index) => (
-                        <motion.div
-                            key={category.label}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: index * 0.04 }}
-                            className={category.colSpan === 2 ? 'md:col-span-2' : 'md:col-span-1'}
-                        >
-                            <SpotlightCard
-                                containerClassName="h-full"
-                                className="p-6 md:p-8 h-full flex flex-col justify-center"
+                <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                    {skillModules.map((m, i) => {
+                        const last = i === skillModules.length - 1;
+                        return (
+                            <Reveal
+                                key={m.id}
+                                delay={Math.min(i, 5) * 0.05}
+                                className={`panel flex flex-col p-5 ${
+                                    last ? 'sm:col-span-2 lg:col-span-1' : ''
+                                } ${m.id === 'transverse' ? 'border-copper-dim' : ''}`}
                             >
-                                <div className="flex items-center gap-4 mb-6">
-                                    <div className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center">
-                                        <svg className="w-5 h-5 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                                            {icons[category.icon]}
-                                        </svg>
-                                    </div>
-                                    <h3 className="text-lg font-semibold text-white">{category.label}</h3>
+                                <div className="flex items-center justify-between">
+                                    <span className="font-mono text-[10px] tracking-[0.24em] text-copper-bright">
+                                        {m.code}
+                                    </span>
+                                    <span className="font-mono text-[10px] tracking-[0.16em] text-muted">
+                                        {String(m.items.length).padStart(2, '0')}
+                                    </span>
                                 </div>
-                                <div className="flex flex-wrap gap-2">
-                                    {category.skills.map((skill) => (
-                                        <SkillBadge key={skill} name={skill} />
+                                <h3 className="mt-3 font-display text-base font-semibold uppercase tracking-wide text-silk">
+                                    {m.label}
+                                </h3>
+                                <div className="mt-4 flex flex-wrap gap-1.5">
+                                    {m.items.map((s) => (
+                                        <span key={s} className="pad">
+                                            {s}
+                                        </span>
                                     ))}
                                 </div>
-                            </SpotlightCard>
-                        </motion.div>
-                    ))}
+                            </Reveal>
+                        );
+                    })}
                 </div>
             </div>
         </section>
     );
 }
-
-export default Skills;

@@ -1,149 +1,80 @@
-import { motion } from 'framer-motion';
-import SpotlightCard from '../components/SpotlightCard';
+import Reveal from '../components/Reveal';
+import SectionHeader from '../components/SectionHeader';
 import { meta } from '../data/meta';
 
-function Contact() {
+const channels = [
+    { label: 'E-mail', value: meta.email, href: `mailto:${meta.email}` },
+    { label: 'Téléphone', value: meta.phone, href: meta.phoneHref },
+    { label: 'GitHub', value: meta.githubLabel, href: meta.github, external: true },
+    { label: 'LinkedIn', value: 'in/jimmy-zheng', href: meta.linkedin, external: true },
+    { label: 'Localisation', value: meta.location, href: null },
+];
+
+export default function Contact() {
     return (
-        <section id="contact" className="relative" aria-labelledby="contact-title">
-            <div className="section-container">
-                <motion.h2 
-                    id="contact-title"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="text-3xl font-bold text-white mb-12 tracking-tight text-center"
-                >
-                    Contact
-                </motion.h2>
+        <section id="contact" className="relative py-20 md:py-28">
+            <div className="mx-auto max-w-6xl px-5 sm:px-8">
+                <SectionHeader index="06" title="Contact" meta="DOC 06 · CONNEXION" />
 
-                <div className="max-w-2xl mx-auto text-center">
-                    <motion.p
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.1 }}
-                        className="text-lg text-slate-400 mb-8"
-                    >
-                        {meta.contactBlurb}
-                    </motion.p>
+                <Reveal className="panel p-6 md:p-12">
+                    <div className="grid gap-10 lg:grid-cols-2">
+                        <div>
+                            <h3 className="font-display text-3xl font-semibold uppercase leading-[1.05] tracking-tight text-silk md:text-4xl lg:text-5xl">
+                                Un stage à confier&nbsp;?
+                                <br />
+                                <span className="text-copper-bright">Discutons-en.</span>
+                            </h3>
+                            <p className="mt-6 max-w-md text-sm leading-relaxed text-silk/75">
+                                Disponible du 18 janvier au 14 mai 2027, à temps plein, à Paris ou en Île-de-France.
+                                Je réponds vite, avec des projets qui tournent déjà en production.
+                            </p>
 
-                    <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
-                        <motion.a
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: 0.2 }}
-                            href={`mailto:${meta.email}`}
-                            className="group transition-all duration-300 flex flex-col h-full"
-                            aria-label="Envoyer un email à Jimmy Zheng"
-                        >
-                            <SpotlightCard containerClassName="h-full" className="p-6 flex flex-col items-center justify-center h-full">
-                                <div className="w-12 h-12 mb-4 rounded-full bg-white/5 group-hover:bg-white/10 transition-all duration-300 flex items-center justify-center shrink-0">
-                                    <svg className="w-5 h-5 text-slate-400 group-hover:text-white transition-colors" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                                        <rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>      
-                                    </svg>
-                                </div>
-                                <h3 className="font-medium text-white mb-1 text-sm">Email</h3>
-                                <p className="text-[11px] text-slate-500 group-hover:text-slate-300 transition-colors break-all leading-tight">{meta.email}</p>
-                            </SpotlightCard>
-                        </motion.a>
-
-                        <motion.a
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: 0.3 }}
-                            href={`tel:${meta.phone}`}
-                            className="group transition-all duration-300 flex flex-col h-full"
-                            aria-label="Appeler Jimmy Zheng"
-                        >
-                            <SpotlightCard containerClassName="h-full" className="p-6 flex flex-col items-center justify-center h-full">
-                                <div className="w-12 h-12 mb-4 rounded-full bg-white/5 group-hover:bg-white/10 transition-all duration-300 flex items-center justify-center shrink-0">
-                                    <svg className="w-5 h-5 text-slate-400 group-hover:text-white transition-colors" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-                                    </svg>
-                                </div>
-                                <h3 className="font-medium text-white mb-1 text-sm">Téléphone</h3>
-                                <p className="text-[11px] text-slate-500 group-hover:text-slate-300 transition-colors">{meta.phoneDisplay}</p>
-                            </SpotlightCard>
-                        </motion.a>
-
-                        <motion.a
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: 0.4 }}
-                            href={meta.linkedin}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="group transition-all duration-300 flex flex-col h-full"
-                            aria-label="Profil LinkedIn de Jimmy Zheng"
-                        >
-                            <SpotlightCard containerClassName="h-full" className="p-6 flex flex-col items-center justify-center h-full">
-                                <div className="w-12 h-12 mb-4 rounded-full bg-white/5 group-hover:bg-white/10 transition-all duration-300 flex items-center justify-center shrink-0">
-                                    <svg className="w-5 h-5 text-slate-400 group-hover:text-white transition-colors" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/>
-                                    </svg>
-                                </div>
-                                <h3 className="font-medium text-white mb-1 text-sm">LinkedIn</h3>
-                                <p className="text-[11px] text-slate-500 group-hover:text-slate-300 transition-colors">Mon profil</p>
-                            </SpotlightCard>
-                        </motion.a>
-
-                        <motion.a
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: 0.5 }}
-                            href="https://maps.google.com/?q=Paris+13e+France"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="group transition-all duration-300 flex flex-col h-full"
-                            aria-label="Voir Paris 13e sur Google Maps"
-                        >
-                            <SpotlightCard containerClassName="h-full" className="p-6 flex flex-col items-center justify-center h-full">
-                                <div className="w-12 h-12 mb-4 rounded-full bg-white/5 group-hover:bg-white/10 transition-all duration-300 flex items-center justify-center shrink-0">
-                                    <svg className="w-5 h-5 text-slate-400 group-hover:text-white transition-colors" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                                        <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/>
-                                    </svg>
-                                </div>
-                                <h3 className="font-medium text-white mb-1 text-sm">Localisation</h3>
-                                <p className="text-[11px] text-slate-500 group-hover:text-slate-300 transition-colors">Paris 13e</p>
-                            </SpotlightCard>
-                        </motion.a>                    </div>
-
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.6 }}
-                        className="max-w-lg mx-auto"
-                    >
-                        <SpotlightCard className="p-8 flex flex-col items-center">
-                            <div className="flex items-center justify-center gap-2 mb-4">
-                                <span className="w-2 h-2 bg-white rounded-full animate-pulse shadow-[0_0_8px_rgba(255,255,255,0.4)]" aria-hidden="true"></span>
-                                <span className="text-white text-sm font-medium">Actuellement en stage</span>
-                            </div>
-                            <h3 className="text-xl font-bold text-white mb-2 text-center tracking-tight">USTS · Paris 13e</h3>
-                            <p className="text-slate-400 mb-8 text-sm text-center">{meta.internshipPeriod}</p>
-                            <div className="flex justify-center">
-                                <a
-                                    href={`mailto:${meta.email}?subject=Opportunité - Jimmy ZHENG`}
-                                    className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-white text-black font-semibold text-sm rounded-full hover:bg-slate-200 transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.1)]"
-                                    aria-label="Envoyer un email à Jimmy Zheng"
-                                >
-                                    <svg className="w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                                        <rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
-                                    </svg>
-                                    <span>Me contacter</span>
+                            <div className="mt-8 flex flex-wrap gap-3">
+                                <a className="btn btn-primary" href={`mailto:${meta.email}`}>
+                                    Écrire un e-mail
+                                </a>
+                                <a className="btn" href={meta.cvPath} download>
+                                    Télécharger le CV
                                 </a>
                             </div>
-                        </SpotlightCard>
-                    </motion.div>
-                </div>
+
+                            <div className="mt-9 inline-flex items-center gap-3 border border-line px-4 py-3">
+                                <span className="led" />
+                                <span className="silk-label !text-silk/85">
+                                    {meta.status} · {meta.internship}
+                                </span>
+                            </div>
+                        </div>
+
+                        <div className="grid content-start gap-px self-start border border-line bg-line">
+                            {channels.map((c) =>
+                                c.href ? (
+                                    <a
+                                        key={c.label}
+                                        href={c.href}
+                                        target={c.external ? '_blank' : undefined}
+                                        rel={c.external ? 'noopener noreferrer' : undefined}
+                                        className="group flex items-center justify-between gap-4 bg-panel px-5 py-4 transition-colors hover:bg-white/[0.03]"
+                                    >
+                                        <span className="silk-label">{c.label}</span>
+                                        <span className="font-mono text-[12px] text-silk/85 transition-colors group-hover:text-copper-bright">
+                                            {c.value} <span className="text-copper-bright">↗</span>
+                                        </span>
+                                    </a>
+                                ) : (
+                                    <div
+                                        key={c.label}
+                                        className="flex items-center justify-between gap-4 bg-panel px-5 py-4"
+                                    >
+                                        <span className="silk-label">{c.label}</span>
+                                        <span className="font-mono text-[12px] text-silk/85">{c.value}</span>
+                                    </div>
+                                ),
+                            )}
+                        </div>
+                    </div>
+                </Reveal>
             </div>
         </section>
     );
 }
-
-export default Contact;
