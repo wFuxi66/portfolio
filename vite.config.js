@@ -1,19 +1,6 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from 'vite';
 
-export default defineConfig({
-    plugins: [react()],
-    base: '/portfolio/',
-    build: {
-        rollupOptions: {
-            output: {
-                manualChunks: {
-                    'react-vendor': ['react', 'react-dom'],
-                    'framer': ['framer-motion'],
-                    'three': ['three'],
-                    'r3f': ['@react-three/fiber'],
-                },
-            },
-        },
-    },
-})
+// Dev stays at the root; the production build and preview are served from /portfolio/.
+export default defineConfig(({ mode }) => ({
+  base: mode === 'production' ? '/portfolio/' : '/',
+}));
