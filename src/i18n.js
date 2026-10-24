@@ -88,7 +88,7 @@ const EN_TEXT = {
     'A panoramic Chinese landscape with two boats, a pavilion, and pale mountains',
   'Voir le projet Réservation': 'View the Reservation project',
   'Voir le projet osu!scan': 'View the osu!scan project',
-  'Voir le projet osu-browser': 'View the osu-browser project',
+  'Voir le projet osu!browser': 'View the osu!browser project',
   'Retour en haut': 'Back to top',
   'Pied de page': 'Footer',
   'Navigation mobile': 'Mobile navigation',

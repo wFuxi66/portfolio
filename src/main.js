@@ -798,9 +798,9 @@ const editions = {
     fr: {
       cn: '网',
       pinyin: 'WǍNG',
-      plate: 'Nº 03 · OSU-BROWSER',
+      plate: 'Nº 03 · OSU!BROWSER',
       kicker: 'Projet 03 — Personnel',
-      title: 'osu-browser',
+      title: 'osu!browser',
       desc: "Un osu! stable complet dans le navigateur : menu principal, song select, jeu et éditeur de beatmaps. On dépose un MP3 ou un .osz pour commencer, on mappe avec les outils de stable — timing, storyboards, skins — puis on exporte le .osz. L'éditeur tourne entièrement côté client (IndexedDB, synchronisation Google Drive optionnelle), avec une API Hono sans base de données pour l'OAuth osu! et les appels à l'API.",
       character: 'Jeu · Éditeur · Export .osz',
       ingredients: 'React · TypeScript · Hono · IndexedDB',
@@ -813,9 +813,9 @@ const editions = {
     en: {
       cn: '网',
       pinyin: 'WǍNG',
-      plate: 'Nº 03 · OSU-BROWSER',
+      plate: 'Nº 03 · OSU!BROWSER',
       kicker: 'Project 03 — Personal',
-      title: 'osu-browser',
+      title: 'osu!browser',
       desc: "A full osu! stable experience in the browser: main menu, song select, gameplay and a beatmap editor. Drop an MP3 or an .osz to start, map with stable's tools — timing, storyboards, skins — then export the .osz. The editor runs entirely client-side (IndexedDB, optional Google Drive sync), with a database-free Hono API for osu! OAuth and API calls.",
       character: 'Gameplay · Editor · .osz export',
       ingredients: 'React · TypeScript · Hono · IndexedDB',
