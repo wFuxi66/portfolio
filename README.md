@@ -78,7 +78,7 @@ The five skill domains and four journey steps are driven by the markup; project 
 - **Profile** — BUT Informatique at IUT d'Orsay, Networks & Security track; internship at USTS; looking for an internship from 18 January to 14 May 2027.
 - **Skills** — languages, frameworks, data, systems/network, practices/quality.
 - **Journey** — BUT Informatique, USTS internship, CHOKEN, Baccalauréat.
-- **Projects** — Réservation (USTS), osu!scan, Glitch Party, plus eight archived projects, including the previous 3D PCB portfolio.
+- **Projects** — Réservation (USTS), osu!scan, osu-browser, plus nine archived projects, including Glitch Party and the previous 3D PCB portfolio.
 - **Contact** — email, phone, GitHub, LinkedIn, CV.
 
 ---
@@ -105,7 +105,7 @@ All paintings and objects are **public domain**, downloaded from [The Metropolit
 - Shitao (Zhu Ruoji), *Thirty-six Peaks of Mount Huang Recollected*, ca. 1705 — hero scroll
 - Wang Meng, *Red Cliffs and Green Valleys*, ca. 1367 — profile figure
 - Wang Meng, *Simple Retreat*, ca. 1370 — osu!scan card
-- Chen Rong, *The Dragon*, 13th century — interlude and Glitch Party card
+- Chen Rong, *The Dragon*, 13th century — interlude and osu-browser card
 - Attributed to Shitao, *Landscapes* (album leaf), ca. 1690 — panorama and Réservation card
 - Duan inkstone with pine and bird carving — object study
 
@@ -120,7 +120,7 @@ Room tone is synthesized in the browser with filtered brown noise and a slow gai
 - The project is a portfolio, not an atelier: the ink paintings and Chinese typographic accents are art direction, while the content, projects, dates, and contact details are Jimmy Zheng's.
 - The previous 3D PCB portfolio is preserved under the `pcb-2026` tag, and the archive links to it.
 - The social preview (`public/img/og-cover.jpg`, 1200 × 630) is composed from the hero scroll, the site's type, and the 2027 internship window.
-- Glitch Party's original domain is offline; its card now opens a demo request by email.
+- Glitch Party's original domain is offline; it now sits in the archive, where its card opens a demo request by email.
 
 ---
 

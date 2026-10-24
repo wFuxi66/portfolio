@@ -790,40 +790,40 @@ const editions = {
       cta: 'View site'
     }
   },
-  'glitch-party': {
+  'osu-browser': {
     art: '/img/dragon.webp',
     stick: 'stick-rain',
-    href: 'mailto:zhengjimmy66@gmail.com?subject=D%C3%A9mo%20Glitch%20Party%20%E2%80%94%20portfolio',
-    external: false,
+    href: 'https://github.com/wFuxi66/osu-browser',
+    external: true,
     fr: {
-      cn: '故障',
-      pinyin: 'GÙ ZHÀNG',
-      plate: 'Nº 03 · GLITCH PARTY',
-      kicker: 'Projet 03 — Académique · S4',
-      title: 'Glitch Party',
-      desc: "Jeu multijoueur colocalisé développé en équipe de 3 : les joueurs contrôlent leur personnage depuis leur téléphone sur un écran partagé, en se dissimulant parmi 25 NPCs pilotés par l'IA. Huit effets « Glitch » aléatoires, architecture Node.js + Socket.io pour le temps réel, moteur 3D Three.js custom et déploiement Docker.",
-      character: 'Temps réel · NPCs IA · Téléphones',
-      ingredients: 'Node.js · Socket.io · Three.js · Docker',
-      format: 'S4 — 2026',
-      edition: 'Projet académique — 3 personnes',
-      price: 'Académique',
+      cn: '网',
+      pinyin: 'WǍNG',
+      plate: 'Nº 03 · OSU-BROWSER',
+      kicker: 'Projet 03 — Personnel',
+      title: 'osu-browser',
+      desc: "Un osu! stable complet dans le navigateur : menu principal, song select, jeu et éditeur de beatmaps. On dépose un MP3 ou un .osz pour commencer, on mappe avec les outils de stable — timing, storyboards, skins — puis on exporte le .osz. L'éditeur tourne entièrement côté client (IndexedDB, synchronisation Google Drive optionnelle), avec une API Hono sans base de données pour l'OAuth osu! et les appels à l'API.",
+      character: 'Jeu · Éditeur · Export .osz',
+      ingredients: 'React · TypeScript · Hono · IndexedDB',
+      format: '2026 — en cours',
+      edition: 'Code ouvert — GitHub',
+      price: 'Personnel',
       credit: 'Chen Rong, <em>The Dragon</em>, 13th century',
-      cta: 'Demander une démo'
+      cta: 'Voir le dépôt GitHub'
     },
     en: {
-      cn: '故障',
-      pinyin: 'GÙ ZHÀNG',
-      plate: 'Nº 03 · GLITCH PARTY',
-      kicker: 'Project 03 — Academic · S4',
-      title: 'Glitch Party',
-      desc: 'Local multiplayer game built in a team of 3: players control their character from their phone on a shared screen, hiding among 25 AI-driven NPCs. Eight random “Glitch” effects, a Node.js + Socket.io real-time architecture, a custom Three.js 3D engine and Docker deployment.',
-      character: 'Real-time · AI NPCs · Phones',
-      ingredients: 'Node.js · Socket.io · Three.js · Docker',
-      format: 'S4 — 2026',
-      edition: 'Academic project — 3 people',
-      price: 'Academic',
+      cn: '网',
+      pinyin: 'WǍNG',
+      plate: 'Nº 03 · OSU-BROWSER',
+      kicker: 'Project 03 — Personal',
+      title: 'osu-browser',
+      desc: "A full osu! stable experience in the browser: main menu, song select, gameplay and a beatmap editor. Drop an MP3 or an .osz to start, map with stable's tools — timing, storyboards, skins — then export the .osz. The editor runs entirely client-side (IndexedDB, optional Google Drive sync), with a database-free Hono API for osu! OAuth and API calls.",
+      character: 'Gameplay · Editor · .osz export',
+      ingredients: 'React · TypeScript · Hono · IndexedDB',
+      format: '2026 — ongoing',
+      edition: 'Open source — GitHub',
+      price: 'Personal',
       credit: 'Chen Rong, <em>The Dragon</em>, 13th century',
-      cta: 'Request a demo'
+      cta: 'View on GitHub'
     }
   }
 };
