@@ -793,7 +793,7 @@ const editions = {
   'osu-browser': {
     art: '/img/dragon.webp',
     stick: 'stick-rain',
-    href: 'https://github.com/wFuxi66/osu-browser',
+    href: 'https://osu-browser.vercel.app',
     external: true,
     fr: {
       cn: '网',
@@ -808,7 +808,7 @@ const editions = {
       edition: 'Code ouvert — GitHub',
       price: 'Personnel',
       credit: 'Chen Rong, <em>The Dragon</em>, 13th century',
-      cta: 'Voir le dépôt GitHub'
+      cta: 'Voir le site'
     },
     en: {
       cn: '网',
@@ -823,7 +823,7 @@ const editions = {
       edition: 'Open source — GitHub',
       price: 'Personal',
       credit: 'Chen Rong, <em>The Dragon</em>, 13th century',
-      cta: 'View on GitHub'
+      cta: 'View site'
     }
   }
 };
